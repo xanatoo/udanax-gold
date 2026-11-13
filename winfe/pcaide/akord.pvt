@@ -1,0 +1,196 @@
+
+AKORD DIALOG LOADONCALL MOVEABLE DISCARDABLE 0, 0, 292, 320
+STYLE WS_POPUP | WS_DLGFRAME
+CAPTION "AKORD General Liability Section"
+BEGIN
+ /* , , Ravi Pandya:AKORD CGL Form, @O@L@V@B,  */
+     CONTROL "1/30/93", 1, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 236, 8, 50, 10  /*  ,  */
+     CONTROL "Unlucky Markets", 2, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 138, 26, 150, 24  /*  ,  */
+     CONTROL "Willy Loman", 3, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 2, 36, 90, 56  /*  ,  */
+     CONTROL "4/1/93", 4, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 98, 68, 44, 10  /*  ,  */
+     CONTROL "4/1/94", 5, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 152, 68, 38, 10  /*  ,  */
+     CONTROL "AGENCY", 6, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 196, 66, 32, 10  /*  ,  */
+     CONTROL "DIRECT", 7, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 196, 76, 32, 10  /*  ,  */
+     CONTROL "TBD", 8, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 236, 68, 26, 10  /*  ,  */
+     CONTROL "Y", 9, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 270, 68, 8, 10  /*  ,  */
+     CONTROL "MANUFACTURER'S && CONTRACTORS", 10, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 136, 120, 10  /*  ,  */
+     CONTROL "STOREKEEPERS LIABILITY", 11, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 146, 120, 10  /*  ,  */
+     CONTROL "OWNER'S && CONTRACTORS PROTECTIVE", 12, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 158, 120, 10  /*  ,  */
+     CONTROL "DESIG.", 13, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 94, 170, 26, 8  /*  ,  */
+     CONTROL "PRODUCTS/COMPLETED OPERATIONS", 14, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 182, 120, 10  /*  ,  */
+     CONTROL "COMPREHENSIVE GENERAL LIABILITY", 15, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 112, 120, 10  /*  ,  */
+     CONTROL "OWNERS, LANDLORDS, && TENANTS", 16, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 124, 120, 10  /*  ,  */
+     CONTROL "CONTRACTUAL", 17, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 6, 170, 50, 10  /*  ,  */
+     CONTROL "BLANKET", 18, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 58, 170, 34, 8  /*  ,  */
+     CONTROL "BROAD FORM CGL ENDORSEMENT", 19, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 234, 120, 10  /*  ,  */
+     CONTROL "XC", 20, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 68, 246, 20, 8  /*  ,  */
+     CONTROL "FIRE LEGAL LIABILITY (Give Loc's && Lim's)", 21, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 258, 114, 10  /*  ,  */
+     CONTROL "EXCLUDE COMPL. OPS", 22, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 52, 224, 66, 8  /*  ,  */
+     CONTROL "NON-OWNED AUTO (Give Terr's && Emp's)", 23, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 282, 112, 10  /*  ,  */
+     CONTROL "BROAD FORM PROPERTY DAMAGE", 24, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 212, 120, 10  /*  ,  */
+     CONTROL "ELEVATOR COLLISION", 25, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 268, 86, 10  /*  ,  */
+     CONTROL "INCLUDE", 26, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 18, 224, 34, 8  /*  ,  */
+		 CONTROL "U", 27, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 92, 246, 20, 8  /*  ,  */
+     CONTROL "INCLUDE", 28, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 8, 246, 34, 8  /*  ,  */
+     CONTROL "X", 29, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 44, 246, 18, 8  /*  ,  */
+     CONTROL "PER OCCUR.", 30, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 72, 306, 44, 10  /*  ,  */
+     CONTROL "PER CLAIM", 31, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 72, 296, 44, 10  /*  ,  */
+     CONTROL "$", 32, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 20, 308, 44, 10  /*  ,  */
+     CONTROL "$10.000", 33, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 170, 196, 32, 10  /*  ,  */
+     CONTROL "$25.000", 34, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 206, 196, 32, 10  /*  ,  */
+     CONTROL "$", 35, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 196, 32, 10  /*  ,  */
+     CONTROL "$", 36, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 134, 32, 10  /*  ,  */
+     CONTROL "$", 37, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 206, 134, 32, 10  /*  ,  */
+     CONTROL "$", 38, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 170, 134, 32, 10  /*  ,  */
+     CONTROL "$", 39, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 170, 152, 32, 10  /*  ,  */
+     CONTROL "$", 40, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 206, 152, 32, 10  /*  ,  */
+     CONTROL "$", 41, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 152, 32, 10  /*  ,  */
+     CONTROL "$1,000", 42, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 170, 168, 32, 10  /*  ,  */
+     CONTROL "$1,000", 43, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 206, 168, 32, 10  /*  ,  */
+     CONTROL "$", 44, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 168, 32, 10  /*  ,  */
+     CONTROL "$", 45, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 206, 222, 32, 10  /*  ,  */
+     CONTROL "$", 46, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 272, 32, 10  /*  ,  */
+     CONTROL "C", 47, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 188, 210, 14, 8  /*  ,  */
+     CONTROL "A", 48, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 156, 210, 14, 8  /*  ,  */
+     CONTROL "B", 49, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 172, 210, 14, 8  /*  ,  */
+     CONTROL "", 50, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 158, 222, 30, 8  /*  ,  */
+     CONTROL "DELETE EXCLUSION C", 51, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 128, 234, 92, 10  /*  ,  */
+     CONTROL "Care, custody, and control / Broad form liability", 52, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 128, 260, 116, 32  /*  ,  */
+     CONTROL "$", 53, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 222, 32, 10  /*  ,  */
+     CONTROL "$", 54, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 250, 248, 32, 10  /*  ,  */
+     CONTROL "Set Aside", 55, "Button", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | BS_OKAY, 178, 298, 40, 14  /*  ,  */
+     CONTROL "Done", 56, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_CANCEL, 232, 298, 40, 14  /*  ,  */
+     CONTROL "akord", 54, "text", WS_CHILD, 2, 2, 0, 0
+     CONTROL "GENERAL LIABILITY SECTION", 54, "text", WS_CHILD, 52, 6, 0, 0
+     CONTROL "PRODUCER", 0, "text", WS_CHILD, 2, 26, 0, 0
+     CONTROL "DATE", 0, "text", WS_CHILD, 216, 8, 0, 0
+     CONTROL "APPLICANT", 56, "text", WS_CHILD, 98, 26, 0, 0
+     CONTROL "BILLING", 0, "text", WS_CHILD, 196, 56, 0, 0
+     CONTROL "PAYMENT", 54, "text", WS_CHILD, 236, 56, 0, 0
+     CONTROL "AUDIT", 0, "text", WS_CHILD, 270, 56, 0, 0
+     CONTROL "P.D. DEDUCT.", 0, "text", WS_CHILD, 20, 298, 0, 0
+     CONTROL "PROP EFF", 0, "text", WS_CHILD, 98, 56, 0, 0
+     CONTROL "COVERAGES / LIMITS", 0, "text", WS_CHILD, 2, 100, 0, 0
+     CONTROL "OPTIONS", 0, "text", WS_CHILD, 38, 200, 0, 0
+     CONTROL "PROP EXP", 0, "text", WS_CHILD, 152, 56, 0, 0
+     CONTROL "TOTAL", 0, "text", WS_CHILD, 250, 260, 0, 0
+     CONTROL "COMB SING LIM", 0, "text", WS_CHILD, 130, 168, 0, 0
+     CONTROL "PARTIC. %", 0, "text", WS_CHILD, 130, 224, 0, 0
+     CONTROL "(000)", 0, "text", WS_CHILD, 224, 122, 0, 0
+     CONTROL "LIMITS OF LIABILITY", 0, "text", WS_CHILD, 156, 104, 0, 0
+     CONTROL "COVERAGE", 0, "text", WS_CHILD, 130, 114, 0, 0
+     CONTROL "BODILY INJ", 0, "text", WS_CHILD, 130, 136, 0, 0
+     CONTROL "PROP DAMAGE", 0, "text", WS_CHILD, 130, 152, 0, 0
+     CONTROL "EACH ACC.", 0, "text", WS_CHILD, 206, 188, 0, 0
+     CONTROL "OTHER COVERAGES AND/OR ENDORSEMENTS", 0, "text", WS_CHILD, 128, 248, 0, 0
+     CONTROL "EACH PERS.", 0, "text", WS_CHILD, 170, 188, 0, 0
+     CONTROL "AGGREGATE", 0, "text", WS_CHILD, 206, 114, 0, 0
+     CONTROL "AGGREGATE", 0, "text", WS_CHILD, 206, 212, 0, 0
+     CONTROL "PERS. INJ.", 0, "text", WS_CHILD, 130, 212, 0, 0
+     CONTROL "PREMISES MED", 0, "text", WS_CHILD, 130, 198, 0, 0
+     CONTROL "PREMIUM", 0, "text", WS_CHILD, 250, 104, 0, 0
+     CONTROL "EACH OCC.", 0, "text", WS_CHILD, 172, 114, 0, 0
+     CONTROL "(000)", 0, "text", WS_CHILD, 188, 122, 0, 0
+END
+
+/* Color Values and Validation strings */
+AKORD RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+3,
+52, "@PRT()\n", 0,
+55, " Ravi Pandya", 0,
+56, " Ravi Pandya", 0
+54, /* Field Fonts */
+1, 10, 0, "Courier", 0,
+2, 10, 0, "Courier", 0,
+3, 10, 0, "Courier", 0,
+4, 10, 0, "Courier", 0,
+5, 10, 0, "Courier", 0,
+6, 9, 1, "Arial Narrow", 0,
+7, 9, 1, "Arial Narrow", 0,
+8, 10, 0, "Courier", 0,
+9, 10, 0, "Courier", 0,
+10, 9, 1, "Arial Narrow", 0,
+11, 9, 1, "Arial Narrow", 0,
+12, 9, 1, "Arial Narrow", 0,
+13, 9, 1, "Arial Narrow", 0,
+14, 9, 1, "Arial Narrow", 0,
+15, 9, 1, "Arial Narrow", 0,
+16, 9, 1, "Arial Narrow", 0,
+17, 9, 1, "Arial Narrow", 0,
+18, 9, 1, "Arial Narrow", 0,
+19, 9, 1, "Arial Narrow", 0,
+20, 9, 1, "Arial Narrow", 0,
+21, 9, 1, "Arial Narrow", 0,
+22, 9, 1, "Arial Narrow", 0,
+23, 9, 1, "Arial Narrow", 0,
+24, 9, 1, "Arial Narrow", 0,
+25, 9, 1, "Arial Narrow", 0,
+26, 9, 1, "Arial Narrow", 0,
+27, 9, 1, "Arial Narrow", 0,
+28, 9, 1, "Arial Narrow", 0,
+29, 9, 1, "Arial Narrow", 0,
+30, 9, 1, "Arial Narrow", 0,
+31, 9, 1, "Arial Narrow", 0,
+32, 10, 0, "Courier", 0,
+33, 10, 0, "Courier", 0,
+34, 10, 0, "Courier", 0,
+35, 10, 0, "Courier", 0,
+36, 10, 0, "Courier", 0,
+37, 10, 0, "Courier", 0,
+38, 10, 0, "Courier", 0,
+39, 10, 0, "Courier", 0,
+40, 10, 0, "Courier", 0,
+41, 10, 0, "Courier", 0,
+42, 10, 0, "Courier", 0,
+43, 10, 0, "Courier", 0,
+44, 10, 0, "Courier", 0,
+45, 10, 0, "Courier", 0,
+46, 10, 0, "Courier", 0,
+47, 9, 1, "Arial Narrow", 0,
+48, 9, 1, "Arial Narrow", 0,
+49, 9, 1, "Arial Narrow", 0,
+50, 10, 0, "Courier", 0,
+51, 9, 1, "Arial Narrow", 0,
+52, 10, 0, "Courier", 0,
+53, 10, 0, "Courier", 0,
+54, 10, 0, "Courier", 0,
+31, /* Textfield Fonts */
+1, 36, 1, "Arial Super", 0,
+2, 14, 1, "Arial Narrow", 0,
+3, 11, 1, "Arial Narrow", 0,
+4, 11, 1, "Arial Narrow", 0,
+5, 11, 1, "Arial Narrow", 0,
+6, 11, 1, "Arial Narrow", 0,
+7, 11, 1, "Arial Narrow", 0,
+8, 11, 1, "Arial Narrow", 0,
+9, 11, 1, "Arial Narrow", 0,
+10, 11, 1, "Arial Narrow", 0,
+11, 11, 1, "Arial Narrow", 0,
+12, 11, 1, "Arial Narrow", 0,
+13, 11, 1, "Arial Narrow", 0,
+14, 9, 1, "Arial Narrow", 0,
+15, 9, 1, "Arial Narrow", 0,
+16, 9, 1, "Arial Narrow", 0,
+17, 9, 1, "Arial Narrow", 0,
+18, 9, 1, "Arial Narrow", 0,
+19, 9, 1, "Arial Narrow", 0,
+20, 9, 1, "Arial Narrow", 0,
+21, 9, 1, "Arial Narrow", 0,
+22, 9, 1, "Arial Narrow", 0,
+23, 9, 1, "Arial Narrow", 0,
+24, 9, 1, "Arial Narrow", 0,
+25, 9, 1, "Arial Narrow", 0,
+26, 9, 1, "Arial Narrow", 0,
+27, 9, 1, "Arial Narrow", 0,
+28, 9, 1, "Arial Narrow", 0,
+29, 9, 1, "Arial Narrow", 0,
+30, 9, 1, "Arial Narrow", 0,
+31, 9, 1, "Arial Narrow", 0,
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+

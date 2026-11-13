@@ -1,0 +1,113 @@
+
+RATE DIALOG LOADONCALL MOVEABLE DISCARDABLE 14, 60, 292, 320
+STYLE WS_POPUP | WS_DLGFRAME
+CAPTION "Rating Instructions"
+BEGIN
+ /* , , Ravi Pandya:AKORD CGL Form, @A@M@V@B,  */
+     CONTROL "2/1/93", 1, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 242, 8, 40, 12  /*  ,  */
+     CONTROL "Unlucky Markets", 2, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT | ES_MULTILINE, 146, 26, 144, 24  /*  ,  */
+     CONTROL "Willy Loman", 3, "Edit", WS_CHILD | WS_VISIBLE | WS_DISABLED | ES_LEFT | ES_MULTILINE, 4, 37, 74, 55  /*  ,  */
+     CONTROL "4/1/93", 4, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 82, 68, 40, 10  /*  ,  */
+     CONTROL "4/1/94", 5, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 211, 68, 38, 10  /*  ,  */
+     CONTROL "AGENCY", 6, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 171, 66, 34, 11  /*  ,  */
+     CONTROL "DIRECT", 7, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 171, 76, 32, 10  /*  ,  */
+     CONTROL "TBD", 8, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 129, 68, 26, 10  /*  ,  */
+     CONTROL "Y", 9, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 256, 68, 8, 10  /*  ,  */
+     CONTROL "Set Aside", 10, "Button", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | BS_OKAY, 184, 298, 40, 14  /*  ,  */
+     CONTROL "Done", 11, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_CANCEL, 238, 298, 40, 14  /*  ,  */
+     CONTROL "RATE", 12, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 6, 110, 20, 8  /*  ,  */
+     CONTROL "BASE", 13, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 44, 110, 50, 8  /*  ,  */
+     CONTROL "REFERENCE", 14, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 110, 110, 50, 8  /*  ,  */
+     CONTROL "COMMENTS", 15, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 196, 110, 50, 8  /*  ,  */
+     CONTROL "", 16, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 6, 122, 34, 8  /*  ,  */
+     CONTROL "", 17, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 44, 122, 62, 8  /*  ,  */
+     CONTROL "", 18, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 110, 122, 82, 8  /*  ,  */
+     CONTROL "", 19, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 196, 122, 82, 8  /*  ,  */
+     CONTROL "", 20, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 6, 134, 34, 8  /*  ,  */
+     CONTROL "", 21, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 44, 134, 62, 8 /*  ,  */
+     CONTROL "", 22, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 110, 134, 82, 8  /*  ,  */
+     CONTROL "", 23, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 196, 134, 82, 8  /*  ,  */
+     CONTROL "", 24, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 6, 146, 34, 8 /*  ,  */
+     CONTROL "", 25, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 44, 146, 62, 8 /*  ,  */
+     CONTROL "", 26, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 110, 146, 82, 8  /*  ,  */
+     CONTROL "", 27, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 196, 146, 82, 8  /*  ,  */
+     CONTROL "", 28, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 6, 158, 34, 8  /*  ,  */
+     CONTROL "", 29, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 44, 158, 62, 8  /*  ,  */
+     CONTROL "", 30, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 110, 158, 82, 8  /*  ,  */
+     CONTROL "", 31, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 196, 158, 82, 8  /*  ,  */
+     CONTROL "", 32, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 6, 170, 34, 8  /*  ,  */
+     CONTROL "", 33, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 44, 170, 62, 8  /*  ,  */
+     CONTROL "", 34, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 110, 170, 82, 8  /*  ,  */
+     CONTROL "", 35, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 196, 170, 82, 8  /*  ,  */
+		 CONTROL "ACME", 0, "text", WS_CHILD, 6, 4, 0, 0
+     CONTROL "RATING INSTRUCTIONS", 16, "text", WS_CHILD, 4, 92, 0, 0
+     CONTROL "PRODUCER", 0, "text", WS_CHILD, 4, 26, 0, 0
+     CONTROL "DATE", 0, "text", WS_CHILD, 218, 8, 0, 0
+     CONTROL "APPLICANT", 0, "text", WS_CHILD, 100, 26, 0, 0
+     CONTROL "BILLING", 0, "text", WS_CHILD, 171, 56, 0, 0
+     CONTROL "PAYMENT", 0, "text", WS_CHILD, 211, 56, 0, 0
+     CONTROL "AUDIT", 0, "text", WS_CHILD, 256, 56, 0, 0
+     CONTROL "PROP EFF", 0, "text", WS_CHILD, 82, 56, 0, 0
+     CONTROL "PROP EXP", 0, "text", WS_CHILD, 128, 56, 0, 0
+     CONTROL "CASUALTY INSURANCE", 0, "text", WS_CHILD, 56, 6, 0, 0
+END
+
+/* Color Values and Validation strings */
+RATE RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+2,
+10, " Ravi Pandya", 0,
+11, " Ravi Pandya", 0
+33, /* Field Fonts */
+1, 10, 0, "Courier", 0,
+2, 10, 0, "Courier", 0,
+3, 10, 0, "Courier", 0,
+4, 10, 0, "Courier", 0,
+5, 10, 0, "Courier", 0,
+6, 9, 1, "Arial", 0,
+7, 9, 1, "Arial", 0,
+8, 10, 0, "Courier", 0,
+9, 10, 0, "Courier", 0,
+12, 10, 1, "Arial", 0,
+13, 10, 1, "Arial", 0,
+14, 10, 1, "Arial", 0,
+15, 10, 1, "Arial", 0,
+16, 10, 0, "Courier", 0,
+17, 10, 0, "Courier", 0,
+18, 10, 0, "Courier", 0,
+19, 10, 0, "Courier", 0,
+20, 10, 0, "Courier", 0,
+21, 10, 0, "Courier", 0,
+22, 10, 0, "Courier", 0,
+23, 10, 0, "Courier", 0,
+24, 10, 0, "Courier", 0,
+25, 10, 0, "Courier", 0,
+26, 10, 0, "Courier", 0,
+27, 10, 0, "Courier", 0,
+28, 10, 0, "Courier", 0,
+29, 10, 0, "Courier", 0,
+30, 10, 0, "Courier", 0,
+31, 10, 0, "Courier", 0,
+32, 10, 0, "Courier", 0,
+33, 10, 0, "Courier", 0,
+34, 10, 0, "Courier", 0,
+35, 10, 0, "Courier", 0,
+11, /* Textfield Fonts */
+1, 32, 1, "Arial Super", 0,
+2, 14, 1, "Arial", 0,
+3, 11, 1, "Arial", 0,
+4, 11, 1, "Arial", 0,
+5, 11, 1, "Arial", 0,
+6, 11, 1, "Arial", 0,
+7, 11, 1, "Arial", 0,
+8, 11, 1, "Arial", 0,
+9, 11, 1, "Arial", 0,
+10, 11, 1, "Arial", 0,
+11, 14, 1, "Arial", 0,
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+

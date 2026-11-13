@@ -1,0 +1,12 @@
+#ifndef RATEFORMCONTENT_OXX
+#define RATEFORMCONTENT_OXX
+
+#include "formct.oxx"
+
+class FERateFormContent;
+XU_TYPE_4(FERateFormContent,FEFormContent,FEContent,XuCounted)
+
+class FERateFormContentType;
+typedef FERateFormContentType * FERateFormContentTypeP;
+
+#endif // FORMCONTENT_OXX

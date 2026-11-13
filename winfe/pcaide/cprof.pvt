@@ -1,0 +1,182 @@
+
+CPROF DIALOG LOADONCALL MOVEABLE DISCARDABLE 49, 3, 266, 321
+STYLE WS_POPUP | WS_DLGFRAME
+CAPTION "Contractual Profile"
+BEGIN
+ /* MainWndProc, , Ravi Pandya:, @A@M@V@B,  */
+     CONTROL "ACME", 1, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 5, 6, 54, 24  /*  ,  */
+     CONTROL "Commercial Casualty", 2, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 60, 6, 58, 24  /*  ,  */
+     CONTROL "MANUAL", 3, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 147, 21, 29, 9  /*  ,  */
+     CONTROL "PROCEDURE", 4, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 183, 21, 37, 9  /*  ,  */
+     CONTROL "PAGE", 5, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 228, 21, 22, 8  /*  ,  */
+     CONTROL "Volume I", 6, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 179, 4, 44, 12  /*  ,  */
+     CONTROL "REV", 7, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 228, 42, 29, 9  /*  ,  */
+     CONTROL "TITLE", 8, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 125, 62, 29, 9  /*  ,  */
+     CONTROL "DATE", 9, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 183, 42, 29, 9  /*  ,  */
+     CONTROL "", 10, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 198, 7, 7  /*  ,  */
+     CONTROL "", 11, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 199, 7, 7  /*  ,  */
+     CONTROL "", 12, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 199, 7, 7  /*  ,  */
+     CONTROL "", 13, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 199, 7, 7  /*  ,  */
+     CONTROL "", 14, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 199, 7, 7  /*  ,  */
+     CONTROL "", 15, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 146, 7, 7  /*  ,  */
+     CONTROL "", 16, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 146, 7, 7  /*  ,  */
+     CONTROL "", 17, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 184, 7, 7  /*  ,  */
+     CONTROL "", 18, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 184, 7, 7  /*  ,  */
+     CONTROL "", 19, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 184, 7, 7  /*  ,  */
+     CONTROL "", 20, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 184, 7, 7  /*  ,  */
+     CONTROL "", 21, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 184, 7, 7  /*  ,  */
+     CONTROL "", 22, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 162, 7, 7  /*  ,  */
+     CONTROL "", 23, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 162, 7, 7  /*  ,  */
+     CONTROL "", 24, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 162, 7, 7  /*  ,  */
+     CONTROL "", 25, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 162, 7, 7  /*  ,  */
+     CONTROL "", 26, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 162, 7, 7  /*  ,  */
+     CONTROL "", 27, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 213, 7, 7  /*  ,  */
+     CONTROL "", 28, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 213, 7, 7  /*  ,  */
+     CONTROL "", 29, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 213, 7, 7  /*  ,  */
+     CONTROL "", 30, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 213, 7, 7  /*  ,  */
+     CONTROL "", 31, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 213, 7, 7  /*  ,  */
+     CONTROL "", 32, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 235, 7, 7  /*  ,  */
+     CONTROL "", 33, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 235, 7, 7  /*  ,  */
+     CONTROL "", 34, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 235, 7, 7  /*  ,  */
+     CONTROL "", 35, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 235, 7, 7  /*  ,  */
+     CONTROL "", 36, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 235, 7, 7  /*  ,  */
+     CONTROL "", 37, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 279, 7, 7  /*  ,  */
+     CONTROL "", 38, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 279, 7, 7  /*  ,  */
+     CONTROL "", 39, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 279, 7, 7  /*  ,  */
+     CONTROL "", 40, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 279, 7, 7  /*  ,  */
+     CONTROL "", 41, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 279, 7, 7  /*  ,  */
+     CONTROL "Done", 42, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_CANCEL, 200, 298, 40, 14  /*  ,  */
+     CONTROL "Set Aside", 43, "Button", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | BS_OKAY, 148, 298, 40, 14  /*  ,  */
+     CONTROL "PRODUCER", 44, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 6, 32, 33, 9  /*  ,  */
+     CONTROL "APPLICANT", 45, "Static", WS_CHILD | WS_VISIBLE | SS_LEFT, 6, 64, 43, 8  /*  ,  */
+     CONTROL "", 46, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 213, 258, 7, 7  /*  ,  */
+     CONTROL "", 47, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 195, 258, 7, 7  /*  ,  */
+     CONTROL "", 48, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 159, 258, 7, 7  /*  ,  */
+     CONTROL "", 49, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 177, 258, 7, 7  /*  ,  */
+     CONTROL "", 50, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 231, 258, 7, 7  /*  ,  */
+     CONTROL "AB14", 0, "text", WS_CHILD, 147, 32, 0, 0
+     CONTROL "00", 10, "text", WS_CHILD, 228, 53, 0, 0
+     CONTROL "", 0, "text", WS_CHILD, 10, 77, 0, 0
+     CONTROL "3220", 0, "text", WS_CHILD, 183, 32, 0, 0
+     CONTROL "Ex1.2", 11, "text", WS_CHILD, 228, 33, 0, 0
+     CONTROL "10 Feb 93", 0, "text", WS_CHILD, 183, 53, 0, 0
+     CONTROL "Unlucky Markets", 0, "text", WS_CHILD, 6, 74, 0, 0
+     CONTROL "", 0, "text", WS_CHILD, 10, 60, 0, 0
+     CONTROL "CONTRACTUAL PROFILE", 0, "text", WS_CHILD, 69, 101, 0, 0
+     CONTROL "Sev", 0, "text", WS_CHILD, 212, 116, 0, 0
+     CONTROL "A. Exposure Prospector - Where May", 0, "text", WS_CHILD, 9, 116, 0, 0
+     CONTROL "Avg", 0, "text", WS_CHILD, 194, 116, 0, 0
+     CONTROL "Mod", 0, "text", WS_CHILD, 176, 116, 0, 0
+     CONTROL "Extr", 0, "text", WS_CHILD, 230, 116, 0, 0
+     CONTROL "Mild", 0, "text", WS_CHILD, 158, 116, 0, 0
+     CONTROL "Hold Harmless be Present", 0, "text", WS_CHILD, 18, 127, 0, 0
+     CONTROL "1. Freight Handlers Agreements", 0, "text", WS_CHILD, 18, 144, 0, 0
+     CONTROL "4. Construction Agreements", 0, "text", WS_CHILD, 19, 197, 0, 0
+     CONTROL "3. Cartage Agreements", 0, "text", WS_CHILD, 19, 182, 0, 0
+     CONTROL "Ordinance", 0, "text", WS_CHILD, 26, 168, 0, 0
+     CONTROL "2. Agreements Required by Municipal", 0, "text", WS_CHILD, 19, 160, 0, 0
+     CONTROL "Sidewalk) or Other Rights of Access", 0, "text", WS_CHILD, 26, 219, 0, 0
+     CONTROL "5. Easement Agreements (Streets or", 0, "text", WS_CHILD, 19, 211, 0, 0
+     CONTROL "Rights-of-way, and Sidetracks", 0, "text", WS_CHILD, 26, 241, 0, 0
+     CONTROL "6.Railroad Agreements - Crossings,", 0, "text", WS_CHILD, 19, 233, 0, 0
+     CONTROL "8. Employment Agreements", 0, "text", WS_CHILD, 19, 277, 0, 0
+     CONTROL "CONTRACTUAL PROFILE - EXHIBIT 1", 0, "text", WS_CHILD, 124, 74, 0, 0
+     CONTROL "Willy Loman", 0, "text", WS_CHILD, 6, 40, 0, 0
+     CONTROL "Agreements", 0, "text", WS_CHILD, 26, 264, 0, 0
+     CONTROL "7. Elevator/Escalator Maintenance", 0, "text", WS_CHILD, 19, 256, 0, 0
+END
+
+/* Color Values and Validation strings */
+CPROF RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+39,
+10, " Ravi Pandya", 0,
+11, " Ravi Pandya", 0,
+12, " Ravi Pandya", 0,
+13, " Ravi Pandya", 0,
+14, " Ravi Pandya", 0,
+15, " Ravi Pandya", 0,
+16, " Ravi Pandya", 0,
+17, " Ravi Pandya", 0,
+18, " Ravi Pandya", 0,
+19, " Ravi Pandya", 0,
+20, " Ravi Pandya", 0,
+21, " Ravi Pandya", 0,
+22, " Ravi Pandya", 0,
+23, " Ravi Pandya", 0,
+24, " Ravi Pandya", 0,
+25, " Ravi Pandya", 0,
+26, " Ravi Pandya", 0,
+27, " Ravi Pandya", 0,
+28, " Ravi Pandya", 0,
+29, " Ravi Pandya", 0,
+30, " Ravi Pandya", 0,
+31, " Ravi Pandya", 0,
+32, " Ravi Pandya", 0,
+33, " Ravi Pandya", 0,
+34, " Ravi Pandya", 0,
+35, " Ravi Pandya", 0,
+36, " Ravi Pandya", 0,
+37, " Ravi Pandya", 0,
+38, " Ravi Pandya", 0,
+39, " Ravi Pandya", 0,
+40, " Ravi Pandya", 0,
+41, " Ravi Pandya", 0,
+42, " Ravi Pandya", 0,
+43, " Ravi Pandya", 0,
+46, " Ravi Pandya", 0,
+47, " Ravi Pandya", 0,
+48, " Ravi Pandya", 0,
+49, " Ravi Pandya", 0,
+50, " Ravi Pandya", 0
+11, /* Field Fonts */
+1, 24, 1, "Arial", 0,
+2, 14, 1, "Arial", 0,
+3, 10, 1, "Arial Narrow", 0,
+4, 10, 1, "Arial Narrow", 0,
+5, 10, 1, "Arial Narrow", 0,
+6, 14, 1, "Arial", 0,
+7, 10, 1, "Arial Narrow", 0,
+8, 10, 1, "Arial Narrow", 0,
+9, 10, 1, "Arial Narrow", 0,
+44, 10, 1, "Arial Narrow", 0,
+45, 10, 1, "Arial Narrow", 0,
+30, /* Textfield Fonts */
+1, 10, 0, "Courier", 0,
+2, 10, 0, "Courier", 0,
+3, 10, 0, "Courier", 0,
+4, 10, 0, "Courier", 0,
+5, 10, 0, "Courier", 0,
+6, 10, 0, "Courier", 0,
+7, 10, 0, "Courier", 0,
+8, 10, 0, "Courier", 0,
+9, 12, 1, "Arial", 0,
+10, 12, 1, "Arial Narrow", 0,
+11, 12, 1, "Arial Narrow", 0,
+12, 12, 1, "Arial Narrow", 0,
+13, 12, 1, "Arial Narrow", 0,
+14, 12, 1, "Arial Narrow", 0,
+15, 12, 1, "Arial Narrow", 0,
+16, 12, 1, "Arial Narrow", 0,
+17, 12, 1, "Arial Narrow", 0,
+18, 12, 1, "Arial Narrow", 0,
+19, 12, 1, "Arial Narrow", 0,
+20, 12, 1, "Arial Narrow", 0,
+21, 12, 1, "Arial Narrow", 0,
+22, 12, 1, "Arial Narrow", 0,
+23, 12, 1, "Arial Narrow", 0,
+24, 12, 1, "Arial Narrow", 0,
+25, 12, 1, "Arial Narrow", 0,
+26, 12, 1, "Arial Narrow", 0,
+27, 10, 0, "Courier", 0,
+28, 10, 0, "Courier", 0,
+29, 12, 1, "Arial Narrow", 0,
+30, 12, 1, "Arial Narrow", 0,
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+
+

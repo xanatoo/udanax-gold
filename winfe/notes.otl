@@ -1,0 +1,40 @@
+special edition structures:
+	TheWorks
+		maps from integers to Works 
+		associates works with frontend structures (Drafts, Windows, etc.)
+	the application HomeDoc
+		connected by a homeDoc link to the login club
+	the public HomeDoc
+		connected by a homeDoc link to the public club
+		Structure:
+			"HomeDoc:linkTypes" -> linkTypes doc
+			"HomeDoc:docTypes" -> contentTypes document
+			"HomeDoc:homeDocWork" -> the normal homeDoc for the publicClub
+	managing contentTypes
+		contentTypes document structure: (TheDocTypes)
+			Sequence(ContentTypeName) -> Work(ContentTypeName)
+			the ID of the Work is the endorsement for that docType
+		TheContentTypeMapping
+			a session level mapping from endorsements to contentType numbers
+			the domain regions are projections of the ContentType IDs
+			the range positions are session level contentType numbers
+			this extends to using special contentTypes depending on who made the endorsement
+	TitleManager
+	linkTypes
+	SheetTypes
+		right now ContentTypes are doubling for SheetTypes
+
+To be added:
+	an update rountine that makes all the controls of a FormSheet refresh their contents
+		this will be used for setContent (and revise hooks)
+
+Issues
+	Should FEContent::makeContent allow non-endorsed editions?
+	how do we bless an edition as being appropriate to a content without building it that way?
+	deletion
+	shutting down
+	linkContext on the current path
+	get rid of draft->work()
+	textContent to use XuText endorsement
+	who knows what subdrafts need to be made, and who makes them
+	drafts become counted [done]

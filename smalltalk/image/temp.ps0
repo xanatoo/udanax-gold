@@ -1,0 +1,442 @@
+%!
+
+% start of setup.
+save /state exch def
+initgraphics
+/PPS 255 dict def PPS begin
+/leftMargin 72 def
+/yDelta 16 def
+/portrait 0 def
+/landscape 1 def
+/orientation portrait def
+/doFooter false def
+/doPageNumbers true def
+/doLogo false def
+/F  %  Fast font setup.
+{
+  findfont exch scalefont setfont
+} bind def
+/ArrowDim % Pop the dimensions of the arrows off the stack.
+{
+/upArrowThickness exch def
+/upArrowHeight exch def
+/upArrowWidth exch def
+/leftArrowThickness exch def
+/leftArrowheadHeight exch def
+/leftArrowWidth exch def
+} bind def
+/upArrow %  Draw an up arrow.
+{ 
+	gsave
+	0 setlinecap
+	0 setlinejoin
+	/upArrowY exch def
+	/upArrowX exch def
+	upArrowThickness setlinewidth
+	/upArrowX upArrowX upArrowWidth 2 div add def
+	/upArrowSpace upArrowWidth 10 div def
+	/upArrowRenderWidth upArrowWidth upArrowSpace upArrowSpace add sub 3 div def
+	newpath
+	upArrowX upArrowY moveto
+	0 upArrowHeight rlineto 
+	stroke
+	newpath
+	upArrowX upArrowRenderWidth sub upArrowY upArrowHeight add upArrowHeight 3 div sub moveto
+	upArrowX upArrowY upArrowHeight add lineto
+	upArrowX upArrowRenderWidth add upArrowY upArrowHeight add upArrowHeight 3 div sub lineto
+	stroke
+	grestore
+} bind def
+/leftArrow  %  Draw a left arrow.
+{ 
+	gsave
+	0 setlinecap
+	0 setlinejoin
+	/leftArrowY exch def
+	/leftArrowX exch def
+	leftArrowThickness setlinewidth
+	/leftArrowSpace leftArrowWidth 10 div def
+	/leftArrowX leftArrowX leftArrowSpace add def
+	/leftArrowRenderWidth leftArrowWidth leftArrowSpace leftArrowSpace add sub def
+	/leftArrowheadWidth leftArrowRenderWidth 3 div def
+	newpath
+	leftArrowX leftArrowY moveto
+	leftArrowRenderWidth 0 rlineto 
+	stroke
+	newpath
+	leftArrowX leftArrowheadWidth add leftArrowY leftArrowheadHeight 2 div add moveto
+	leftArrowX leftArrowY lineto
+	leftArrowX leftArrowheadWidth add leftArrowY leftArrowheadHeight 2 div sub lineto
+	stroke
+	grestore
+} bind def
+/CR			%stack: -- --> --
+{	
+ currentpoint exch pop leftMargin exch yDelta sub moveto 
+} bind def
+/Ustart		%stack: -- --> --
+{
+	/ULstart currentpoint pop def
+} bind def
+/UStop		% stack: underlineThickness underlineYDelta --> --
+{
+	currentpoint
+	/ULY exch def
+	/ULX exch def
+	gsave newpath
+	ULY add ULstart exch moveto
+	ULX ULstart sub 0 rlineto
+	setlinewidth stroke grestore
+} bind def
+/pageNum 1 def
+/pageString 4 string def
+/pageNumFont 
+{
+  /Times-Roman findfont 10 scalefont
+} bind def
+/footerStringFont 
+{
+  /Times-Italic findfont 10 scalefont
+} def
+
+/footerString () def
+/footer
+{
+   leftMargin bottomMargin 2 div moveto
+  doPageNumbers true eq 
+  {
+    pageNumFont setfont
+    pageNum pageString cvs show
+    (  ) show
+  } if
+  footerStringFont setfont
+  footerString show
+} bind def
+/newPage 
+{  
+  /savefont currentfont def
+  doFooter true eq { footer } if
+   showpage
+  /pageNum 1 pageNum add def
+  setOrientation
+  savefont setfont
+} bind def
+/finalPage
+{
+  /savefont currentfont def
+  doFooter true eq { footer } if
+  savefont setfont
+  showpage
+} bind def
+/setOrientation
+{
+  orientation landscape eq 
+  {
+    -90 rotate
+    0 pageWidth sub 0 translate
+  } if
+} bind def
+
+% end of setup.
+10 (Helvetica)  F
+/yDelta 11.6667 def
+5.56 3.33333 0.48618 4.69 5.0 0.48618 ArrowDim
+/pageHeight 792.0 def
+/pageWidth 612.0 def
+/leftMargin 72 def
+/topMargin 72 def
+/rightMargin 72 def
+/bottomMargin 72 def
+/doFooter true def
+/footerString (ActualCalc        Xanadu Operating Company Proprietary   ---   1 April 1992 at 8:42:27 am) def
+/doPageNumbers true def
+72.0 720.0 moveto
+10 (Helvetica-Bold)  F
+/yDelta 11.6667 def
+5.56 3.33333 0.48618 5.84 5.0 0.48618 ArrowDim
+(Calc subclass: #ActualCalc) show
+CR
+90.0 708.333 moveto
+(instanceVariableNames: ') show
+CR
+108.0 696.667 moveto
+(myCount {UInt4}) show
+CR
+108.0 685.0 moveto
+(myRationals {PtrArray}) show
+CR
+108.0 673.333 moveto
+(myAfterTOS {UInt4}) show
+CR
+108.0 661.667 moveto
+(mySensor {PopSensor}') show
+CR
+90.0 650.0 moveto
+(classVariableNames: '') show
+CR
+90.0 638.333 moveto
+(poolDictionaries: '') show
+CR
+90.0 626.666 moveto
+(category: 'Xanadu-Calc') show
+8 (Helvetica-Oblique)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+CR
+(ActualCalc methodsFor: accessing) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({void PROXY} plantPopSensor: sensor {PopSensor}) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+90.0 561.333 moveto
+(mySensor ~= NULL) show
+CR
+108.0 552.0 moveto
+(ifTrue: [Heaper BLAST: #SensorQueueOverflow].) show
+CR
+90.0 542.667 moveto
+(myAfterTOS > UInt40) show
+CR
+108.0 533.333 moveto
+(ifTrue: [sensor poppedValue: self pop]) show
+CR
+108.0 524.0 moveto
+(ifFalse: [mySensor ) show
+176.464 526.667 leftArrow
+180.912 524.0 moveto 
+( sensor]) show
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({Rational PROXY} pop) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+90.0 486.667 moveto
+(myAfterTOS <= UInt40) show
+CR
+108.0 477.333 moveto
+(ifTrue: [Heaper BLAST: #StackUnderflow].) show
+CR
+90.0 468.0 moveto
+(myAfterTOS ) show
+136.232 470.667 leftArrow
+140.68 468.0 moveto 
+( myAfterTOS -1.) show
+CR
+90.0 458.667 moveto
+90.0 458.667 upArrow
+93.752 458.667 moveto 
+(\050myRationals fetch: myAfterTOS\051 cast: Rational.) show
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({void PROXY} push: rat {Rational}) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+90.0 421.333 moveto
+(mySensor ~~ NULL) show
+CR
+108.0 412.0 moveto
+(ifTrue: [mySensor poppedValue: rat.) show
+CR
+144.0 402.667 moveto
+(mySensor ) show
+182.232 405.333 leftArrow
+186.68 402.667 moveto 
+( NULL.) show
+CR
+144.0 393.333 moveto
+144.0 393.333 upArrow
+147.752 393.333 moveto 
+(VOID].) show
+CR
+90.0 384.0 moveto
+(myAfterTOS >= myCount) show
+CR
+108.0 374.667 moveto
+(ifTrue: [Heaper BLAST: #StackOverflow].) show
+CR
+90.0 365.333 moveto
+(myRationals at: myAfterTOS store: rat.) show
+CR
+90.0 356.0 moveto
+(myAfterTOS ) show
+136.232 358.667 leftArrow
+140.68 356.0 moveto 
+( myAfterTOS +1) show
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({void PROXY} times) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+90.0 318.666 moveto
+(| a {Rational} b {Rational} |) show
+CR
+90.0 309.333 moveto
+(a ) show
+96.672 312.0 leftArrow
+101.12 309.333 moveto 
+( self pop.) show
+CR
+90.0 300.0 moveto
+(b ) show
+96.672 302.666 leftArrow
+101.12 300.0 moveto 
+( self pop.) show
+CR
+90.0 290.666 moveto
+(self push: \050Rational make: a numerator * b numerator) show
+CR
+162.0 281.333 moveto
+(with: a denominator * b denominator\051.) show
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({void PROXY} timesArg: rat {Rational}) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+90.0 253.333 moveto
+CR
+90.0 244.0 moveto
+(self push: rat.) show
+CR
+90.0 234.666 moveto
+(self times) show
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+CR
+(ActualCalc methodsFor: creation) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+(create: arrayCount {UInt4}) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+90.0 178.666 moveto
+(super create: 37.) show
+CR
+90.0 169.333 moveto
+(myCount ) show
+124.232 172.0 leftArrow
+128.68 169.333 moveto 
+( arrayCount.) show
+CR
+90.0 160.0 moveto
+(myRationals ) show
+136.232 162.666 leftArrow
+140.68 160.0 moveto 
+( PtrArray make: myCount.) show
+CR
+90.0 150.666 moveto
+(myAfterTOS ) show
+136.232 153.333 leftArrow
+140.68 150.666 moveto 
+( UInt40.) show
+CR
+90.0 141.333 moveto
+(mySensor ) show
+128.232 144.0 leftArrow
+132.68 141.333 moveto 
+( NULL.) show
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+CR
+(ActualCalc methodsFor: generated:) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+(hashForEqual) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+( ) show
+127.568 104.0 upArrow
+131.32 104.0 moveto 
+(self asOop) show
+CR
+CR
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+(isEqual: other) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+( ) show
+127.568 85.3331 upArrow
+131.32 85.3331 moveto 
+(self == other) show
+CR
+ newPage
+72.0 720.0 moveto
+8 (Helvetica-Bold)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 4.672 4.0 0.388944 ArrowDim
+({void} sendProxyTo: xmtr {Xmtr}) show
+8 (Helvetica)  F
+/yDelta 9.33333 def
+4.448 2.66667 0.388944 3.752 4.0 0.388944 ArrowDim
+CR
+90.0 710.667 moveto
+(super sendSelfTo: xmtr) show
+CR
+CR
+CR
+
+finalPage
+state restore

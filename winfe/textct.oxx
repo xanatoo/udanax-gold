@@ -1,0 +1,12 @@
+#ifndef TEXTCONTENT_OXX
+#define TEXTCONTENT_OXX
+
+#include "content.oxx"
+
+class FETextContent;
+XU_TYPE_3(FETextContent,FEContent,XuCounted)
+
+class FETextContentType;
+typedef FETextContentType * FETextContentTypeP;
+
+#endif // TEXTCONTENT_OXX

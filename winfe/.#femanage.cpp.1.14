@@ -1,0 +1,219 @@
+// The manager for all documents, windows, and managers.
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "femanage.h"
+#include "absui.h"
+#include "draft.h"
+#include "content.h"
+#include "xstuff.hxx"
+
+#include "formct.h"
+#include "mxapp.h"
+
+void FEManager::
+startup () {}
+
+void FEManager::
+returnHome () {
+// *** TheWorks isn't in this context.
+	if (TheWorks == NULL) {
+		cerr << "Haven't finished startup!!!\n";
+		XuIntValue::signedMake(42);
+    XuPromise::forceAll();
+		XuDetectorHook::poll();
+		FEUI::beep();
+		return;
+  }
+	FEApplication::show("Akord");
+	FEApplication::show("Papers");
+}
+
+#include <sys/stat.h>
+static XuStringVar fileContents (char * filename) {
+	FILE * f = fopen (filename, "rb");
+
+	// get the length of the file.
+	struct stat statbuf;
+	fstat(fileno(f), &statbuf);
+	int len = statbuf.st_size;
+	
+	char * buf = new char [len + 1];
+	int n = fread (buf, 1, len, f);
+	buf[n] = 0;
+	cerr << "read " << n << " characters from " << filename << '\n';
+	fclose (f);
+	return buf;
+}
+		
+XuEditionP FEManager::
+appHomeEdition ()
+{
+	XuIDP loginID = TheFEConn->loginClubID();
+
+	// Here is where all the initial documents are created and connected.
+
+	// First make the rate form.
+	FEFormContentP rateCt = FEApplication::RateFormType->makeContent();
+	XuEditionP rateEdn = rateCt->edition();
+	XuWorkP rateWork = XuWork::make(rateEdn);
+  rateWork->release ();
+
+	// Then make the Contractual Profile form
+	FEFormContentP cprofCt = FEApplication::CProfFormType->makeContent();
+	XuEditionP cprofEdn = cprofCt->edition();
+	XuWorkP cprofWork = XuWork::make(cprofEdn);
+  cprofWork->release ();
+
+	// Then make the UM CLC form pointing to it
+	XuStringVar buf = fileContents ("umclc.txt");
+	FEFormContentP umclcCt = FEApplication::UMFormType->makeContent()
+		->with ("Manual", XuText::make ("AB14")->edition ())
+		->with ("Procedure", XuText::make ("3220")->edition ())
+		->with ("Page", XuText::make ("12")->edition ())
+		->with ("Date", XuText::make ("7/12/92")->edition ())
+		->with ("Rev", XuText::make ("00")->edition ())
+		->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+CONTRACTUAL LIABILITY COVERAGE\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+		->with ("Contents", XuText::make (buf)->edition ())
+		->with ("Exhibit",
+			FEStuff::makeSingleRef(cprofWork, cprofEdn, XU_NULL)->edition ());
+	XuEditionP umclcEdn = umclcCt->edition();
+	XuWorkP umclcWork = XuWork::make (umclcEdn);
+	umclcWork->release ();
+	delete (void*) buf;
+
+	// Then make the UM CCC form
+ 	buf = fileContents ("umccc.txt");
+	XuTextP umcccText = XuText::make (buf); // for revised version later
+	delete (void*) buf;
+	FEFormContentP umcccCt = FEApplication::UMFormType->makeContent()
+		->with ("Manual", XuText::make ("AB14")->edition ())
+		->with ("Procedure", XuText::make ("3220")->edition ())
+		->with ("Page", XuText::make ("05")->edition ())
+		->with ("Date", XuText::make ("7/12/92")->edition ())
+		->with ("Rev", XuText::make ("00")->edition ())
+		->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+AMENDED CARE, CUSTODY, AND CONTROL EXCLUSION\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+		->with ("Contents", umcccText->edition ());
+	XuEditionP umcccEdn = umcccCt->edition();
+	XuWorkP umcccWork = XuWork::make (umcccEdn);
+  umcccWork->release ();
+
+	// Now make the akord form pointing to both UM pages
+	FEFormContentP akordCt = FEApplication::AkordFormType->makeContent()
+		->with ("CGL", FEStuff::makeSingleRef(umclcWork, umclcEdn, XU_NULL)->edition ())
+		->with ("CCC", FEStuff::makeSingleRef(umcccWork, umclcEdn, XU_NULL)->edition ());
+	XuEditionP akordEdn = akordCt->edition();
+	XuWorkP akordWork = XuWork::make(akordEdn);
+  akordWork->release ();
+
+	// Then make the Tabs form pointing to the other forms
+	FEFormContentP tabsCt = FEApplication::TabsFormType->makeContent()
+		->with ("Rate Instructions",
+			FEStuff::makeSingleRef(rateWork, rateEdn, XU_NULL)->edition ())
+		->with ("Akord",
+			FEStuff::makeSingleRef(akordWork, akordEdn, XU_NULL)->edition ())
+		->with ("Contractual Profile",
+			FEStuff::makeSingleRef(cprofWork, cprofEdn, XU_NULL)->edition ());
+	XuEditionP tabsEdn = tabsCt->edition();
+	XuWorkP tabsWork = XuWork::make (tabsEdn);
+  tabsWork->release ();
+
+	// Next make the UM hazard form
+	buf = fileContents ("umhaz.txt");
+	FEFormContentP umhazCt = FEApplication::UMFormType->makeContent()
+		->with ("Manual", XuText::make ("AB14")->edition ())
+		->with ("Procedure", XuText::make ("3220")->edition ())
+		->with ("Page", XuText::make ("22")->edition ())
+		->with ("Date", XuText::make ("7/12/92")->edition ())
+		->with ("Rev", XuText::make ("00")->edition ())
+		->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+NEARBY HAZARDS\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+		->with ("Contents", XuText::make (buf)->edition ());
+	XuEditionP umhazEdn = umhazCt->edition();
+	XuWorkP umhazWork = XuWork::make (umhazEdn);
+  umhazWork->release ();
+	delete (void*) buf;
+
+	// Then make the LCR memo pointing to it
+	FEFormContentP lcrmemoCt = FEApplication::MemoFormType->makeContent()
+		->with ("Date", XuText::make ("2/10/93")->edition ())
+		->with ("File", XuText::make ("Unlucky Markets")->edition ())
+		->with ("From", XuText::make ("Karen Albertson, Loss Control Representative")->edition ())
+		->with ("To", XuText::make ("Blake Patterson, Underwriter")->edition ())
+		->with ("Memorandum", XuText::make ("The new market has a vacant wood frame building next door.")->edition ())
+		->with ("References", FEStuff::makeSingleRef(umhazWork, umhazEdn, XU_NULL)->edition ());
+	XuEditionP lcrmemoEdn = lcrmemoCt->edition();
+	XuWorkP lcrmemoWork = XuWork::make (lcrmemoEdn);
+  lcrmemoWork->release ();
+
+	// And then make the LCR attention window pointing to it
+	FEFormContentP lcrattnCt = FEApplication::AttnFormType->makeContent()
+		->with ("Message", XuText::make ("MEMO\r\nFrom: Karen Albertson, Loss Control Representative")->edition ())
+		->with ("Read", FEStuff::makeSingleRef(lcrmemoWork, lcrmemoEdn, XU_NULL)->edition ());
+	XuEditionP lcrattnEdn = lcrattnCt->edition();
+	XuWorkP lcrattnWork = XuWork::make (lcrattnEdn);
+  lcrattnWork->release ();
+
+	// Next make the revised UM CCC form
+	XuEditionP umccc2Ct = umcccCt
+		->with ("Date", XuText::make ("2/12/93")->edition ())
+		->with ("Rev", XuText::make ("01")->edition ())
+		->with ("Contents", umcccText->replace(XuIntegerSpace::make()->interval(529,534),
+																					 XuText::make("10-20%"))->edition())
+		->with ("Original", umcccText->edition());
+	XuEditionP umccc2Edn = umccc2Ct->edition();
+	XuWorkP umccc2Work = XuWork::make (umccc2Edn);
+	umccc2Work->release();
+
+	// And then make the UM Change attention window pointing to it
+	FEFormContentP umattnCt = FEApplication::AttnFormType->makeContent()
+		->with ("Message", XuText::make ("UM CHANGE\r\nCare, Custody, and Control Exclusions")->edition ())
+		->with ("Read", FEStuff::makeSingleRef(umccc2Work, umccc2Edn, XU_NULL)->edition ());
+	XuEditionP umattnEdn = umattnCt->edition();
+	XuWorkP umattnWork = XuWork::make(umattnEdn);
+  umattnWork->release();
+
+	// Next make the HOUO memo
+	FEFormContentP houomemoCt = FEApplication::MemoFormType->makeContent()
+		->with ("Date", XuText::make ("2/15/93")->edition ())
+		->with ("File", XuText::make ("Unlucky Markets")->edition ())
+		->with ("From", XuText::make ("George Smithers, Branch Manager")->edition ())
+		->with ("To", XuText::make ("Blake Patterson, Underwriter")->edition ())
+		->with ("Memorandum", XuText::make ("The Home Office Underwriting Officer says we should try to reduce the rate since they write $5M premiums per year with us")->edition ());
+	XuEditionP houomemoEdn = houomemoCt->edition();
+	XuWorkP houomemoWork = XuWork::make (houomemoEdn);
+	houomemoWork->release ();
+
+	// And then make the HOUO attention window pointing to it
+	FEFormContentP houoattnCt = FEApplication::AttnFormType->makeContent()
+		->with ("Message", XuText::make ("MEMO\r\nFrom: George Smithers, Branch Manager")->edition ())
+		->with ("Read", FEStuff::makeSingleRef(houomemoWork, houomemoEdn, XU_NULL)->edition ());
+	XuEditionP houoattnEdn = houoattnCt->edition();
+	XuWorkP houoattnWork = XuWork::make (houoattnEdn);
+  houoattnWork->release ();
+
+	// Now make the home doc and connect it to the akord, tabs, and attention
+	FEFormContentP homeCt = FEApplication::HomeFormType->makeContent()
+		->with ("Akord", FEStuff::makeSingleRef(akordWork, akordEdn, XU_NULL)->edition ())
+		->with ("Papers", FEStuff::makeSingleRef(tabsWork, tabsEdn, XU_NULL)->edition ())
+		->with ("Attention 1B", FEStuff::makeSingleRef(lcrattnWork, lcrattnEdn, XU_NULL)->edition ())
+		->with ("Attention 2B", FEStuff::makeSingleRef(umattnWork, umattnEdn, XU_NULL)->edition ())
+		->with ("Attention 1C", FEStuff::makeSingleRef(houoattnWork, houoattnEdn, XU_NULL)->edition ());
+	XuEditionP homeEdn = homeCt->edition();
+  return homeEdn;
+}
+

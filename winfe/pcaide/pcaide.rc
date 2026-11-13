@@ -1,0 +1,33 @@
+//REGEN_FILEHEADING
+//REGEN_FILEHEADING
+
+     /********************************************************************
+      *                                                                  *
+      *   Source File: PCAide.rc                                         *
+      *   Description: Resource file for PCAIDE application              *
+      *   Date:        Fri May 07 10:31:40 1993                          *
+      *                                                                  *
+      ********************************************************************/
+
+#include <windows.h>
+#include "vwstyle.h"
+#include <bwcc.h>
+#include "PCAideID.h"
+#include "PCAide.h"
+//REGEN_RC
+//REGEN_RC
+
+
+#include "PCAide.MNU"
+#include "akord.pvt"
+#include "rate.pvt"
+#include "cprof.pvt"
+#include "tabs.pvt"
+#include "memo.pvt"
+#include "um.pvt"
+#include "attn.pvt"
+
+
+
+
+

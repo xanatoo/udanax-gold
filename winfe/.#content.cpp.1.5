@@ -1,0 +1,151 @@
+// The superclass of all Content classes.
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "title.h"
+#include "draft.h"
+#include "content.h"
+#include "xconn.hxx"
+
+XU_DEFINE_TYPE(FEContent,XuCounted)
+
+/* the edition of this Content */
+XuEditionP FEContent::edition () {
+	return myEdition;
+}
+
+/********************** Content Types **********************/
+
+// a sequence-indexed edition of Works describing doc types
+static XuEditionP TheContentTypes = XU_NULL;
+
+/* The mapping from contentType IDs to contentType numbers
+static XuMappingP TheContentTypeMapping = XU_NULL;
+
+FEContentTypeP FEContentType::TheFirst = NULL;
+
+// note that these next three members depend on the Edition structure
+// created in docTypeEdition()
+// note that these next three members depend on the Edition structure
+// created in docTypeEdition()
+XuEditionP FEContentType::
+docTypeEdition () {
+	if (TheContentTypes == XU_NULL) {
+		// make new one, with works
+		TheContentTypes = XuEdition::empty(XuSequenceSpace::make());
+		TheContentTypeMapping = 
+			XuCrossSpace::endorsements()
+				->completeMapping(XuIntegerSpace::make()->emptyRegion())
+				->restrict(XuCrossSpace::endorsements()->emptyRegion());
+
+		/* for each registered doc type, make a work on the type name, make
+			 an ID for that work, use that ID as the content class's typeID */
+		for (FEContentTypeP cType = FEContentType::TheFirst; cType; cType = cType->myNext) {
+			TheContentTypes = TheContentTypes->with(type->name(), cType->initializeType());
+		}
+	}
+	return TheContentTypes;
+}
+
+// Load TheContentTypes from an already-made home document
+void FEContentType::
+setDocTypeEdition (XuEditionP newEdition) {
+	TheContentTypes = newEdition;
+	TheContentTypeMapping = 
+		XuCrossSpace::endorsements()
+			->completeMapping(XuIntegerSpace::make()->emptyRegion())
+			->restrict(XuCrossSpace::endorsements()->emptyRegion());
+	for (FEContentType P cType = FEContentType::TheFirst; cType; cType = cType->myNext) {
+		cType->myTypeID = XuServer::iDOf( newEdition->get( cType->name()));
+  }
+	for (cType = FEContentType::TheFirst; cType; cType = cType->myNext) {
+		cType->registerType();
+  }
+}
+
+/* Make any works associated with the type, and get its endorsementID */
+XuWorkP FEContentType::
+initializeType ()
+{
+	XuWorkP work = XuWork::make(XuText::make(this->name())->edition());
+	XuIDP iD = XuServer::assignID (work);
+  myTypeID = iD;
+	return work;
+}
+
+void FEContentType::
+registerType () 
+{
+	myTypeID->force();
+	if ( !(myTypeID->isFulfilled())) {
+		cerr << "Can't find contentType: " << this->name() << "\n";
+		return;
+	}
+	myTypeNumber = ContentTypeNumber++;
+	/* Compute a map from the endorsement''s region to the contentType number */
+	XuMappingP singleMap =
+		XuCrossSpace::endorsements()
+				->completeMapping(IntegerSpace::make()->position(myTypeNumber)->asRegion())
+				->restrict(XuCrossSpace::endorsements()->extrusion(1,myTypeID))
+	TheContentTypeMapping = TheContentTypeMapping->combine(singleMap);
+
+	// TODO: make this use the application club's ID, not the login club's
+	myEndorsements = XuTuple::endorsement(TheFEConn->loginClubID(), myTypeID) ->asRegion();
+}
+
+XuCrossRegionP FEContentType::
+endorsements () {
+	return myEndorsements;
+}
+
+FEContentType::
+FEContentType () {
+	// add myself to the head of a linked list
+	myNext = TheFirst;
+	TheFirst = this;
+}
+
+/******************* FEContentHandle ********************/
+
+XU_DEFINE_TYPE(FEContentHandle,XuCounted)
+
+FEContentTypeP FEContentHandle::
+make (XuEditionP edition)
+{
+	/* TODO: This should take the largest number in order so that a document
+		 can have endorsements from supertypes of mappings and this will get 
+		 the most specific type. */
+	FEContentHandleP result = new FEContentHandle();
+	result->myEdition = edition;
+	result->myTypeNum =
+		XuInteger:cast(TheContentTypeMapping->ofAll(edition->endorsements())->theOne())->value();
+	return result;
+}
+
+FEContentTypeP FEContentHandle::
+fetchType ()
+{
+	myTypeNum->force();
+	XuIntVar typeNum = myTypeNum->asInt();
+	for (FEContentTypeP cType = FEContentType::TheFirst; cType; cType = cType->myNext) {
+		if (cType->myTypeNum == typeNum) {
+			return cType;
+		}
+	}
+	cerr << "Couldn't find contentType.\n";
+	return NULL;
+}
+
+FEContentTypeP FEContentHandle::
+fetchContent ()
+{
+	FEContentTypeP type = this->fetchType();
+	return type ? type->makeContent(myEdition) : NULL;
+}
+

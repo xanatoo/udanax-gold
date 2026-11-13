@@ -1,0 +1,2673 @@
+21:!ScavengeablePage class methodsFor: #collection!
+24:!SharedPtrArray methodsFor: #accessing!
+28:!ActualHashSet methodsFor: #'protected: creation'!
+33:!ActualHashTable methodsFor: #protected:!
+38:!SetTable methodsFor: #creation!
+43:!HashSetStepper methodsFor: #'protected: destruct'!
+49:!HashSetStepper methodsFor: #private:!
+59:!BucketArrayStepper methodsFor: #'protected: create'!
+67:!SharedPtrArray methodsFor: #accessing!
+71:!ActualHashSet methodsFor: #'private: housekeeping'!
+82:!ActualHashSet methodsFor: #'private: housekeeping'!
+106:!ActualHashSet methodsFor: #'protected: creation'!
+115:!ActualHashSet methodsFor: #'protected: creation'!
+124:!ActualHashSet methodsFor: #hooks:!
+135:!ActualHashTable methodsFor: #private:!
+157:!ActualHashTable methodsFor: #private:!
+177:!ActualHashTable methodsFor: #protected:!
+185:!ActualHashTable methodsFor: #hooks:!
+201:!SetTable methodsFor: #'private: resize'!
+223:!SetTable methodsFor: #'private: resize'!
+243:!SetTable methodsFor: #creation!
+251:!HashSetStepper methodsFor: #'protected: creation'!
+259:!BucketArrayStepper methodsFor: #'protected: create'!
+270:!HxxPrintStream class methodsFor: #maps!
+429:!SnarfPacker methodsFor: #transactions!
+465:!TestPacker methodsFor: #transactions!
+488:!ShepherdLockTester methodsFor: #testing!
+523:!StackExaminer class methodsFor: #accessing!
+552:!CompositeTester methodsFor: #init!
+561:!FilterTester methodsFor: #init!
+591:!IDTester methodsFor: #init!
+628:!RealTester methodsFor: #'deferred: init'!
+649:!SequenceTester methodsFor: #init!
+678:!SnarfTester methodsFor: #testing!
+689:!BasicSpace methodsFor: #testing!
+695:!CrossSpace methodsFor: #testing!
+700:!FilterSpace methodsFor: #testing!
+704:!HeaperSpace methodsFor: #testing!
+710:!IDSpace methodsFor: #testing!
+720:!IntegerSpace methodsFor: #testing!
+726:!RealSpace methodsFor: #testing!
+732:!SequenceSpace methodsFor: #testing!
+738:!CompositeMapping methodsFor: #testing!
+742:!Joint methodsFor: #testing!
+746:!ConstantMapping methodsFor: #testing!
+750:!GenericCrossDsp methodsFor: #testing!
+757:!FilterDsp methodsFor: #testing!
+761:!IntegerMapping methodsFor: #testing!
+765:!EmptyMapping methodsFor: #testing!
+769:!SimpleMapping methodsFor: #testing!
+773:!CrossOrderSpec methodsFor: #accessing!
+779:!IDUpOrder methodsFor: #accessing!
+784:!IntegerUpOrder methodsFor: #accessing!
+789:!RealUpOrder methodsFor: #accessing!
+794:!ReverseOrder methodsFor: #accessing!
+799:!SequenceUpOrder methodsFor: #accessing!
+804:!Pair methodsFor: #access!
+814:!FilterPosition methodsFor: #comparing!
+819:!ID methodsFor: #comparing!
+830:!IntegerPos methodsFor: #comparing!
+840:!RealPos methodsFor: #comparing!
+847:!Sequence methodsFor: #comparing!
+852:!ActualTuple methodsFor: #comparing!
+857:!StrongAsPosition methodsFor: #comparing!
+861:!PrimFloatSpec methodsFor: #testing!
+867:!PrimIntegerSpec methodsFor: #testing!
+875:!PrimPointerSpec methodsFor: #testing!
+880:!PrimIEEE32 methodsFor: #testing!
+888:!PrimIEEE64 methodsFor: #testing!
+896:!PrimIntValue methodsFor: #testing!
+901:!BertProp methodsFor: #testing!
+905:!SensorProp methodsFor: #testing!
+911:!BackfollowFinder methodsFor: #testing!
+919:!BackfollowPFinder methodsFor: #testing!
+924:!CannotPartializeFinder methodsFor: #testing!
+929:!SensorFinder methodsFor: #testing!
+934:!ClosedPropFinder methodsFor: #testing!
+939:!OpenPropFinder methodsFor: #testing!
+944:!AnyRecorderEFinder methodsFor: #testing!
+951:!AnyRecorderPFinder methodsFor: #testing!
+957:!CumulativeRecorderFinder methodsFor: #testing!
+964:!ContainedEditionRecorderEFinder methodsFor: #testing!
+972:!OriginalResultRecorderEFinder methodsFor: #testing!
+980:!ResultRecorderPFinder methodsFor: #testing!
+987:!PartialityFinder methodsFor: #testing!
+992:!Recipe methodsFor: #testing!
+996:!RegionDelta methodsFor: #testing!
+1000:!NoScrambler methodsFor: #testing!
+1004:!ImmuSet methodsFor: #testing!
+1008:!ImmuTable methodsFor: #testing!
+1012:!OffsetImmuTable methodsFor: #testing!
+1016:!SHTO methodsFor: #tests!
+1021:!BoundedTrace methodsFor: #testing!
+1029:!RealEdge methodsFor: #comparing!
+1034:!SequenceEdge methodsFor: #comparing!
+1039:!XcvrMaker methodsFor: #testing!
+1043:!CrossRegion methodsFor: #testing!
+1049:!GenericCrossRegion methodsFor: #testing!
+1061:!AndFilter methodsFor: #testing!
+1066:!ClosedFilter methodsFor: #testing!
+1070:!NotSubsetFilter methodsFor: #testing!
+1075:!NotSupersetFilter methodsFor: #testing!
+1080:!OpenFilter methodsFor: #testing!
+1084:!OrFilter methodsFor: #testing!
+1089:!SubsetFilter methodsFor: #testing!
+1094:!SupersetFilter methodsFor: #testing!
+1099:!IDRegion methodsFor: #testing!
+1112:!IntegerRegion methodsFor: #testing!
+1118:!RealRegion methodsFor: #testing!
+1126:!SequenceRegion methodsFor: #testing!
+1133:!SetRegion methodsFor: #testing!
+1351:!Heaper methodsFor: #accessing!
+1355:!Heaper methodsFor: #accessing!
+1359:!PrimIndexTable methodsFor: #private:!
+1374:!PrimIndexTable methodsFor: #private:!
+1389:!PrimPtr2PtrTable methodsFor: #private:!
+1409:!PrimSet methodsFor: #private:!
+1439:!Abraham methodsFor: #testing!
+1445:!HistoryCrum methodsFor: #testing!
+1449:!OrderSpec methodsFor: #accessing!
+1462:!CoordinateSpace methodsFor: #accessing!
+1471:!Position methodsFor: #testing!
+1477:!XnRegion methodsFor: #testing!
+1489:!Tuple methodsFor: #testing!
+1498:!UnOrdered methodsFor: #testing!
+1505:!HeaperAsPosition methodsFor: #comparing!
+1518:!Heaper class methodsFor: #accessing!
+1522:!PropChange methodsFor: #testing!
+1528:!ScruSet methodsFor: #testing!
+1548:!Heaper class methodsFor: #'stubble OTHERS'!
+1554:!Heaper class methodsFor: #'smalltalk: system'!
+1561:!ScruTable methodsFor: #testing!
+1569:!IntegerScruTable methodsFor: #testing!
+1575:!OffsetScruTable methodsFor: #testing!
+1597:!TracePosition methodsFor: #testing!
+1615:!TransitionEdge methodsFor: #testing!
+1622:!Filter methodsFor: #testing!
+1643:!IdentityDsp methodsFor: #testing!
+1647:!OffsetScruArray methodsFor: #testing!
+1653:!ShepherdLocked methodsFor: #accessing!
+1664:!MainDummy class methodsFor: #'global: booting'!
+1685:!ServerLoop methodsFor: #execution!
+1715:!ExplicitArrangement methodsFor: #'private: accessing'!
+1719:!ExplicitArrangement methodsFor: #testing!
+1727:!ExplicitArrangement methodsFor: #testing!
+1733:!IntegerArrangement methodsFor: #testing!
+1737:!IntegerArrangement methodsFor: #testing!
+1745:!IntegerArrangement methodsFor: #testing!
+1749:!ExplicitArrangement methodsFor: #testing!
+1770:!DiskManagerEmulsion methodsFor: #accessing!
+1776:!SocketPortal methodsFor: #accessing!
+1794:!ListenerEmulsion methodsFor: #accessing!
+1804:!SelectServerLoop methodsFor: #execution!
+1866:!IPRendezvousListener methodsFor: #hooks:!
+1908:!IPRendezvousListener methodsFor: #accessing!
+1945:!SpecialistRcvr methodsFor: #'protected: creation'!
+1956:!SpecialistXmtr methodsFor: #'protected: creation'!
+1967:!RepairEngineer methodsFor: #'protected: create'!
+1976:!SanitationEngineer methodsFor: #'protected: create'!
+1985:!SetTableStepper methodsFor: #create!
+1996:!IPPromiseListener methodsFor: #accessing!
+2021:!RegionTester methodsFor: #testing!
+2043:!RegionTester methodsFor: #testing!
+2064:!OrderSpec methodsFor: #generated:!
+2068:!OrderSpec methodsFor: #generated:!
+2072:!EdgeManager methodsFor: #generated:!
+2075:!EdgeManager methodsFor: #generated:!
+2078:!FlockLocation methodsFor: #generated:!
+2081:!FlockLocation methodsFor: #generated:!
+2084:!ProtocolBroker methodsFor: #generated:!
+2087:!ProtocolBroker methodsFor: #generated:!
+2090:!FeArchiver methodsFor: #generated:!
+2093:!FeArchiver methodsFor: #generated:!
+2096:!CommIbid methodsFor: #generated:!
+2101:!CommIbid methodsFor: #generated:!
+2106:!MailParseItem methodsFor: #generated:!
+2109:!MailParseItem methodsFor: #generated:!
+2112:!ChunkCleaner methodsFor: #generated:!
+2115:!ChunkCleaner methodsFor: #generated:!
+2118:!Transporter methodsFor: #generated:!
+2121:!Transporter methodsFor: #generated:!
+2124:!ServerChunk methodsFor: #generated:!
+2127:!ServerChunk methodsFor: #generated:!
+2130:!Heaper2UInt32Cache methodsFor: #generated:!
+2133:!Heaper2UInt32Cache methodsFor: #generated:!
+2136:!FeDetector methodsFor: #generated:!
+2139:!FeDetector methodsFor: #generated:!
+2142:!TransferSpecialist methodsFor: #generated:!
+2145:!TransferSpecialist methodsFor: #generated:!
+2148:!FeCalcCreator methodsFor: #generated:!
+2151:!FeCalcCreator methodsFor: #generated:!
+2154:!EncrypterMaker methodsFor: #generated:!
+2157:!EncrypterMaker methodsFor: #generated:!
+2160:!Response methodsFor: #generated:!
+2163:!Response methodsFor: #generated:!
+2166:!Converter methodsFor: #generated:!
+2169:!Converter methodsFor: #generated:!
+2172:!FeRational methodsFor: #generated:!
+2175:!FeRational methodsFor: #generated:!
+2178:!FeWrapperSpec methodsFor: #generated:!
+2181:!FeWrapperSpec methodsFor: #generated:!
+2184:!Arrangement methodsFor: #generated:!
+2188:!Arrangement methodsFor: #generated:!
+2192:!Pair methodsFor: #generated:!
+2198:!Pair methodsFor: #generated:!
+2204:!SnarfRecord methodsFor: #generated:!
+2207:!SnarfRecord methodsFor: #generated:!
+2210:!Cobbler methodsFor: #generated:!
+2213:!Cobbler methodsFor: #generated:!
+2216:!TokenSource methodsFor: #generated:!
+2219:!TokenSource methodsFor: #generated:!
+2222:!Stepper methodsFor: #generated:!
+2225:!Stepper methodsFor: #generated:!
+2228:!PrimeSizeProvider methodsFor: #generated:!
+2231:!PrimeSizeProvider methodsFor: #generated:!
+2234:!ResultRecorder methodsFor: #generated:!
+2237:!ResultRecorder methodsFor: #generated:!
+2240:!Accumulator methodsFor: #generated:!
+2243:!Accumulator methodsFor: #generated:!
+2246:!SuspendedHeaper methodsFor: #generated:!
+2249:!SuspendedHeaper methodsFor: #generated:!
+2252:!XnExecutor methodsFor: #generated:!
+2255:!XnExecutor methodsFor: #generated:!
+2258:!MailItem methodsFor: #generated:!
+2261:!MailItem methodsFor: #generated:!
+2264:!Xmtr methodsFor: #generated:!
+2267:!Xmtr methodsFor: #generated:!
+2270:!PrimRemovedObject methodsFor: #generated:!
+2273:!PrimRemovedObject methodsFor: #generated:!
+2276:!Phaser methodsFor: #generated:!
+2285:!Phaser methodsFor: #generated:!
+2294:!Phaser methodsFor: #generated:!
+2297:!Phaser methodsFor: #generated:!
+2300:!FooTest methodsFor: #generated:!
+2305:!FooTest methodsFor: #generated:!
+2310:!FooTest methodsFor: #generated:!
+2313:!FooTest methodsFor: #generated:!
+2316:!Encrypter methodsFor: #generated:!
+2319:!Encrypter methodsFor: #generated:!
+2322:!Electrician methodsFor: #generated:!
+2325:!Electrician methodsFor: #generated:!
+2328:!HistoryCrum methodsFor: #generated:!
+2333:!HistoryCrum methodsFor: #generated:!
+2338:!Filesys methodsFor: #generated:!
+2341:!Filesys methodsFor: #generated:!
+2344:!Sighting methodsFor: #generated:!
+2347:!Sighting methodsFor: #generated:!
+2350:!SetTable methodsFor: #generated:!
+2357:!SetTable methodsFor: #generated:!
+2364:!SetTable methodsFor: #generated:!
+2367:!SetTable methodsFor: #generated:!
+2370:!FeWrapper methodsFor: #generated:!
+2373:!FeWrapper methodsFor: #generated:!
+2376:!PrimArray methodsFor: #generated:!
+2379:!PrimArray methodsFor: #generated:!
+2382:!Rcvr methodsFor: #generated:!
+2385:!Rcvr methodsFor: #generated:!
+2388:!RegionDelta methodsFor: #generated:!
+2394:!RegionDelta methodsFor: #generated:!
+2400:!RPCIntegerThing methodsFor: #generated:!
+2405:!RPCIntegerThing methodsFor: #generated:!
+2410:!TableEntry methodsFor: #generated:!
+2416:!TableEntry methodsFor: #generated:!
+2422:!TableEntry methodsFor: #generated:!
+2425:!TableEntry methodsFor: #generated:!
+2428:!Stand.v1 methodsFor: #generated:!
+2431:!Stand.v1 methodsFor: #generated:!
+2434:!FeWrapperDef methodsFor: #generated:!
+2437:!FeWrapperDef methodsFor: #generated:!
+2440:!Racer.v1 methodsFor: #generated:!
+2443:!Racer.v1 methodsFor: #generated:!
+2446:!CalcCreator methodsFor: #generated:!
+2449:!CalcCreator methodsFor: #generated:!
+2452:!Chameleon methodsFor: #generated:!
+2459:!Chameleon methodsFor: #generated:!
+2466:!XuPromise methodsFor: #generated:!
+2469:!XuPromise methodsFor: #generated:!
+2472:!MailIndex methodsFor: #generated:!
+2475:!MailIndex methodsFor: #generated:!
+2478:!Request methodsFor: #generated:!
+2484:!Request methodsFor: #generated:!
+2491:!TransitionEdge methodsFor: #generated:!
+2495:!TransitionEdge methodsFor: #generated:!
+2499:!Racetrack.v1 methodsFor: #generated:!
+2502:!Racetrack.v1 methodsFor: #generated:!
+2505:!FeServer methodsFor: #generated:!
+2508:!FeServer methodsFor: #generated:!
+2511:!FePopSensor methodsFor: #generated:!
+2514:!FePopSensor methodsFor: #generated:!
+2517:!Lock methodsFor: #generated:!
+2520:!Lock methodsFor: #generated:!
+2523:!Cookbook methodsFor: #generated:!
+2526:!Cookbook methodsFor: #generated:!
+2529:!FeKeyMaster methodsFor: #generated:!
+2532:!FeKeyMaster methodsFor: #generated:!
+2535:!Rational methodsFor: #generated:!
+2541:!Rational methodsFor: #generated:!
+2547:!Rational methodsFor: #generated:!
+2550:!Rational methodsFor: #generated:!
+2553:!FeCalc methodsFor: #generated:!
+2556:!FeCalc methodsFor: #generated:!
+2559:!Portal methodsFor: #generated:!
+2562:!Portal methodsFor: #generated:!
+2565:!InstanceCache methodsFor: #generated:!
+2568:!InstanceCache methodsFor: #generated:!
+2571:!BarTest methodsFor: #generated:!
+2576:!BarTest methodsFor: #generated:!
+2581:!BarTest methodsFor: #generated:!
+2584:!BarTest methodsFor: #generated:!
+2587:!Station methodsFor: #generated:!
+2590:!Station methodsFor: #generated:!
+2593:!Thunk methodsFor: #generated:!
+2596:!Thunk methodsFor: #generated:!
+2599:!PopSensor methodsFor: #generated:!
+2602:!PopSensor methodsFor: #generated:!
+2605:!Connection methodsFor: #generated:!
+2608:!Connection methodsFor: #generated:!
+2611:!FilterStream methodsFor: #generated:!
+2614:!FilterStream methodsFor: #generated:!
+2617:!FeRangeElement methodsFor: #generated:!
+2620:!FeRangeElement methodsFor: #generated:!
+2623:!Calc methodsFor: #generated:!
+2629:!Calc methodsFor: #generated:!
+2635:!Calc methodsFor: #generated:!
+2638:!Calc methodsFor: #generated:!
+2641:!FeAdminer methodsFor: #generated:!
+2644:!FeAdminer methodsFor: #generated:!
+2647:!TokenSet methodsFor: #generated:!
+2650:!TokenSet methodsFor: #generated:!
+2653:!HashSetCache methodsFor: #generated:!
+2659:!HashSetCache methodsFor: #generated:!
+2665:!HashSetCache methodsFor: #generated:!
+2668:!HashSetCache methodsFor: #generated:!
+2671:!PrimSpec methodsFor: #generated:!
+2676:!PrimSpec methodsFor: #generated:!
+2681:!Joint methodsFor: #generated:!
+2687:!Joint methodsFor: #generated:!
+2693:!SanitationEngineer methodsFor: #generated:!
+2696:!SanitationEngineer methodsFor: #generated:!
+2699:!RepairEngineer methodsFor: #generated:!
+2702:!RepairEngineer methodsFor: #generated:!
+2705:!Abraham methodsFor: #generated:!
+2710:!Abraham methodsFor: #generated:!
+2716:!IntegerUpOrder methodsFor: #generated:!
+2720:!IntegerUpOrder methodsFor: #generated:!
+2724:!SequenceUpOrder methodsFor: #generated:!
+2728:!SequenceUpOrder methodsFor: #generated:!
+2732:!IDUpOrder methodsFor: #generated:!
+2737:!IDUpOrder methodsFor: #generated:!
+2742:!ReverseOrder methodsFor: #generated:!
+2747:!ReverseOrder methodsFor: #generated:!
+2752:!RealUpOrder methodsFor: #generated:!
+2756:!RealUpOrder methodsFor: #generated:!
+2760:!CrossOrderSpec methodsFor: #generated:!
+2767:!CrossOrderSpec methodsFor: #generated:!
+2774:!TPortReadStream methodsFor: #generated:!
+2777:!TPortReadStream methodsFor: #generated:!
+2780:!ReadArrayStream methodsFor: #generated:!
+2783:!ReadArrayStream methodsFor: #generated:!
+2786:!XnBufferedReadStream methodsFor: #generated:!
+2789:!XnBufferedReadStream methodsFor: #generated:!
+2792:!ReadMemStream methodsFor: #generated:!
+2795:!ReadMemStream methodsFor: #generated:!
+2798:!SequenceManager methodsFor: #generated:!
+2802:!SequenceManager methodsFor: #generated:!
+2806:!RealManager methodsFor: #generated:!
+2810:!RealManager methodsFor: #generated:!
+2814:!Tuple methodsFor: #generated:!
+2818:!Tuple methodsFor: #generated:!
+2822:!ID methodsFor: #generated:!
+2829:!ID methodsFor: #generated:!
+2836:!Sequence methodsFor: #generated:!
+2842:!Sequence methodsFor: #generated:!
+2848:!FilterPosition methodsFor: #generated:!
+2853:!FilterPosition methodsFor: #generated:!
+2858:!RealPos methodsFor: #generated:!
+2862:!RealPos methodsFor: #generated:!
+2866:!IntegerPos methodsFor: #generated:!
+2871:!IntegerPos methodsFor: #generated:!
+2876:!PathPosition methodsFor: #generated:!
+2882:!PathPosition methodsFor: #generated:!
+2888:!CompositePosition methodsFor: #generated:!
+2895:!CompositePosition methodsFor: #generated:!
+2902:!StrongAsPosition methodsFor: #generated:!
+2907:!StrongAsPosition methodsFor: #generated:!
+2912:!ActualTuple methodsFor: #generated:!
+2917:!ActualTuple methodsFor: #generated:!
+2922:!IEEE8Pos methodsFor: #generated:!
+2927:!IEEE8Pos methodsFor: #generated:!
+2932:!IEEE64Pos methodsFor: #generated:!
+2937:!IEEE64Pos methodsFor: #generated:!
+2942:!IEEE32Pos methodsFor: #generated:!
+2947:!IEEE32Pos methodsFor: #generated:!
+2952:!ConstantMapping methodsFor: #generated:!
+2958:!ConstantMapping methodsFor: #generated:!
+2964:!SimpleMapping methodsFor: #generated:!
+2970:!SimpleMapping methodsFor: #generated:!
+2976:!EmptyMapping methodsFor: #generated:!
+2982:!EmptyMapping methodsFor: #generated:!
+2988:!CompositeMapping methodsFor: #generated:!
+2995:!CompositeMapping methodsFor: #generated:!
+3002:!PathDsp methodsFor: #generated:!
+3007:!PathDsp methodsFor: #generated:!
+3012:!CompositeDsp methodsFor: #generated:!
+3017:!CompositeDsp methodsFor: #generated:!
+3022:!SequenceMapping methodsFor: #generated:!
+3028:!SequenceMapping methodsFor: #generated:!
+3034:!IntegerMapping methodsFor: #generated:!
+3039:!HeaperDsp methodsFor: #generated:!
+3043:!RealDsp methodsFor: #generated:!
+3047:!RealDsp methodsFor: #generated:!
+3051:!IDDsp methodsFor: #generated:!
+3055:!FilterDsp methodsFor: #generated:!
+3060:!FilterDsp methodsFor: #generated:!
+3065:!GenericCrossDsp methodsFor: #generated:!
+3071:!GenericCrossDsp methodsFor: #generated:!
+3077:!FDListener methodsFor: #generated:!
+3080:!FDListener methodsFor: #generated:!
+3083:!ExecutePromiseFile methodsFor: #generated:!
+3089:!ExecutePromiseFile methodsFor: #generated:!
+3096:!IPRendezvousListener methodsFor: #generated:!
+3101:!IPRendezvousListener methodsFor: #generated:!
+3107:!MacTCPRendezvousListener methodsFor: #generated:!
+3112:!MacTCPRendezvousListener methodsFor: #generated:!
+3118:!WorksTestFillDetector methodsFor: #generated:!
+3121:!WorksTestFillDetector methodsFor: #generated:!
+3124:!WorksWaitDetector methodsFor: #generated:!
+3127:!WorksWaitDetector methodsFor: #generated:!
+3130:!WorksTestStatusDetector methodsFor: #generated:!
+3133:!WorksTestStatusDetector methodsFor: #generated:!
+3136:!WorksTestFillRangeDetector methodsFor: #generated:!
+3139:!WorksTestFillRangeDetector methodsFor: #generated:!
+3142:!ActualOrgl methodsFor: #generated:!
+3145:!ActualOrgl methodsFor: #generated:!
+3148:!MuSet methodsFor: #generated:!
+3151:!MuSet methodsFor: #generated:!
+3154:!WimpyMuSet methodsFor: #generated:!
+3159:!WimpyMuSet methodsFor: #generated:!
+3164:!GrandHashSet methodsFor: #generated:!
+3174:!GrandHashSet methodsFor: #generated:!
+3184:!ActualHashSet methodsFor: #generated:!
+3190:!ActualHashSet methodsFor: #generated:!
+3196:!TinyImmuSet methodsFor: #generated:!
+3201:!TinyImmuSet methodsFor: #generated:!
+3206:!EmptyImmuSet methodsFor: #generated:!
+3210:!ImmuSetOnMu methodsFor: #generated:!
+3215:!ImmuSetOnMu methodsFor: #generated:!
+3220:!BooleanVarResponse methodsFor: #generated:!
+3225:!BooleanVarResponse methodsFor: #generated:!
+3230:!Int32Response methodsFor: #generated:!
+3235:!Int32Response methodsFor: #generated:!
+3240:!NOWAITResponse methodsFor: #generated:!
+3244:!NOWAITResponse methodsFor: #generated:!
+3248:!VoidResponse methodsFor: #generated:!
+3252:!VoidResponse methodsFor: #generated:!
+3256:!IntegerVarResponse methodsFor: #generated:!
+3261:!IntegerVarResponse methodsFor: #generated:!
+3266:!HeaperResponse methodsFor: #generated:!
+3271:!HeaperResponse methodsFor: #generated:!
+3276:!UInt4Response methodsFor: #generated:!
+3281:!UInt4Response methodsFor: #generated:!
+3286:!Int4Response methodsFor: #generated:!
+3291:!Int4Response methodsFor: #generated:!
+3296:!UInt32Response methodsFor: #generated:!
+3301:!UInt32Response methodsFor: #generated:!
+3306:!SensorPropJoint methodsFor: #generated:!
+3313:!SensorPropJoint methodsFor: #generated:!
+3320:!BertPropJoint methodsFor: #generated:!
+3328:!BertPropJoint methodsFor: #generated:!
+3336:!IntegerArrangement methodsFor: #generated:!
+3342:!IntegerArrangement methodsFor: #generated:!
+3348:!ExplicitArrangement methodsFor: #generated:!
+3353:!ExplicitArrangement methodsFor: #generated:!
+3358:!XnModel methodsFor: #generated:!
+3361:!XnModel methodsFor: #generated:!
+3364:!XnSensor methodsFor: #generated:!
+3367:!XnSensor methodsFor: #generated:!
+3370:!ID2LockSchnert methodsFor: #generated:!
+3373:!ID2LockSchnert methodsFor: #generated:!
+3376:!BackfollowSensor methodsFor: #generated:!
+3383:!BackfollowSensor methodsFor: #generated:!
+3390:!TupleStepper methodsFor: #generated:!
+3399:!TupleStepper methodsFor: #generated:!
+3408:!GenericCrossSimpleRegionStepper methodsFor: #generated:!
+3411:!GenericCrossSimpleRegionStepper methodsFor: #generated:!
+3414:!MergeStepper methodsFor: #generated:!
+3422:!MergeStepper methodsFor: #generated:!
+3430:!SetTableStepper methodsFor: #generated:!
+3433:!SetTableStepper methodsFor: #generated:!
+3436:!MergeBundlesStepper methodsFor: #generated:!
+3444:!MergeBundlesStepper methodsFor: #generated:!
+3452:!PtrArrayStepper methodsFor: #generated:!
+3460:!PtrArrayStepper methodsFor: #generated:!
+3468:!SCPrimeSizeProvider methodsFor: #generated:!
+3471:!SCPrimeSizeProvider methodsFor: #generated:!
+3474:!LPPrimeSizeProvider methodsFor: #generated:!
+3477:!LPPrimeSizeProvider methodsFor: #generated:!
+3480:!EdgeAccumulator methodsFor: #generated:!
+3489:!EdgeAccumulator methodsFor: #generated:!
+3499:!UnionRecruiter methodsFor: #generated:!
+3504:!UnionRecruiter methodsFor: #generated:!
+3509:!SetAccumulator methodsFor: #generated:!
+3514:!SetAccumulator methodsFor: #generated:!
+3519:!CloseExecutor methodsFor: #generated:!
+3522:!CloseExecutor methodsFor: #generated:!
+3525:!DeleteExecutor methodsFor: #generated:!
+3528:!DeleteExecutor methodsFor: #generated:!
+3531:!MacTCPWire methodsFor: #generated:!
+3537:!MacTCPWire methodsFor: #generated:!
+3543:!SocketWire methodsFor: #generated:!
+3549:!SocketWire methodsFor: #generated:!
+3555:!HUpperCrum methodsFor: #generated:!
+3562:!HUpperCrum methodsFor: #generated:!
+3569:!HBottomCrum methodsFor: #generated:!
+3576:!HBottomCrum methodsFor: #generated:!
+3583:!BackfollowTable methodsFor: #generated:!
+3589:!BackfollowTable methodsFor: #generated:!
+3595:!MuTable methodsFor: #generated:!
+3599:!MuTable methodsFor: #generated:!
+3603:!MuTable methodsFor: #generated:!
+3606:!MuTable methodsFor: #generated:!
+3609:!IntegerScruTable methodsFor: #generated:!
+3614:!IntegerScruTable methodsFor: #generated:!
+3619:!OffsetScruArray methodsFor: #generated:!
+3625:!OffsetScruArray methodsFor: #generated:!
+3631:!ImmuTableOnMu methodsFor: #generated:!
+3636:!ImmuTableOnMu methodsFor: #generated:!
+3641:!WimpyMuTable methodsFor: #generated:!
+3646:!WimpyMuTable methodsFor: #generated:!
+3651:!GrandHashTable methodsFor: #generated:!
+3662:!GrandHashTable methodsFor: #generated:!
+3674:!ActualHashTable methodsFor: #generated:!
+3681:!ActualHashTable methodsFor: #generated:!
+3688:!ActualArray methodsFor: #generated:!
+3694:!ActualArray methodsFor: #generated:!
+3700:!ActualWordArray methodsFor: #generated:!
+3705:!ActualWordArray methodsFor: #generated:!
+3710:!ActualIntegerTable methodsFor: #generated:!
+3721:!ActualIntegerTable methodsFor: #generated:!
+3732:!COWIntegerTable methodsFor: #generated:!
+3737:!COWIntegerTable methodsFor: #generated:!
+3742:!CompositeRegion methodsFor: #generated:!
+3747:!CompositeRegion methodsFor: #generated:!
+3752:!IDRegion methodsFor: #generated:!
+3760:!IDRegion methodsFor: #generated:!
+3768:!PathRegion methodsFor: #generated:!
+3773:!PathRegion methodsFor: #generated:!
+3778:!IntegerRegion methodsFor: #generated:!
+3785:!IntegerRegion methodsFor: #generated:!
+3792:!Filter methodsFor: #generated:!
+3797:!Filter methodsFor: #generated:!
+3802:!SetRegion methodsFor: #generated:!
+3808:!SetRegion methodsFor: #generated:!
+3814:!SequenceRegion methodsFor: #generated:!
+3821:!SequenceRegion methodsFor: #generated:!
+3828:!RealRegion methodsFor: #generated:!
+3835:!RealRegion methodsFor: #generated:!
+3842:!ActualCompositeRegion methodsFor: #generated:!
+3847:!ActualCompositeRegion methodsFor: #generated:!
+3852:!SimpleCrossRegion methodsFor: #generated:!
+3857:!SimpleCrossRegion methodsFor: #generated:!
+3862:!CrossDistinction methodsFor: #generated:!
+3869:!CrossDistinction methodsFor: #generated:!
+3876:!GenericCrossRegion methodsFor: #generated:!
+3883:!GenericCrossRegion methodsFor: #generated:!
+3890:!UnionCrossRegion methodsFor: #generated:!
+3896:!UnionCrossRegion methodsFor: #generated:!
+3902:!OpenFilter methodsFor: #generated:!
+3906:!OpenFilter methodsFor: #generated:!
+3910:!OrFilter methodsFor: #generated:!
+3915:!OrFilter methodsFor: #generated:!
+3920:!SubsetFilter methodsFor: #generated:!
+3925:!SubsetFilter methodsFor: #generated:!
+3930:!SupersetFilter methodsFor: #generated:!
+3935:!SupersetFilter methodsFor: #generated:!
+3940:!AndFilter methodsFor: #generated:!
+3945:!AndFilter methodsFor: #generated:!
+3950:!ClosedFilter methodsFor: #generated:!
+3954:!ClosedFilter methodsFor: #generated:!
+3958:!NotSubsetFilter methodsFor: #generated:!
+3963:!NotSubsetFilter methodsFor: #generated:!
+3968:!NotSupersetFilter methodsFor: #generated:!
+3973:!NotSupersetFilter methodsFor: #generated:!
+3978:!HeaperRegion methodsFor: #generated:!
+3982:!HeaperRegion methodsFor: #generated:!
+3986:!SensorProp methodsFor: #generated:!
+3993:!SensorProp methodsFor: #generated:!
+4000:!BertProp methodsFor: #generated:!
+4008:!BertProp methodsFor: #generated:!
+4016:!ActualSighting methodsFor: #generated:!
+4021:!ActualSighting methodsFor: #generated:!
+4026:!ProxySighting methodsFor: #generated:!
+4031:!ProxySighting methodsFor: #generated:!
+4036:!CoreAHook methodsFor: #generated:!
+4039:!CoreAHook methodsFor: #generated:!
+4042:!PtrArray methodsFor: #generated:!
+4047:!PtrArray methodsFor: #generated:!
+4052:!SharedPtrArray methodsFor: #generated:!
+4057:!SharedPtrArray methodsFor: #generated:!
+4062:!IntegerVarArray methodsFor: #generated:!
+4067:!IntegerVarArray methodsFor: #generated:!
+4072:!UInt32Array methodsFor: #generated:!
+4077:!UInt32Array methodsFor: #generated:!
+4082:!Int32Array methodsFor: #generated:!
+4087:!Int32Array methodsFor: #generated:!
+4092:!UInt8Array methodsFor: #generated:!
+4097:!UInt8Array methodsFor: #generated:!
+4102:!IEEE64Array methodsFor: #generated:!
+4106:!IEEE64Array methodsFor: #generated:!
+4110:!IEEE32Array methodsFor: #generated:!
+4114:!IEEE32Array methodsFor: #generated:!
+4118:!HashStream methodsFor: #generated:!
+4121:!HashStream methodsFor: #generated:!
+4124:!WriteVariableArrayStream methodsFor: #generated:!
+4127:!WriteVariableArrayStream methodsFor: #generated:!
+4130:!CountStream methodsFor: #generated:!
+4133:!CountStream methodsFor: #generated:!
+4136:!TPortWriteStream methodsFor: #generated:!
+4139:!TPortWriteStream methodsFor: #generated:!
+4142:!WriteArrayStream methodsFor: #generated:!
+4145:!WriteArrayStream methodsFor: #generated:!
+4148:!WriteMemStream methodsFor: #generated:!
+4151:!WriteMemStream methodsFor: #generated:!
+4154:!XnBufferedWriteStream methodsFor: #generated:!
+4157:!XnBufferedWriteStream methodsFor: #generated:!
+4160:!DetectorWaitingChange methodsFor: #generated:!
+4164:!DetectorWaitingChange methodsFor: #generated:!
+4168:!CannotPartializeChange methodsFor: #generated:!
+4172:!CannotPartializeChange methodsFor: #generated:!
+4176:!EndorsementsChange methodsFor: #generated:!
+4180:!EndorsementsChange methodsFor: #generated:!
+4184:!PermissionsChange methodsFor: #generated:!
+4188:!PermissionsChange methodsFor: #generated:!
+4192:!SensorPropChange methodsFor: #generated:!
+4196:!SensorPropChange methodsFor: #generated:!
+4200:!BertPropChange methodsFor: #generated:!
+4204:!BertPropChange methodsFor: #generated:!
+4208:!StubAHook methodsFor: #generated:!
+4211:!StubAHook methodsFor: #generated:!
+4214:!HashIndexEntry methodsFor: #generated:!
+4218:!HashIndexEntry methodsFor: #generated:!
+4222:!HeaperAsEntry methodsFor: #generated:!
+4226:!HeaperAsEntry methodsFor: #generated:!
+4230:!IndexEntry methodsFor: #generated:!
+4235:!IndexEntry methodsFor: #generated:!
+4240:!PositionEntry methodsFor: #generated:!
+4245:!PositionEntry methodsFor: #generated:!
+4250:!FeIndirectWrapperDef methodsFor: #generated:!
+4253:!FeIndirectWrapperDef methodsFor: #generated:!
+4256:!FeDirectWrapperDef methodsFor: #generated:!
+4259:!FeDirectWrapperDef methodsFor: #generated:!
+4262:!FeAbstractWrapperDef methodsFor: #generated:!
+4265:!FeAbstractWrapperDef methodsFor: #generated:!
+4268:!ActualCalcCreator methodsFor: #generated:!
+4271:!ActualCalcCreator methodsFor: #generated:!
+4274:!DeadMoth methodsFor: #generated:!
+4281:!DeadMoth methodsFor: #generated:!
+4288:!Moth methodsFor: #generated:!
+4293:!Moth methodsFor: #generated:!
+4298:!DeadButterfly methodsFor: #generated:!
+4306:!DeadButterfly methodsFor: #generated:!
+4314:!Butterfly methodsFor: #generated:!
+4320:!Butterfly methodsFor: #generated:!
+4326:!SequenceEdge methodsFor: #generated:!
+4331:!SequenceEdge methodsFor: #generated:!
+4336:!RealEdge methodsFor: #generated:!
+4341:!RealEdge methodsFor: #generated:!
+4346:!BeforeSequencePrefix methodsFor: #generated:!
+4351:!BeforeSequencePrefix methodsFor: #generated:!
+4356:!AfterSequence methodsFor: #generated:!
+4360:!AfterSequence methodsFor: #generated:!
+4364:!BeforeSequence methodsFor: #generated:!
+4368:!BeforeSequence methodsFor: #generated:!
+4372:!AfterReal methodsFor: #generated:!
+4376:!AfterReal methodsFor: #generated:!
+4380:!BeforeReal methodsFor: #generated:!
+4384:!BeforeReal methodsFor: #generated:!
+4388:!BoundedTrace methodsFor: #generated:!
+4394:!BoundedTrace methodsFor: #generated:!
+4400:!UndefinedRational methodsFor: #generated:!
+4404:!UndefinedRational methodsFor: #generated:!
+4407:!UndefinedRational methodsFor: #generated:!
+4410:!OpenPropFinder methodsFor: #generated:!
+4414:!OpenPropFinder methodsFor: #generated:!
+4418:!ClosedPropFinder methodsFor: #generated:!
+4422:!ClosedPropFinder methodsFor: #generated:!
+4426:!PartialityFinder methodsFor: #generated:!
+4430:!PartialityFinder methodsFor: #generated:!
+4434:!RecorderEFinder methodsFor: #generated:!
+4440:!RecorderEFinder methodsFor: #generated:!
+4446:!RecorderPFinder methodsFor: #generated:!
+4452:!RecorderPFinder methodsFor: #generated:!
+4458:!CumulativeRecorderFinder methodsFor: #generated:!
+4465:!CumulativeRecorderFinder methodsFor: #generated:!
+4472:!RecorderFinder methodsFor: #generated:!
+4478:!RecorderFinder methodsFor: #generated:!
+4484:!SimpleRecorderFinder methodsFor: #generated:!
+4489:!SimpleRecorderFinder methodsFor: #generated:!
+4494:!CompositeRecorderFinder methodsFor: #generated:!
+4501:!CompositeRecorderFinder methodsFor: #generated:!
+4508:!ResultRecorderPFinder methodsFor: #generated:!
+4515:!ResultRecorderPFinder methodsFor: #generated:!
+4522:!ContainedEditionRecorderEFinder methodsFor: #generated:!
+4529:!ContainedEditionRecorderEFinder methodsFor: #generated:!
+4536:!OriginalResultRecorderEFinder methodsFor: #generated:!
+4543:!OriginalResultRecorderEFinder methodsFor: #generated:!
+4550:!AnyRecorderPFinder methodsFor: #generated:!
+4556:!AnyRecorderPFinder methodsFor: #generated:!
+4562:!AnyRecorderEFinder methodsFor: #generated:!
+4569:!AnyRecorderEFinder methodsFor: #generated:!
+4576:!BackfollowFinder methodsFor: #generated:!
+4582:!BackfollowFinder methodsFor: #generated:!
+4588:!SensorFinder methodsFor: #generated:!
+4592:!SensorFinder methodsFor: #generated:!
+4596:!BackfollowPFinder methodsFor: #generated:!
+4601:!BackfollowPFinder methodsFor: #generated:!
+4606:!CannotPartializeFinder methodsFor: #generated:!
+4610:!CannotPartializeFinder methodsFor: #generated:!
+4614:!DiskIniter methodsFor: #generated:!
+4620:!DiskIniter methodsFor: #generated:!
+4626:!DiskPurgeRate methodsFor: #generated:!
+4631:!DiskPurgeRate methodsFor: #generated:!
+4636:!SwitchLogger methodsFor: #generated:!
+4642:!SwitchLogger methodsFor: #generated:!
+4648:!SnarfStatistics methodsFor: #generated:!
+4653:!SnarfStatistics methodsFor: #generated:!
+4658:!FebeIniter methodsFor: #generated:!
+4662:!FebeIniter methodsFor: #generated:!
+4667:!TapestryIniter methodsFor: #generated:!
+4671:!TapestryIniter methodsFor: #generated:!
+4675:!StopHere methodsFor: #generated:!
+4679:!StopHere methodsFor: #generated:!
+4683:!PrintCBlocksTracks methodsFor: #generated:!
+4687:!PrintCBlocksTracks methodsFor: #generated:!
+4691:!FakeDisk methodsFor: #generated:!
+4696:!FakeDisk methodsFor: #generated:!
+4701:!WorksIniter methodsFor: #generated:!
+4705:!WorksIniter methodsFor: #generated:!
+4709:!XViewTester methodsFor: #generated:!
+4713:!XViewTester methodsFor: #generated:!
+4717:!Honestly methodsFor: #generated:!
+4724:!Honestly methodsFor: #generated:!
+4731:!CommentThunk methodsFor: #generated:!
+4736:!CommentThunk methodsFor: #generated:!
+4741:!EchoThunk methodsFor: #generated:!
+4746:!EchoThunk methodsFor: #generated:!
+4751:!SetDiskProtocol methodsFor: #generated:!
+4756:!SetDiskProtocol methodsFor: #generated:!
+4761:!SetCommProtocol methodsFor: #generated:!
+4766:!SetCommProtocol methodsFor: #generated:!
+4771:!GCMaxInterval methodsFor: #generated:!
+4776:!GCMaxInterval methodsFor: #generated:!
+4781:!GCMinInterval methodsFor: #generated:!
+4786:!GCMinInterval methodsFor: #generated:!
+4791:!SpareStageSpace methodsFor: #generated:!
+4797:!SpareStageSpace methodsFor: #generated:!
+4803:!ServerLoop methodsFor: #generated:!
+4808:!ServerLoop methodsFor: #generated:!
+4814:!HonestAbeIniter methodsFor: #generated:!
+4821:!HonestAbeIniter methodsFor: #generated:!
+4828:!FromWirePlan methodsFor: #generated:!
+4834:!FromWirePlan methodsFor: #generated:!
+4840:!ClearPlan methodsFor: #generated:!
+4845:!ClearPlan methodsFor: #generated:!
+4850:!TrackCBlocks methodsFor: #generated:!
+4855:!TrackCBlocks methodsFor: #generated:!
+4860:!FromDiskPlan methodsFor: #generated:!
+4866:!FromDiskPlan methodsFor: #generated:!
+4872:!FeWorksBootMaker methodsFor: #generated:!
+4876:!FeWorksBootMaker methodsFor: #generated:!
+4880:!BackendBootMaker methodsFor: #generated:!
+4884:!BackendBootMaker methodsFor: #generated:!
+4888:!CalcBootMaker methodsFor: #generated:!
+4892:!CalcBootMaker methodsFor: #generated:!
+4896:!ShepherdBootMaker methodsFor: #generated:!
+4900:!ShepherdBootMaker methodsFor: #generated:!
+4904:!HonestAbePlan methodsFor: #generated:!
+4909:!HonestAbePlan methodsFor: #generated:!
+4914:!WorksBootMaker methodsFor: #generated:!
+4918:!WorksBootMaker methodsFor: #generated:!
+4922:!FeCalcBootMaker methodsFor: #generated:!
+4926:!FeCalcBootMaker methodsFor: #generated:!
+4930:!MichaelsCIVTester methodsFor: #generated:!
+4934:!MichaelsCIVTester methodsFor: #generated:!
+4938:!PackageTester methodsFor: #generated:!
+4942:!PackageTester methodsFor: #generated:!
+4946:!VolumeTester methodsFor: #generated:!
+4950:!VolumeTester methodsFor: #generated:!
+4954:!WordArrayTester methodsFor: #generated:!
+4958:!WordArrayTester methodsFor: #generated:!
+4962:!ProtocolTester methodsFor: #generated:!
+4966:!ProtocolTester methodsFor: #generated:!
+4970:!PrCalcTester methodsFor: #generated:!
+4974:!PrCalcTester methodsFor: #generated:!
+4978:!SnefruTester methodsFor: #generated:!
+4982:!SnefruTester methodsFor: #generated:!
+4986:!IntegerTableTester methodsFor: #generated:!
+4990:!IntegerTableTester methodsFor: #generated:!
+4994:!UrdiTester methodsFor: #generated:!
+4998:!UrdiTester methodsFor: #generated:!
+5002:!CalcTester methodsFor: #generated:!
+5006:!CalcTester methodsFor: #generated:!
+5010:!PrimPtrTableTester methodsFor: #generated:!
+5014:!PrimPtrTableTester methodsFor: #generated:!
+5018:!FMTextTester methodsFor: #generated:!
+5022:!FMTextTester methodsFor: #generated:!
+5026:!LogTester methodsFor: #generated:!
+5030:!LogTester methodsFor: #generated:!
+5034:!FeCalcTester methodsFor: #generated:!
+5038:!FeCalcTester methodsFor: #generated:!
+5042:!BecomeTester methodsFor: #generated:!
+5046:!BecomeTester methodsFor: #generated:!
+5050:!HashTableTester methodsFor: #generated:!
+5054:!HashTableTester methodsFor: #generated:!
+5058:!ScruSetTester methodsFor: #generated:!
+5062:!ScruSetTester methodsFor: #generated:!
+5067:!ShuffleTester methodsFor: #generated:!
+5071:!ShuffleTester methodsFor: #generated:!
+5075:!TableEntryTester methodsFor: #generated:!
+5079:!TableEntryTester methodsFor: #generated:!
+5083:!GrandHashTableTester methodsFor: #generated:!
+5087:!GrandHashTableTester methodsFor: #generated:!
+5091:!ShepherdLockTester methodsFor: #generated:!
+5095:!ShepherdLockTester methodsFor: #generated:!
+5099:!HelloTester methodsFor: #generated:!
+5103:!HelloTester methodsFor: #generated:!
+5107:!SetTableTester methodsFor: #generated:!
+5111:!SetTableTester methodsFor: #generated:!
+5115:!PrimIndexTableTester methodsFor: #generated:!
+5119:!PrimIndexTableTester methodsFor: #generated:!
+5123:!MichaelsDestructionTester methodsFor: #generated:!
+5127:!MichaelsDestructionTester methodsFor: #generated:!
+5131:!WarpTester methodsFor: #generated:!
+5135:!WarpTester methodsFor: #generated:!
+5139:!MichaelsHacksTester methodsFor: #generated:!
+5143:!MichaelsHacksTester methodsFor: #generated:!
+5147:!SetTester methodsFor: #generated:!
+5151:!SetTester methodsFor: #generated:!
+5155:!WorksTester methodsFor: #generated:!
+5159:!WorksTester methodsFor: #generated:!
+5164:!FebeTester methodsFor: #generated:!
+5168:!FebeTester methodsFor: #generated:!
+5173:!DiskTester methodsFor: #generated:!
+5177:!DiskTester methodsFor: #generated:!
+5182:!PrWorksTester methodsFor: #generated:!
+5186:!PrWorksTester methodsFor: #generated:!
+5191:!SnarfTester methodsFor: #generated:!
+5195:!SnarfTester methodsFor: #generated:!
+5199:!ImmuSetTester methodsFor: #generated:!
+5203:!ImmuSetTester methodsFor: #generated:!
+5207:!MuSetTester methodsFor: #generated:!
+5211:!MuSetTester methodsFor: #generated:!
+5215:!HashSetTester methodsFor: #generated:!
+5219:!HashSetTester methodsFor: #generated:!
+5223:!GrandHashSetTester methodsFor: #generated:!
+5227:!GrandHashSetTester methodsFor: #generated:!
+5231:!RealTester methodsFor: #generated:!
+5235:!RealTester methodsFor: #generated:!
+5239:!SequenceTester methodsFor: #generated:!
+5243:!SequenceTester methodsFor: #generated:!
+5247:!FilterTester methodsFor: #generated:!
+5251:!FilterTester methodsFor: #generated:!
+5256:!IntegerRegionTester methodsFor: #generated:!
+5260:!IntegerRegionTester methodsFor: #generated:!
+5264:!CompositeTester methodsFor: #generated:!
+5268:!CompositeTester methodsFor: #generated:!
+5272:!CrossTester methodsFor: #generated:!
+5276:!CrossTester methodsFor: #generated:!
+5280:!IDTester methodsFor: #generated:!
+5284:!IDTester methodsFor: #generated:!
+5288:!PointRegionTester methodsFor: #generated:!
+5292:!PointRegionTester methodsFor: #generated:!
+5297:!ClubTester methodsFor: #generated:!
+5301:!ClubTester methodsFor: #generated:!
+5306:!WaldoTester methodsFor: #generated:!
+5310:!WaldoTester methodsFor: #generated:!
+5314:!ComparatorTester methodsFor: #generated:!
+5318:!ComparatorTester methodsFor: #generated:!
+5322:!TapestryTester methodsFor: #generated:!
+5326:!TapestryTester methodsFor: #generated:!
+5331:!SelectServerLoop methodsFor: #generated:!
+5335:!SelectServerLoop methodsFor: #generated:!
+5339:!MacServerLoop methodsFor: #generated:!
+5343:!MacServerLoop methodsFor: #generated:!
+5347:!ActualPopSensor methodsFor: #generated:!
+5350:!ActualPopSensor methodsFor: #generated:!
+5353:!ActualCalc methodsFor: #generated:!
+5356:!ActualCalc methodsFor: #generated:!
+5359:!PrimPointerSpec methodsFor: #generated:!
+5363:!PrimPointerSpec methodsFor: #generated:!
+5367:!PrimIntegerSpec methodsFor: #generated:!
+5375:!PrimIntegerSpec methodsFor: #generated:!
+5383:!PrimFloatSpec methodsFor: #generated:!
+5388:!PrimFloatSpec methodsFor: #generated:!
+5393:!PrimFloatValue methodsFor: #generated:!
+5397:!PrimFloatValue methodsFor: #generated:!
+5401:!PrimIntValue methodsFor: #generated:!
+5406:!PrimIntValue methodsFor: #generated:!
+5411:!PrimIEEE32 methodsFor: #generated:!
+5416:!PrimIEEE32 methodsFor: #generated:!
+5421:!PrimIEEE64 methodsFor: #generated:!
+5426:!PrimIEEE64 methodsFor: #generated:!
+5431:!CompositeSpace methodsFor: #generated:!
+5436:!CompositeSpace methodsFor: #generated:!
+5441:!SequenceSpace methodsFor: #generated:!
+5445:!RealSpace methodsFor: #generated:!
+5449:!FilterSpace methodsFor: #generated:!
+5454:!IntegerSpace methodsFor: #generated:!
+5458:!PathSpace methodsFor: #generated:!
+5463:!PathSpace methodsFor: #generated:!
+5468:!IDSpace methodsFor: #generated:!
+5473:!HeaperSpace methodsFor: #generated:!
+5477:!ActualCrossSpace methodsFor: #generated:!
+5481:!ActualCrossSpace methodsFor: #generated:!
+5485:!GenericCrossSpace methodsFor: #generated:!
+5490:!PointSpace methodsFor: #generated:!
+5494:!TextyXcvrMaker methodsFor: #generated:!
+5498:!TextyXcvrMaker methodsFor: #generated:!
+5502:!Binary2XcvrMaker methodsFor: #generated:!
+5506:!Binary2XcvrMaker methodsFor: #generated:!
+5510:!IObject methodsFor: #generated:!
+5523:!IObject methodsFor: #generated:!
+5536:!Pumpkin methodsFor: #generated:!
+5540:!Pumpkin methodsFor: #generated:!
+5544:!Pumpkin methodsFor: #generated:!
+5547:!Pumpkin methodsFor: #generated:!
+5550:!FastClub methodsFor: #generated:!
+5564:!FastClub methodsFor: #generated:!
+5578:!Ent methodsFor: #generated:!
+5583:!Ent methodsFor: #generated:!
+5588:!GrandMap methodsFor: #generated:!
+5602:!GrandMap methodsFor: #generated:!
+5617:!ShepherdStub methodsFor: #generated:!
+5622:!ShepherdStub methodsFor: #generated:!
+5627:!Turtle methodsFor: #generated:!
+5631:!Turtle methodsFor: #generated:!
+5635:!DagWood methodsFor: #generated:!
+5641:!DagWood methodsFor: #generated:!
+5648:!MultiCounter methodsFor: #generated:!
+5654:!MultiCounter methodsFor: #generated:!
+5660:!GrandNode methodsFor: #generated:!
+5669:!GrandNode methodsFor: #generated:!
+5678:!GrandEntry methodsFor: #generated:!
+5683:!GrandEntry methodsFor: #generated:!
+5688:!SharedData methodsFor: #generated:!
+5694:!SharedData methodsFor: #generated:!
+5700:!Counter methodsFor: #generated:!
+5704:!Counter methodsFor: #generated:!
+5708:!AgendaItem methodsFor: #generated:!
+5712:!AgendaItem methodsFor: #generated:!
+5716:!OPart methodsFor: #generated:!
+5721:!OPart methodsFor: #generated:!
+5726:!Fossil methodsFor: #generated:!
+5736:!Fossil methodsFor: #generated:!
+5747:!Fossil methodsFor: #generated:!
+5750:!Fossil methodsFor: #generated:!
+5753:!BeRangeElement methodsFor: #generated:!
+5760:!BeRangeElement methodsFor: #generated:!
+5768:!RecorderFossil methodsFor: #generated:!
+5775:!RecorderFossil methodsFor: #generated:!
+5783:!CanopyCrum methodsFor: #generated:!
+5795:!CanopyCrum methodsFor: #generated:!
+5807:!PairFlock methodsFor: #generated:!
+5813:!PairFlock methodsFor: #generated:!
+5819:!PairFlock methodsFor: #generated:!
+5822:!PairFlock methodsFor: #generated:!
+5825:!HRoot methodsFor: #generated:!
+5832:!HRoot methodsFor: #generated:!
+5839:!GrandDataPage methodsFor: #generated:!
+5848:!GrandDataPage methodsFor: #generated:!
+5857:!BeGrandMap methodsFor: #generated:!
+5882:!BeGrandMap methodsFor: #generated:!
+5908:!ShepherdLocked methodsFor: #generated:!
+5912:!ShepherdLocked methodsFor: #generated:!
+5916:!GrandOverflow methodsFor: #generated:!
+5924:!GrandOverflow methodsFor: #generated:!
+5932:!DoublingFlock methodsFor: #generated:!
+5938:!DoublingFlock methodsFor: #generated:!
+5944:!DoublingFlock methodsFor: #generated:!
+5947:!DoublingFlock methodsFor: #generated:!
+5950:!TrailBlazer methodsFor: #generated:!
+5957:!TrailBlazer methodsFor: #generated:!
+5964:!TrailBlazer methodsFor: #generated:!
+5967:!TrailBlazer methodsFor: #generated:!
+5970:!BranchDescription methodsFor: #generated:!
+5978:!BranchDescription methodsFor: #generated:!
+5986:!Stamp methodsFor: #generated:!
+5992:!Stamp methodsFor: #generated:!
+5998:!Bert methodsFor: #generated:!
+6005:!Bert methodsFor: #generated:!
+6012:!MockTurtle methodsFor: #generated:!
+6018:!MockTurtle methodsFor: #generated:!
+6024:!SimpleTurtle methodsFor: #generated:!
+6032:!SimpleTurtle methodsFor: #generated:!
+6041:!GrandSetEntry methodsFor: #generated:!
+6045:!GrandSetEntry methodsFor: #generated:!
+6049:!GrandTableEntry methodsFor: #generated:!
+6054:!GrandTableEntry methodsFor: #generated:!
+6059:!BatchCounter methodsFor: #generated:!
+6065:!BatchCounter methodsFor: #generated:!
+6072:!SingleCounter methodsFor: #generated:!
+6077:!SingleCounter methodsFor: #generated:!
+6083:!GrandNodeDoubler methodsFor: #generated:!
+6088:!GrandNodeDoubler methodsFor: #generated:!
+6093:!NorthRecorderChecker methodsFor: #generated:!
+6099:!NorthRecorderChecker methodsFor: #generated:!
+6105:!UpdateTransitiveSuperClubIDs methodsFor: #generated:!
+6111:!UpdateTransitiveSuperClubIDs methodsFor: #generated:!
+6117:!Matcher methodsFor: #generated:!
+6124:!Matcher methodsFor: #generated:!
+6131:!Agenda methodsFor: #generated:!
+6136:!Agenda methodsFor: #generated:!
+6141:!SouthRecorderChecker methodsFor: #generated:!
+6148:!SouthRecorderChecker methodsFor: #generated:!
+6155:!Sequencer methodsFor: #generated:!
+6161:!Sequencer methodsFor: #generated:!
+6167:!UpdateTransitiveMemberIDs methodsFor: #generated:!
+6172:!UpdateTransitiveMemberIDs methodsFor: #generated:!
+6177:!RecorderTrigger methodsFor: #generated:!
+6183:!RecorderTrigger methodsFor: #generated:!
+6189:!PropChanger methodsFor: #generated:!
+6194:!PropChanger methodsFor: #generated:!
+6199:!GrandNodeReinserter methodsFor: #generated:!
+6205:!GrandNodeReinserter methodsFor: #generated:!
+6211:!RecorderHoister methodsFor: #generated:!
+6216:!RecorderHoister methodsFor: #generated:!
+6221:!ActualPropChanger methodsFor: #generated:!
+6225:!ActualPropChanger methodsFor: #generated:!
+6229:!HeightChanger methodsFor: #generated:!
+6234:!HeightChanger methodsFor: #generated:!
+6239:!Loaf methodsFor: #generated:!
+6244:!Loaf methodsFor: #generated:!
+6249:!OrglRoot methodsFor: #generated:!
+6254:!OrglRoot methodsFor: #generated:!
+6259:!InnerLoaf methodsFor: #generated:!
+6263:!InnerLoaf methodsFor: #generated:!
+6267:!OExpandingLoaf methodsFor: #generated:!
+6272:!OExpandingLoaf methodsFor: #generated:!
+6277:!SplitLoaf methodsFor: #generated:!
+6284:!SplitLoaf methodsFor: #generated:!
+6291:!DspLoaf methodsFor: #generated:!
+6297:!DspLoaf methodsFor: #generated:!
+6303:!RegionLoaf methodsFor: #generated:!
+6309:!RegionLoaf methodsFor: #generated:!
+6315:!OPartialLoaf methodsFor: #generated:!
+6321:!OPartialLoaf methodsFor: #generated:!
+6327:!OVirtualLoaf methodsFor: #generated:!
+6333:!OVirtualLoaf methodsFor: #generated:!
+6339:!ActualOrglRoot methodsFor: #generated:!
+6345:!ActualOrglRoot methodsFor: #generated:!
+6351:!EmptyOrglRoot methodsFor: #generated:!
+6356:!EmptyOrglRoot methodsFor: #generated:!
+6361:!OrdinaryFossil methodsFor: #generated:!
+6365:!OrdinaryFossil methodsFor: #generated:!
+6369:!BackfollowRecorderFossil methodsFor: #generated:!
+6375:!BackfollowRecorderFossil methodsFor: #generated:!
+6381:!BeWork methodsFor: #generated:!
+6396:!BeWork methodsFor: #generated:!
+6412:!BeEdition methodsFor: #generated:!
+6420:!BeEdition methodsFor: #generated:!
+6429:!BeLabel methodsFor: #generated:!
+6433:!BeLabel methodsFor: #generated:!
+6437:!BePlaceHolder methodsFor: #generated:!
+6442:!BePlaceHolder methodsFor: #generated:!
+6448:!BeDataHolder methodsFor: #generated:!
+6453:!BeDataHolder methodsFor: #generated:!
+6458:!BeIDHolder methodsFor: #generated:!
+6463:!BeIDHolder methodsFor: #generated:!
+6468:!BeClub methodsFor: #generated:!
+6479:!BeClub methodsFor: #generated:!
+6491:!WorkRecorderFossil methodsFor: #generated:!
+6496:!WorkRecorderFossil methodsFor: #generated:!
+6501:!EditionRecorderFossil methodsFor: #generated:!
+6507:!EditionRecorderFossil methodsFor: #generated:!
+6513:!DirectWorkRecorderFossil methodsFor: #generated:!
+6517:!DirectWorkRecorderFossil methodsFor: #generated:!
+6521:!IndirectWorkRecorderFossil methodsFor: #generated:!
+6525:!IndirectWorkRecorderFossil methodsFor: #generated:!
+6529:!IndirectEditionRecorderFossil methodsFor: #generated:!
+6533:!IndirectEditionRecorderFossil methodsFor: #generated:!
+6537:!DirectEditionRecorderFossil methodsFor: #generated:!
+6541:!DirectEditionRecorderFossil methodsFor: #generated:!
+6545:!SensorCrum methodsFor: #generated:!
+6550:!SensorCrum methodsFor: #generated:!
+6555:!BertCrum methodsFor: #generated:!
+6559:!BertCrum methodsFor: #generated:!
+6563:!RootBranch methodsFor: #generated:!
+6567:!RootBranch methodsFor: #generated:!
+6571:!DagBranch methodsFor: #generated:!
+6577:!DagBranch methodsFor: #generated:!
+6583:!TreeBranch methodsFor: #generated:!
+6588:!TreeBranch methodsFor: #generated:!
+6593:!XuOrderSpec class methodsFor: #'pseudo-constructors'!
+6597:!XuOrderSpec class methodsFor: #'pseudo-constructors'!
+6604:!XuOrderSpec class methodsFor: #'pseudo-constructors'!
+6608:!XuOrderSpec methodsFor: #'promise access'!
+6614:!XuOrderSpec methodsFor: #creation!
+6618:!XuOrderSpec methodsFor: #creation!
+6622:!XuOrderSpec methodsFor: #creation!
+6626:!XuOrderSpec methodsFor: #testing!
+6650:!XuOrderSpec methodsFor: #accessing!
+6667:!XuOrderSpec methodsFor: #accessing!
+6685:!XuSession class methodsFor: #'pseudo-constructors'!
+6689:!XuSession class methodsFor: #'pseudo-constructors'!
+6696:!XuSession class methodsFor: #'pseudo-constructors'!
+6700:!XuSession methodsFor: #'promise access'!
+6706:!XuSession methodsFor: #creation!
+6710:!XuSession methodsFor: #creation!
+6714:!XuSession methodsFor: #creation!
+6718:!XuSession methodsFor: #accessing!
+6737:!XuSession methodsFor: #accessing!
+6754:!XuSession methodsFor: #accessing!
+6771:!XuSession methodsFor: #accessing!
+6788:!XuSession methodsFor: #'smalltalk: defaults'!
+6805:!XuSession methodsFor: #accessing!
+6822:!XuArchiver class methodsFor: #'pseudo-constructors'!
+6826:!XuArchiver class methodsFor: #'pseudo-constructors'!
+6833:!XuArchiver class methodsFor: #'pseudo-constructors'!
+6837:!XuArchiver methodsFor: #'promise access'!
+6843:!XuArchiver methodsFor: #creation!
+6847:!XuArchiver methodsFor: #creation!
+6851:!XuArchiver methodsFor: #creation!
+6855:!XuArchiver methodsFor: #accessing!
+6877:!XuArchiver methodsFor: #accessing!
+6899:!XuArchiver methodsFor: #accessing!
+6918:!XuPosition class methodsFor: #'pseudo-constructors'!
+6922:!XuPosition class methodsFor: #'pseudo-constructors'!
+6929:!XuPosition class methodsFor: #'pseudo-constructors'!
+6933:!XuPosition methodsFor: #'promise access'!
+6939:!XuPosition methodsFor: #creation!
+6943:!XuPosition methodsFor: #creation!
+6947:!XuPosition methodsFor: #creation!
+6951:!XuPosition methodsFor: #accessing!
+6968:!XuPosition methodsFor: #accessing!
+6985:!XuMapping class methodsFor: #'pseudo-constructors'!
+6989:!XuMapping class methodsFor: #'pseudo-constructors'!
+6996:!XuMapping class methodsFor: #'pseudo-constructors'!
+7000:!XuMapping methodsFor: #'promise access'!
+7006:!XuMapping methodsFor: #creation!
+7010:!XuMapping methodsFor: #creation!
+7014:!XuMapping methodsFor: #creation!
+7018:!XuMapping methodsFor: #mapping!
+7037:!XuMapping methodsFor: #operations!
+7054:!XuMapping methodsFor: #mapping!
+7073:!XuMapping methodsFor: #accessing!
+7090:!XuMapping methodsFor: #accessing!
+7107:!XuMapping methodsFor: #accessing!
+7124:!XuMapping methodsFor: #accessing!
+7141:!XuMapping methodsFor: #accessing!
+7158:!XuMapping methodsFor: #accessing!
+7175:!XuMapping methodsFor: #accessing!
+7192:!XuMapping methodsFor: #accessing!
+7209:!XuMapping methodsFor: #operations!
+7228:!XuMapping methodsFor: #operations!
+7247:!XuCalcCreator class methodsFor: #'pseudo-constructors'!
+7251:!XuCalcCreator class methodsFor: #'pseudo-constructors'!
+7258:!XuCalcCreator class methodsFor: #'pseudo-constructors'!
+7262:!XuCalcCreator methodsFor: #'promise access'!
+7268:!XuCalcCreator methodsFor: #creation!
+7272:!XuCalcCreator methodsFor: #creation!
+7276:!XuCalcCreator methodsFor: #creation!
+7280:!XuCalcCreator methodsFor: #accessing!
+7297:!XuRational class methodsFor: #'pseudo-constructors'!
+7301:!XuRational class methodsFor: #'pseudo-constructors'!
+7308:!XuRational class methodsFor: #'pseudo-constructors'!
+7312:!XuRational methodsFor: #'promise access'!
+7318:!XuRational methodsFor: #creation!
+7322:!XuRational methodsFor: #creation!
+7326:!XuRational methodsFor: #creation!
+7330:!XuRational methodsFor: #accessing!
+7347:!XuRational methodsFor: #accessing!
+7364:!XuRational methodsFor: #accessing!
+7381:!XuWrapperSpec class methodsFor: #'pseudo-constructors'!
+7385:!XuWrapperSpec class methodsFor: #'pseudo-constructors'!
+7392:!XuWrapperSpec class methodsFor: #'pseudo-constructors'!
+7396:!XuWrapperSpec methodsFor: #'promise access'!
+7402:!XuWrapperSpec methodsFor: #creation!
+7406:!XuWrapperSpec methodsFor: #creation!
+7410:!XuWrapperSpec methodsFor: #creation!
+7414:!XuWrapperSpec methodsFor: #accessing!
+7431:!XuWrapperSpec methodsFor: #accessing!
+7448:!XuWrapperSpec methodsFor: #accessing!
+7467:!XuStepper class methodsFor: #'pseudo-constructors'!
+7471:!XuStepper class methodsFor: #'pseudo-constructors'!
+7478:!XuStepper class methodsFor: #'pseudo-constructors'!
+7482:!XuStepper methodsFor: #'promise access'!
+7488:!XuStepper methodsFor: #creation!
+7492:!XuStepper methodsFor: #creation!
+7496:!XuStepper methodsFor: #creation!
+7500:!XuStepper methodsFor: #operations!
+7519:!XuStepper methodsFor: #operations!
+7538:!XuStepper methodsFor: #operations!
+7555:!XuStepper methodsFor: #create!
+7573:!XuStepper methodsFor: #operations!
+7592:!XuStepper methodsFor: #'smalltalk: defaults'!
+7597:!XuStepper methodsFor: #operations!
+7614:!XuRegion class methodsFor: #'pseudo-constructors'!
+7618:!XuRegion class methodsFor: #'pseudo-constructors'!
+7625:!XuRegion class methodsFor: #'pseudo-constructors'!
+7629:!XuRegion methodsFor: #'promise access'!
+7635:!XuRegion methodsFor: #creation!
+7639:!XuRegion methodsFor: #creation!
+7643:!XuRegion methodsFor: #creation!
+7647:!XuRegion methodsFor: #testing!
+7664:!XuRegion methodsFor: #operations!
+7683:!XuRegion methodsFor: #operations!
+7702:!XuRegion methodsFor: #operations!
+7719:!XuRegion methodsFor: #testing!
+7736:!XuRegion methodsFor: #enumerating!
+7753:!XuRegion methodsFor: #testing!
+7770:!XuRegion methodsFor: #enumerating!
+7789:!XuRegion methodsFor: #'smalltalk: defaults'!
+7794:!XuRegion methodsFor: #operations!
+7813:!XuRegion methodsFor: #testing!
+7832:!XuRegion methodsFor: #testing!
+7851:!XuRegion methodsFor: #enumerating!
+7872:!XuRegion methodsFor: #enumerating!
+7889:!XuRegion methodsFor: #accessing!
+7906:!XuRegion methodsFor: #testing!
+7926:!XuRegion methodsFor: #'smalltalk: defaults'!
+7945:!XuRegion methodsFor: #enumerating!
+7972:!XuRegion methodsFor: #'smalltalk: defaults'!
+7977:!XuRegion methodsFor: #operations!
+7996:!XuRegion methodsFor: #operations!
+8017:!XuWrapper class methodsFor: #'pseudo-constructors'!
+8021:!XuWrapper class methodsFor: #'pseudo-constructors'!
+8028:!XuWrapper class methodsFor: #'pseudo-constructors'!
+8032:!XuWrapper methodsFor: #'promise access'!
+8038:!XuWrapper methodsFor: #creation!
+8042:!XuWrapper methodsFor: #creation!
+8046:!XuWrapper methodsFor: #creation!
+8050:!XuWrapper methodsFor: #accessing!
+8067:!XuWrapper methodsFor: #accessing!
+8084:!XuArray class methodsFor: #'pseudo-constructors'!
+8088:!XuArray class methodsFor: #'pseudo-constructors'!
+8095:!XuArray class methodsFor: #'pseudo-constructors'!
+8099:!XuArray methodsFor: #'promise access'!
+8105:!XuArray methodsFor: #creation!
+8109:!XuArray methodsFor: #creation!
+8113:!XuArray methodsFor: #creation!
+8117:!XuArray methodsFor: #accessing!
+8134:!XuArray methodsFor: #'bulk accessing'!
+8160:!XuArray methodsFor: #'smalltalk: defaults'!
+8183:!XuArray methodsFor: #accessing!
+8202:!XuArray methodsFor: #accessing!
+8223:!XuArray methodsFor: #'bulk accessing'!
+8244:!XuArray methodsFor: #'smalltalk: defaults'!
+8249:!XuArray methodsFor: #'smalltalk: defaults'!
+8254:!XuArray methodsFor: #accessing!
+8271:!XuArray methodsFor: #'bulk accessing'!
+8294:!XuArray methodsFor: #'smalltalk: defaults'!
+8299:!XuArray methodsFor: #'smalltalk: defaults'!
+8304:!XuArray methodsFor: #'smalltalk: defaults'!
+8309:!XuArray methodsFor: #'smalltalk: defaults'!
+8330:!XuArray methodsFor: #'smalltalk: defaults'!
+8335:!XuArray methodsFor: #'smalltalk: defaults'!
+8340:!XuArray methodsFor: #'bulk accessing'!
+8365:!XuArray methodsFor: #'smalltalk: defaults'!
+8370:!XuArray methodsFor: #'smalltalk: defaults'!
+8375:!XuArray methodsFor: #accessing!
+8398:!XuServer class methodsFor: #'pseudo-constructors'!
+8402:!XuServer class methodsFor: #'pseudo-constructors'!
+8409:!XuServer class methodsFor: #'pseudo-constructors'!
+8413:!XuServer methodsFor: #'promise access'!
+8419:!XuServer methodsFor: #creation!
+8423:!XuServer methodsFor: #creation!
+8427:!XuServer methodsFor: #creation!
+8431:!XuPopSensor class methodsFor: #'pseudo-constructors'!
+8435:!XuPopSensor class methodsFor: #'pseudo-constructors'!
+8442:!XuPopSensor class methodsFor: #'pseudo-constructors'!
+8446:!XuPopSensor methodsFor: #'promise access'!
+8452:!XuPopSensor methodsFor: #creation!
+8456:!XuPopSensor methodsFor: #creation!
+8460:!XuPopSensor methodsFor: #creation!
+8464:!XuPopSensor methodsFor: #accessing!
+8483:!XuLock class methodsFor: #'pseudo-constructors'!
+8487:!XuLock class methodsFor: #'pseudo-constructors'!
+8494:!XuLock class methodsFor: #'pseudo-constructors'!
+8498:!XuLock methodsFor: #'promise access'!
+8504:!XuLock methodsFor: #creation!
+8508:!XuLock methodsFor: #creation!
+8512:!XuLock methodsFor: #creation!
+8516:!XuKeyMaster class methodsFor: #'pseudo-constructors'!
+8520:!XuKeyMaster class methodsFor: #'pseudo-constructors'!
+8527:!XuKeyMaster class methodsFor: #'pseudo-constructors'!
+8531:!XuKeyMaster methodsFor: #'promise access'!
+8537:!XuKeyMaster methodsFor: #creation!
+8541:!XuKeyMaster methodsFor: #creation!
+8545:!XuKeyMaster methodsFor: #creation!
+8549:!XuKeyMaster methodsFor: #authority!
+8566:!XuKeyMaster methodsFor: #authority!
+8583:!XuKeyMaster methodsFor: #authority!
+8600:!XuKeyMaster methodsFor: #authority!
+8619:!XuKeyMaster methodsFor: #authority!
+8639:!XuKeyMaster methodsFor: #authority!
+8658:!XuCalc class methodsFor: #'pseudo-constructors'!
+8662:!XuCalc class methodsFor: #'pseudo-constructors'!
+8669:!XuCalc class methodsFor: #'pseudo-constructors'!
+8673:!XuCalc methodsFor: #'promise access'!
+8679:!XuCalc methodsFor: #creation!
+8683:!XuCalc methodsFor: #creation!
+8687:!XuCalc methodsFor: #creation!
+8691:!XuCalc methodsFor: #accessing!
+8710:!XuCalc methodsFor: #accessing!
+8727:!XuCalc methodsFor: #accessing!
+8746:!XuCalc methodsFor: #accessing!
+8763:!XuCalc methodsFor: #accessing!
+8780:!XuCalc methodsFor: #accessing!
+8797:!XuCalc class methodsFor: #'smalltalk: initialization'!
+8802:!XuRangeElement class methodsFor: #'pseudo-constructors'!
+8806:!XuRangeElement class methodsFor: #'pseudo-constructors'!
+8813:!XuRangeElement class methodsFor: #'pseudo-constructors'!
+8817:!XuRangeElement methodsFor: #'promise access'!
+8823:!XuRangeElement methodsFor: #creation!
+8827:!XuRangeElement methodsFor: #creation!
+8831:!XuRangeElement methodsFor: #creation!
+8835:!XuRangeElement methodsFor: #accessing!
+8854:!XuRangeElement methodsFor: #accessing!
+8886:!XuRangeElement methodsFor: #labelling!
+8905:!XuRangeElement methodsFor: #accessing!
+8927:!XuRangeElement methodsFor: #accessing!
+8944:!XuRangeElement methodsFor: #labelling!
+8961:!XuRangeElement methodsFor: #accessing!
+8982:!XuRangeElement methodsFor: #accessing!
+9001:!XuRangeElement methodsFor: #accessing!
+9018:!XuRangeElement methodsFor: #accessing!
+9045:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9050:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9055:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9060:!XuRangeElement methodsFor: #smalltalk:!
+9083:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9088:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9093:!XuRangeElement methodsFor: #'smalltalk: defaults'!
+9098:!XuRangeElement methodsFor: #accessing!
+9116:!XuAdminer class methodsFor: #'pseudo-constructors'!
+9120:!XuAdminer class methodsFor: #'pseudo-constructors'!
+9127:!XuAdminer class methodsFor: #'pseudo-constructors'!
+9131:!XuAdminer methodsFor: #'promise access'!
+9137:!XuAdminer methodsFor: #creation!
+9141:!XuAdminer methodsFor: #creation!
+9145:!XuAdminer methodsFor: #creation!
+9149:!XuAdminer methodsFor: #administrivia!
+9166:!XuAdminer methodsFor: #administrivia!
+9183:!XuAdminer methodsFor: #administrivia!
+9202:!XuAdminer methodsFor: #security!
+9219:!XuAdminer methodsFor: #security!
+9238:!XuAdminer methodsFor: #administrivia!
+9259:!XuAdminer methodsFor: #administrivia!
+9278:!XuAdminer methodsFor: #administrivia!
+9295:!XuAdminer methodsFor: #'smalltalk: defaults'!
+9314:!XuAdminer methodsFor: #'smalltalk: defaults'!
+9319:!XuAdminer methodsFor: #administrivia!
+9340:!XuValue class methodsFor: #'pseudo-constructors'!
+9344:!XuValue class methodsFor: #'pseudo-constructors'!
+9351:!XuValue class methodsFor: #'pseudo-constructors'!
+9355:!XuValue methodsFor: #'promise access'!
+9361:!XuValue methodsFor: #creation!
+9365:!XuValue methodsFor: #creation!
+9369:!XuValue methodsFor: #creation!
+9373:!XuCoordinateSpace class methodsFor: #'pseudo-constructors'!
+9377:!XuCoordinateSpace class methodsFor: #'pseudo-constructors'!
+9384:!XuCoordinateSpace class methodsFor: #'pseudo-constructors'!
+9388:!XuCoordinateSpace methodsFor: #'promise access'!
+9394:!XuCoordinateSpace methodsFor: #creation!
+9398:!XuCoordinateSpace methodsFor: #creation!
+9402:!XuCoordinateSpace methodsFor: #creation!
+9406:!XuCoordinateSpace methodsFor: #accessing!
+9423:!XuCoordinateSpace methodsFor: #accessing!
+9440:!XuCoordinateSpace methodsFor: #accessing!
+9457:!XuCoordinateSpace methodsFor: #accessing!
+9474:!XuCoordinateSpace methodsFor: #accessing!
+9491:!XuCoordinateSpace methodsFor: #accessing!
+9510:!XuBundle class methodsFor: #'pseudo-constructors'!
+9514:!XuBundle class methodsFor: #'pseudo-constructors'!
+9521:!XuBundle class methodsFor: #'pseudo-constructors'!
+9525:!XuBundle methodsFor: #'promise access'!
+9531:!XuBundle methodsFor: #creation!
+9535:!XuBundle methodsFor: #creation!
+9539:!XuBundle methodsFor: #creation!
+9543:!XuBundle methodsFor: #accessing!
+9560:!XuCrossOrderSpec class methodsFor: #'pseudo-constructors'!
+9564:!XuCrossOrderSpec class methodsFor: #'pseudo-constructors'!
+9571:!XuCrossOrderSpec class methodsFor: #'pseudo-constructors'!
+9575:!XuCrossOrderSpec methodsFor: #'promise access'!
+9581:!XuCrossOrderSpec methodsFor: #creation!
+9585:!XuCrossOrderSpec methodsFor: #creation!
+9589:!XuCrossOrderSpec methodsFor: #creation!
+9593:!XuCrossOrderSpec methodsFor: #accessing!
+9612:!XuCrossOrderSpec methodsFor: #accessing!
+9629:!XuCrossOrderSpec methodsFor: #accessing!
+9646:!XuTuple class methodsFor: #'pseudo-constructors'!
+9650:!XuTuple class methodsFor: #'pseudo-constructors'!
+9657:!XuTuple class methodsFor: #'pseudo-constructors'!
+9661:!XuTuple methodsFor: #'promise access'!
+9667:!XuTuple methodsFor: #creation!
+9671:!XuTuple methodsFor: #creation!
+9675:!XuTuple methodsFor: #creation!
+9679:!XuTuple methodsFor: #accessing!
+9698:!XuTuple methodsFor: #accessing!
+9715:!XuID class methodsFor: #'pseudo-constructors'!
+9719:!XuID class methodsFor: #'pseudo-constructors'!
+9726:!XuID class methodsFor: #'pseudo-constructors'!
+9730:!XuID methodsFor: #'promise access'!
+9736:!XuID methodsFor: #creation!
+9740:!XuID methodsFor: #creation!
+9744:!XuID methodsFor: #creation!
+9748:!XuID methodsFor: #accessing!
+9765:!XuSequence class methodsFor: #'pseudo-constructors'!
+9769:!XuSequence class methodsFor: #'pseudo-constructors'!
+9776:!XuSequence class methodsFor: #'pseudo-constructors'!
+9780:!XuSequence methodsFor: #'promise access'!
+9786:!XuSequence methodsFor: #creation!
+9790:!XuSequence methodsFor: #creation!
+9794:!XuSequence methodsFor: #creation!
+9798:!XuSequence methodsFor: #accessing!
+9816:!XuSequence methodsFor: #accessing!
+9833:!XuSequence methodsFor: #operations!
+9854:!XuSequence methodsFor: #accessing!
+9871:!XuSequence methodsFor: #accessing!
+9890:!XuSequence methodsFor: #accessing!
+9907:!XuFilterPosition class methodsFor: #'pseudo-constructors'!
+9911:!XuFilterPosition class methodsFor: #'pseudo-constructors'!
+9918:!XuFilterPosition class methodsFor: #'pseudo-constructors'!
+9922:!XuFilterPosition methodsFor: #'promise access'!
+9928:!XuFilterPosition methodsFor: #creation!
+9932:!XuFilterPosition methodsFor: #creation!
+9936:!XuFilterPosition methodsFor: #creation!
+9940:!XuFilterPosition methodsFor: #accessing!
+9957:!XuReal class methodsFor: #'pseudo-constructors'!
+9961:!XuReal class methodsFor: #'pseudo-constructors'!
+9968:!XuReal class methodsFor: #'pseudo-constructors'!
+9972:!XuReal methodsFor: #'promise access'!
+9978:!XuReal methodsFor: #creation!
+9982:!XuReal methodsFor: #creation!
+9986:!XuReal methodsFor: #creation!
+9990:!XuReal methodsFor: #accessing!
+10007:!XuInteger class methodsFor: #'pseudo-constructors'!
+10011:!XuInteger class methodsFor: #'pseudo-constructors'!
+10018:!XuInteger class methodsFor: #'pseudo-constructors'!
+10022:!XuInteger methodsFor: #'promise access'!
+10028:!XuInteger methodsFor: #creation!
+10032:!XuInteger methodsFor: #creation!
+10036:!XuInteger methodsFor: #creation!
+10040:!XuInteger methodsFor: #accessing!
+10057:!XuSequenceMapping class methodsFor: #'pseudo-constructors'!
+10061:!XuSequenceMapping class methodsFor: #'pseudo-constructors'!
+10068:!XuSequenceMapping class methodsFor: #'pseudo-constructors'!
+10072:!XuSequenceMapping methodsFor: #'promise access'!
+10078:!XuSequenceMapping methodsFor: #creation!
+10082:!XuSequenceMapping methodsFor: #creation!
+10086:!XuSequenceMapping methodsFor: #creation!
+10090:!XuSequenceMapping methodsFor: #accessing!
+10107:!XuSequenceMapping methodsFor: #accessing!
+10124:!XuIntegerMapping class methodsFor: #'pseudo-constructors'!
+10128:!XuIntegerMapping class methodsFor: #'pseudo-constructors'!
+10135:!XuIntegerMapping class methodsFor: #'pseudo-constructors'!
+10139:!XuIntegerMapping methodsFor: #'promise access'!
+10145:!XuIntegerMapping methodsFor: #creation!
+10149:!XuIntegerMapping methodsFor: #creation!
+10153:!XuIntegerMapping methodsFor: #creation!
+10157:!XuIntegerMapping methodsFor: #accessing!
+10175:!XuCrossMapping class methodsFor: #'pseudo-constructors'!
+10179:!XuCrossMapping class methodsFor: #'pseudo-constructors'!
+10186:!XuCrossMapping class methodsFor: #'pseudo-constructors'!
+10190:!XuCrossMapping methodsFor: #'promise access'!
+10196:!XuCrossMapping methodsFor: #creation!
+10200:!XuCrossMapping methodsFor: #creation!
+10204:!XuCrossMapping methodsFor: #creation!
+10208:!XuCrossMapping methodsFor: #accessing!
+10227:!XuCrossMapping methodsFor: #accessing!
+10244:!XuRevisionDetector class methodsFor: #'pseudo-constructors'!
+10248:!XuRevisionDetector class methodsFor: #'pseudo-constructors'!
+10255:!XuRevisionDetector class methodsFor: #'pseudo-constructors'!
+10259:!XuRevisionDetector methodsFor: #'promise access'!
+10265:!XuRevisionDetector methodsFor: #creation!
+10269:!XuRevisionDetector methodsFor: #creation!
+10273:!XuRevisionDetector methodsFor: #creation!
+10277:!XuRevisionDetector methodsFor: #triggering!
+10304:!XuFillDetector class methodsFor: #'pseudo-constructors'!
+10308:!XuFillDetector class methodsFor: #'pseudo-constructors'!
+10315:!XuFillDetector class methodsFor: #'pseudo-constructors'!
+10319:!XuFillDetector methodsFor: #'promise access'!
+10325:!XuFillDetector methodsFor: #creation!
+10329:!XuFillDetector methodsFor: #creation!
+10333:!XuFillDetector methodsFor: #creation!
+10337:!XuFillDetector methodsFor: #triggering!
+10356:!XuWaitDetector class methodsFor: #'pseudo-constructors'!
+10360:!XuWaitDetector class methodsFor: #'pseudo-constructors'!
+10367:!XuWaitDetector class methodsFor: #'pseudo-constructors'!
+10371:!XuWaitDetector methodsFor: #'promise access'!
+10377:!XuWaitDetector methodsFor: #creation!
+10381:!XuWaitDetector methodsFor: #creation!
+10385:!XuWaitDetector methodsFor: #creation!
+10389:!XuWaitDetector methodsFor: #triggering!
+10406:!XuStatusDetector class methodsFor: #'pseudo-constructors'!
+10410:!XuStatusDetector class methodsFor: #'pseudo-constructors'!
+10417:!XuStatusDetector class methodsFor: #'pseudo-constructors'!
+10421:!XuStatusDetector methodsFor: #'promise access'!
+10427:!XuStatusDetector methodsFor: #creation!
+10431:!XuStatusDetector methodsFor: #creation!
+10435:!XuStatusDetector methodsFor: #creation!
+10439:!XuStatusDetector methodsFor: #triggering!
+10460:!XuStatusDetector methodsFor: #triggering!
+10483:!XuFillRangeDetector class methodsFor: #'pseudo-constructors'!
+10487:!XuFillRangeDetector class methodsFor: #'pseudo-constructors'!
+10494:!XuFillRangeDetector class methodsFor: #'pseudo-constructors'!
+10498:!XuFillRangeDetector methodsFor: #'promise access'!
+10504:!XuFillRangeDetector methodsFor: #creation!
+10508:!XuFillRangeDetector methodsFor: #creation!
+10512:!XuFillRangeDetector methodsFor: #creation!
+10516:!XuFillRangeDetector methodsFor: #triggering!
+10535:!XuTableStepper class methodsFor: #'pseudo-constructors'!
+10539:!XuTableStepper class methodsFor: #'pseudo-constructors'!
+10546:!XuTableStepper class methodsFor: #'pseudo-constructors'!
+10550:!XuTableStepper methodsFor: #'promise access'!
+10556:!XuTableStepper methodsFor: #creation!
+10560:!XuTableStepper methodsFor: #creation!
+10564:!XuTableStepper methodsFor: #creation!
+10568:!XuTableStepper methodsFor: #operations!
+10589:!XuTableStepper methodsFor: #'smalltalk: defaults'!
+10606:!XuTableStepper methodsFor: #special!
+10623:!XuIDRegion class methodsFor: #'pseudo-constructors'!
+10627:!XuIDRegion class methodsFor: #'pseudo-constructors'!
+10634:!XuIDRegion class methodsFor: #'pseudo-constructors'!
+10638:!XuIDRegion methodsFor: #'promise access'!
+10644:!XuIDRegion methodsFor: #creation!
+10648:!XuIDRegion methodsFor: #creation!
+10652:!XuIDRegion methodsFor: #creation!
+10656:!XuIDRegion methodsFor: #accessing!
+10673:!XuCrossRegion class methodsFor: #'pseudo-constructors'!
+10677:!XuCrossRegion class methodsFor: #'pseudo-constructors'!
+10684:!XuCrossRegion class methodsFor: #'pseudo-constructors'!
+10688:!XuCrossRegion methodsFor: #'promise access'!
+10694:!XuCrossRegion methodsFor: #creation!
+10698:!XuCrossRegion methodsFor: #creation!
+10702:!XuCrossRegion methodsFor: #creation!
+10706:!XuCrossRegion methodsFor: #accessing!
+10725:!XuCrossRegion methodsFor: #enumerating!
+10742:!XuCrossRegion methodsFor: #enumerating!
+10759:!XuCrossRegion methodsFor: #accessing!
+10776:!XuIntegerRegion class methodsFor: #'pseudo-constructors'!
+10780:!XuIntegerRegion class methodsFor: #'pseudo-constructors'!
+10787:!XuIntegerRegion class methodsFor: #'pseudo-constructors'!
+10791:!XuIntegerRegion methodsFor: #'promise access'!
+10797:!XuIntegerRegion methodsFor: #creation!
+10801:!XuIntegerRegion methodsFor: #creation!
+10805:!XuIntegerRegion methodsFor: #creation!
+10809:!XuIntegerRegion methodsFor: #accessing!
+10827:!XuIntegerRegion methodsFor: #testing!
+10845:!XuIntegerRegion methodsFor: #testing!
+10863:!XuIntegerRegion methodsFor: #accessing!
+10881:!XuIntegerRegion methodsFor: #enumerating!
+10900:!XuIntegerRegion methodsFor: #'smalltalk: defaults'!
+10905:!XuIntegerRegion methodsFor: #enumerating!
+10922:!XuFilter class methodsFor: #'pseudo-constructors'!
+10926:!XuFilter class methodsFor: #'pseudo-constructors'!
+10933:!XuFilter class methodsFor: #'pseudo-constructors'!
+10937:!XuFilter methodsFor: #'promise access'!
+10943:!XuFilter methodsFor: #creation!
+10947:!XuFilter methodsFor: #creation!
+10951:!XuFilter methodsFor: #creation!
+10955:!XuFilter methodsFor: #filtering!
+10974:!XuFilter methodsFor: #accessing!
+10991:!XuFilter methodsFor: #enumerating!
+11008:!XuFilter methodsFor: #testing!
+11025:!XuFilter methodsFor: #enumerating!
+11042:!XuFilter methodsFor: #testing!
+11059:!XuSequenceRegion class methodsFor: #'pseudo-constructors'!
+11063:!XuSequenceRegion class methodsFor: #'pseudo-constructors'!
+11070:!XuSequenceRegion class methodsFor: #'pseudo-constructors'!
+11074:!XuSequenceRegion methodsFor: #'promise access'!
+11080:!XuSequenceRegion methodsFor: #creation!
+11084:!XuSequenceRegion methodsFor: #creation!
+11088:!XuSequenceRegion methodsFor: #creation!
+11092:!XuSequenceRegion methodsFor: #accessing!
+11109:!XuSequenceRegion methodsFor: #enumerating!
+11128:!XuSequenceRegion methodsFor: #'smalltalk: defaults'!
+11133:!XuSequenceRegion methodsFor: #accessing!
+11150:!XuSequenceRegion methodsFor: #accessing!
+11167:!XuSequenceRegion methodsFor: #testing!
+11184:!XuSequenceRegion methodsFor: #accessing!
+11201:!XuSequenceRegion methodsFor: #enumerating!
+11218:!XuSequenceRegion methodsFor: #accessing!
+11235:!XuSequenceRegion methodsFor: #accessing!
+11252:!XuSequenceRegion methodsFor: #testing!
+11269:!XuRealRegion class methodsFor: #'pseudo-constructors'!
+11273:!XuRealRegion class methodsFor: #'pseudo-constructors'!
+11280:!XuRealRegion class methodsFor: #'pseudo-constructors'!
+11284:!XuRealRegion methodsFor: #'promise access'!
+11290:!XuRealRegion methodsFor: #creation!
+11294:!XuRealRegion methodsFor: #creation!
+11298:!XuRealRegion methodsFor: #creation!
+11302:!XuRealRegion methodsFor: #enumerating!
+11319:!XuRealRegion methodsFor: #testing!
+11336:!XuRealRegion methodsFor: #accessing!
+11353:!XuRealRegion methodsFor: #enumerating!
+11372:!XuRealRegion methodsFor: #'smalltalk: defaults'!
+11389:!XuRealRegion methodsFor: #accessing!
+11406:!XuRealRegion methodsFor: #testing!
+11423:!XuText class methodsFor: #'pseudo-constructors'!
+11427:!XuText class methodsFor: #'pseudo-constructors'!
+11434:!XuText class methodsFor: #'pseudo-constructors'!
+11438:!XuText methodsFor: #'promise access'!
+11444:!XuText methodsFor: #creation!
+11448:!XuText methodsFor: #creation!
+11452:!XuText methodsFor: #creation!
+11456:!XuText methodsFor: #'text manipulation'!
+11475:!XuText methodsFor: #'text manipulation'!
+11496:!XuText methodsFor: #'text manipulation'!
+11517:!XuText methodsFor: #'text manipulation'!
+11534:!XuText methodsFor: #'text manipulation'!
+11559:!XuText methodsFor: #'text manipulation'!
+11576:!XuHyperLink class methodsFor: #'pseudo-constructors'!
+11580:!XuHyperLink class methodsFor: #'pseudo-constructors'!
+11587:!XuHyperLink class methodsFor: #'pseudo-constructors'!
+11591:!XuHyperLink methodsFor: #'promise access'!
+11597:!XuHyperLink methodsFor: #creation!
+11601:!XuHyperLink methodsFor: #creation!
+11605:!XuHyperLink methodsFor: #creation!
+11609:!XuHyperLink methodsFor: #accessing!
+11628:!XuHyperLink methodsFor: #accessing!
+11645:!XuHyperLink methodsFor: #accessing!
+11664:!XuHyperLink methodsFor: #accessing!
+11684:!XuHyperLink methodsFor: #accessing!
+11705:!XuHyperLink methodsFor: #accessing!
+11724:!XuPath class methodsFor: #'pseudo-constructors'!
+11728:!XuPath class methodsFor: #'pseudo-constructors'!
+11735:!XuPath class methodsFor: #'pseudo-constructors'!
+11739:!XuPath methodsFor: #'promise access'!
+11745:!XuPath methodsFor: #creation!
+11749:!XuPath methodsFor: #creation!
+11753:!XuPath methodsFor: #creation!
+11757:!XuPath methodsFor: #operations!
+11776:!XuClubDescription class methodsFor: #'pseudo-constructors'!
+11780:!XuClubDescription class methodsFor: #'pseudo-constructors'!
+11787:!XuClubDescription class methodsFor: #'pseudo-constructors'!
+11791:!XuClubDescription methodsFor: #'promise access'!
+11797:!XuClubDescription methodsFor: #creation!
+11801:!XuClubDescription methodsFor: #creation!
+11805:!XuClubDescription methodsFor: #creation!
+11809:!XuClubDescription methodsFor: #accessing!
+11828:!XuClubDescription methodsFor: #accessing!
+11847:!XuClubDescription methodsFor: #accessing!
+11864:!XuClubDescription methodsFor: #accessing!
+11881:!XuHyperRef class methodsFor: #'pseudo-constructors'!
+11885:!XuHyperRef class methodsFor: #'pseudo-constructors'!
+11892:!XuHyperRef class methodsFor: #'pseudo-constructors'!
+11896:!XuHyperRef methodsFor: #'promise access'!
+11902:!XuHyperRef methodsFor: #creation!
+11906:!XuHyperRef methodsFor: #creation!
+11910:!XuHyperRef methodsFor: #creation!
+11914:!XuHyperRef methodsFor: #accessing!
+11931:!XuHyperRef methodsFor: #accessing!
+11950:!XuHyperRef methodsFor: #accessing!
+11969:!XuHyperRef methodsFor: #accessing!
+11988:!XuHyperRef methodsFor: #accessing!
+12005:!XuHyperRef methodsFor: #accessing!
+12022:!XuLockSmith class methodsFor: #'pseudo-constructors'!
+12026:!XuLockSmith class methodsFor: #'pseudo-constructors'!
+12033:!XuLockSmith class methodsFor: #'pseudo-constructors'!
+12037:!XuLockSmith methodsFor: #'promise access'!
+12043:!XuLockSmith methodsFor: #creation!
+12047:!XuLockSmith methodsFor: #creation!
+12051:!XuLockSmith methodsFor: #creation!
+12055:!XuSet class methodsFor: #'pseudo-constructors'!
+12059:!XuSet class methodsFor: #'pseudo-constructors'!
+12066:!XuSet class methodsFor: #'pseudo-constructors'!
+12070:!XuSet methodsFor: #'promise access'!
+12076:!XuSet methodsFor: #creation!
+12080:!XuSet methodsFor: #creation!
+12084:!XuSet methodsFor: #creation!
+12088:!XuSet methodsFor: #accessing!
+12107:!XuSet methodsFor: #accessing!
+12126:!XuSet methodsFor: #accessing!
+12143:!XuSet methodsFor: #accessing!
+12162:!XuSet methodsFor: #accessing!
+12179:!XuSet methodsFor: #accessing!
+12198:!XuSet methodsFor: #accessing!
+12217:!XuSet methodsFor: #accessing!
+12236:!XuMultiRef class methodsFor: #'pseudo-constructors'!
+12240:!XuMultiRef class methodsFor: #'pseudo-constructors'!
+12247:!XuMultiRef class methodsFor: #'pseudo-constructors'!
+12251:!XuMultiRef methodsFor: #'promise access'!
+12257:!XuMultiRef methodsFor: #creation!
+12261:!XuMultiRef methodsFor: #creation!
+12265:!XuMultiRef methodsFor: #creation!
+12269:!XuMultiRef methodsFor: #accessing!
+12288:!XuMultiRef methodsFor: #accessing!
+12305:!XuMultiRef methodsFor: #accessing!
+12324:!XuMultiRef methodsFor: #accessing!
+12343:!XuMultiRef methodsFor: #accessing!
+12362:!XuMultiRef methodsFor: #accessing!
+12381:!XuSingleRef class methodsFor: #'pseudo-constructors'!
+12385:!XuSingleRef class methodsFor: #'pseudo-constructors'!
+12392:!XuSingleRef class methodsFor: #'pseudo-constructors'!
+12396:!XuSingleRef methodsFor: #'promise access'!
+12402:!XuSingleRef methodsFor: #creation!
+12406:!XuSingleRef methodsFor: #creation!
+12410:!XuSingleRef methodsFor: #creation!
+12414:!XuSingleRef methodsFor: #accessing!
+12431:!XuSingleRef methodsFor: #accessing!
+12450:!XuBooLockSmith class methodsFor: #'pseudo-constructors'!
+12454:!XuBooLockSmith class methodsFor: #'pseudo-constructors'!
+12461:!XuBooLockSmith class methodsFor: #'pseudo-constructors'!
+12465:!XuBooLockSmith methodsFor: #'promise access'!
+12471:!XuBooLockSmith methodsFor: #creation!
+12475:!XuBooLockSmith methodsFor: #creation!
+12479:!XuBooLockSmith methodsFor: #creation!
+12483:!XuWallLockSmith class methodsFor: #'pseudo-constructors'!
+12487:!XuWallLockSmith class methodsFor: #'pseudo-constructors'!
+12494:!XuWallLockSmith class methodsFor: #'pseudo-constructors'!
+12498:!XuWallLockSmith methodsFor: #'promise access'!
+12504:!XuWallLockSmith methodsFor: #creation!
+12508:!XuWallLockSmith methodsFor: #creation!
+12512:!XuWallLockSmith methodsFor: #creation!
+12516:!XuChallengeLockSmith class methodsFor: #'pseudo-constructors'!
+12520:!XuChallengeLockSmith class methodsFor: #'pseudo-constructors'!
+12527:!XuChallengeLockSmith class methodsFor: #'pseudo-constructors'!
+12531:!XuChallengeLockSmith methodsFor: #'promise access'!
+12537:!XuChallengeLockSmith methodsFor: #creation!
+12541:!XuChallengeLockSmith methodsFor: #creation!
+12545:!XuChallengeLockSmith methodsFor: #creation!
+12549:!XuChallengeLockSmith methodsFor: #accessing!
+12566:!XuChallengeLockSmith methodsFor: #accessing!
+12583:!XuMatchLockSmith class methodsFor: #'pseudo-constructors'!
+12587:!XuMatchLockSmith class methodsFor: #'pseudo-constructors'!
+12594:!XuMatchLockSmith class methodsFor: #'pseudo-constructors'!
+12598:!XuMatchLockSmith methodsFor: #'promise access'!
+12604:!XuMatchLockSmith methodsFor: #creation!
+12608:!XuMatchLockSmith methodsFor: #creation!
+12612:!XuMatchLockSmith methodsFor: #creation!
+12616:!XuMatchLockSmith methodsFor: #accessing!
+12633:!XuMatchLockSmith methodsFor: #accessing!
+12650:!XuMultiLockSmith class methodsFor: #'pseudo-constructors'!
+12654:!XuMultiLockSmith class methodsFor: #'pseudo-constructors'!
+12661:!XuMultiLockSmith class methodsFor: #'pseudo-constructors'!
+12665:!XuMultiLockSmith methodsFor: #'promise access'!
+12671:!XuMultiLockSmith methodsFor: #creation!
+12675:!XuMultiLockSmith methodsFor: #creation!
+12679:!XuMultiLockSmith methodsFor: #creation!
+12683:!XuMultiLockSmith methodsFor: #accessing!
+12702:!XuMultiLockSmith methodsFor: #accessing!
+12721:!XuMultiLockSmith methodsFor: #accessing!
+12738:!XuMultiLockSmith methodsFor: #accessing!
+12759:!XuPtrArray class methodsFor: #'pseudo-constructors'!
+12763:!XuPtrArray class methodsFor: #'pseudo-constructors'!
+12770:!XuPtrArray class methodsFor: #'pseudo-constructors'!
+12774:!XuPtrArray methodsFor: #'promise access'!
+12780:!XuPtrArray methodsFor: #creation!
+12784:!XuPtrArray methodsFor: #creation!
+12788:!XuPtrArray methodsFor: #creation!
+12792:!XuFloatArray class methodsFor: #'pseudo-constructors'!
+12796:!XuFloatArray class methodsFor: #'pseudo-constructors'!
+12803:!XuFloatArray class methodsFor: #'pseudo-constructors'!
+12807:!XuFloatArray methodsFor: #'promise access'!
+12813:!XuFloatArray methodsFor: #creation!
+12817:!XuFloatArray methodsFor: #creation!
+12821:!XuFloatArray methodsFor: #creation!
+12825:!XuFloatArray methodsFor: #accessing!
+12842:!XuHumberArray class methodsFor: #'pseudo-constructors'!
+12846:!XuHumberArray class methodsFor: #'pseudo-constructors'!
+12853:!XuHumberArray class methodsFor: #'pseudo-constructors'!
+12857:!XuHumberArray methodsFor: #'promise access'!
+12863:!XuHumberArray methodsFor: #creation!
+12867:!XuHumberArray methodsFor: #creation!
+12871:!XuHumberArray methodsFor: #creation!
+12875:!XuIntArray class methodsFor: #'pseudo-constructors'!
+12879:!XuIntArray class methodsFor: #'pseudo-constructors'!
+12886:!XuIntArray class methodsFor: #'pseudo-constructors'!
+12890:!XuIntArray methodsFor: #'promise access'!
+12896:!XuIntArray methodsFor: #creation!
+12900:!XuIntArray methodsFor: #creation!
+12904:!XuIntArray methodsFor: #creation!
+12908:!XuIntArray methodsFor: #accessing!
+12925:!XuWallLock class methodsFor: #'pseudo-constructors'!
+12929:!XuWallLock class methodsFor: #'pseudo-constructors'!
+12936:!XuWallLock class methodsFor: #'pseudo-constructors'!
+12940:!XuWallLock methodsFor: #'promise access'!
+12946:!XuWallLock methodsFor: #creation!
+12950:!XuWallLock methodsFor: #creation!
+12954:!XuWallLock methodsFor: #creation!
+12958:!XuMultiLock class methodsFor: #'pseudo-constructors'!
+12962:!XuMultiLock class methodsFor: #'pseudo-constructors'!
+12969:!XuMultiLock class methodsFor: #'pseudo-constructors'!
+12973:!XuMultiLock methodsFor: #'promise access'!
+12979:!XuMultiLock methodsFor: #creation!
+12983:!XuMultiLock methodsFor: #creation!
+12987:!XuMultiLock methodsFor: #creation!
+12991:!XuMultiLock methodsFor: #accessing!
+13008:!XuMultiLock methodsFor: #accessing!
+13027:!XuChallengeLock class methodsFor: #'pseudo-constructors'!
+13031:!XuChallengeLock class methodsFor: #'pseudo-constructors'!
+13038:!XuChallengeLock class methodsFor: #'pseudo-constructors'!
+13042:!XuChallengeLock methodsFor: #'promise access'!
+13048:!XuChallengeLock methodsFor: #creation!
+13052:!XuChallengeLock methodsFor: #creation!
+13056:!XuChallengeLock methodsFor: #creation!
+13060:!XuChallengeLock methodsFor: #accessing!
+13079:!XuChallengeLock methodsFor: #accessing!
+13096:!XuMatchLock class methodsFor: #'pseudo-constructors'!
+13100:!XuMatchLock class methodsFor: #'pseudo-constructors'!
+13107:!XuMatchLock class methodsFor: #'pseudo-constructors'!
+13111:!XuMatchLock methodsFor: #'promise access'!
+13117:!XuMatchLock methodsFor: #creation!
+13121:!XuMatchLock methodsFor: #creation!
+13125:!XuMatchLock methodsFor: #creation!
+13129:!XuMatchLock methodsFor: #accessing!
+13149:!XuBooLock class methodsFor: #'pseudo-constructors'!
+13153:!XuBooLock class methodsFor: #'pseudo-constructors'!
+13160:!XuBooLock class methodsFor: #'pseudo-constructors'!
+13164:!XuBooLock methodsFor: #'promise access'!
+13170:!XuBooLock methodsFor: #creation!
+13174:!XuBooLock methodsFor: #creation!
+13178:!XuBooLock methodsFor: #creation!
+13182:!XuBooLock methodsFor: #accessing!
+13199:!XuDataHolder class methodsFor: #'pseudo-constructors'!
+13203:!XuDataHolder class methodsFor: #'pseudo-constructors'!
+13210:!XuDataHolder class methodsFor: #'pseudo-constructors'!
+13214:!XuDataHolder methodsFor: #'promise access'!
+13220:!XuDataHolder methodsFor: #creation!
+13224:!XuDataHolder methodsFor: #creation!
+13228:!XuDataHolder methodsFor: #creation!
+13232:!XuDataHolder methodsFor: #'client accessing'!
+13249:!XuLabel class methodsFor: #'pseudo-constructors'!
+13253:!XuLabel class methodsFor: #'pseudo-constructors'!
+13260:!XuLabel class methodsFor: #'pseudo-constructors'!
+13264:!XuLabel methodsFor: #'promise access'!
+13270:!XuLabel methodsFor: #creation!
+13274:!XuLabel methodsFor: #creation!
+13278:!XuLabel methodsFor: #creation!
+13282:!XuEdition class methodsFor: #'pseudo-constructors'!
+13286:!XuEdition class methodsFor: #'pseudo-constructors'!
+13293:!XuEdition class methodsFor: #'pseudo-constructors'!
+13297:!XuEdition methodsFor: #'promise access'!
+13303:!XuEdition methodsFor: #creation!
+13307:!XuEdition methodsFor: #creation!
+13311:!XuEdition methodsFor: #creation!
+13315:!XuEdition methodsFor: #endorsing!
+13332:!XuEdition methodsFor: #accessing!
+13350:!XuEdition methodsFor: #operations!
+13372:!XuEdition methodsFor: #endorsing!
+13391:!XuEdition methodsFor: #comparing!
+13415:!XuEdition methodsFor: #operations!
+13439:!XuEdition methodsFor: #endorsing!
+13456:!XuEdition methodsFor: #comparing!
+13483:!XuEdition methodsFor: #'smalltalk: defaults'!
+13488:!XuEdition methodsFor: #operations!
+13513:!XuEdition methodsFor: #accessing!
+13531:!XuEdition methodsFor: #labelling!
+13558:!XuEdition methodsFor: #comparing!
+13579:!XuEdition methodsFor: #comparing!
+13604:!XuEdition methodsFor: #accessing!
+13631:!XuEdition methodsFor: #comparing!
+13654:!XuEdition methodsFor: #accessing!
+13676:!XuEdition methodsFor: #comparing!
+13697:!XuEdition methodsFor: #operations!
+13720:!XuEdition methodsFor: #comparing!
+13747:!XuEdition methodsFor: #'smalltalk: defaults'!
+13752:!XuEdition methodsFor: #operations!
+13776:!XuEdition methodsFor: #becoming!
+13798:!XuEdition methodsFor: #'smalltalk: defaults'!
+13803:!XuEdition methodsFor: #operations!
+13824:!XuEdition methodsFor: #accessing!
+13842:!XuEdition methodsFor: #accessing!
+13862:!XuEdition methodsFor: #operations!
+13883:!XuEdition methodsFor: #becoming!
+13903:!XuEdition methodsFor: #'smalltalk: defaults'!
+13908:!XuEdition methodsFor: #comparing!
+13944:!XuEdition methodsFor: #'smalltalk: defaults'!
+13949:!XuEdition methodsFor: #comparing!
+13982:!XuEdition methodsFor: #operations!
+14003:!XuEdition methodsFor: #accessing!
+14024:!XuEdition methodsFor: #becoming!
+14052:!XuEdition methodsFor: #'smalltalk: defaults'!
+14057:!XuEdition methodsFor: #'smalltalk: defaults'!
+14076:!XuEdition methodsFor: #'smalltalk: defaults'!
+14099:!XuEdition methodsFor: #'smalltalk: defaults'!
+14104:!XuEdition methodsFor: #'smalltalk: defaults'!
+14109:!XuEdition methodsFor: #'smalltalk: defaults'!
+14114:!XuEdition methodsFor: #accessing!
+14132:!XuEdition methodsFor: #accessing!
+14152:!XuEdition methodsFor: #'smalltalk: defaults'!
+14171:!XuEdition methodsFor: #'smalltalk: defaults'!
+14192:!XuEdition methodsFor: #'smalltalk: defaults'!
+14211:!XuEdition methodsFor: #'smalltalk: defaults'!
+14216:!XuEdition methodsFor: #'smalltalk: defaults'!
+14235:!XuEdition methodsFor: #endorsing!
+14256:!XuEdition methodsFor: #accessing!
+14274:!XuEdition methodsFor: #becoming!
+14292:!XuEdition methodsFor: #'smalltalk: defaults'!
+14315:!XuEdition methodsFor: #'smalltalk: defaults'!
+14320:!XuEdition methodsFor: #'smalltalk: defaults'!
+14325:!XuEdition methodsFor: #'smalltalk: defaults'!
+14330:!XuEdition methodsFor: #becoming!
+14352:!XuEdition methodsFor: #'smalltalk: defaults'!
+14357:!XuEdition methodsFor: #accessing!
+14376:!XuEdition methodsFor: #labelling!
+14397:!XuEdition methodsFor: #'smalltalk: defaults'!
+14414:!XuWork class methodsFor: #'pseudo-constructors'!
+14418:!XuWork class methodsFor: #'pseudo-constructors'!
+14425:!XuWork class methodsFor: #'pseudo-constructors'!
+14429:!XuWork methodsFor: #'promise access'!
+14435:!XuWork methodsFor: #creation!
+14439:!XuWork methodsFor: #creation!
+14443:!XuWork methodsFor: #creation!
+14447:!XuWork methodsFor: #endorsing!
+14465:!XuWork methodsFor: #history!
+14486:!XuWork methodsFor: #'grab status'!
+14504:!XuWork methodsFor: #permissions!
+14521:!XuWork methodsFor: #sponsoring!
+14541:!XuWork methodsFor: #'grab status'!
+14568:!XuWork methodsFor: #contents!
+14586:!XuWork methodsFor: #permissions!
+14603:!XuWork methodsFor: #history!
+14620:!XuWork methodsFor: #'grab status'!
+14637:!XuWork methodsFor: #permissions!
+14656:!XuWork methodsFor: #history!
+14673:!XuWork methodsFor: #history!
+14691:!XuWork methodsFor: #history!
+14708:!XuWork methodsFor: #'grab status'!
+14726:!XuWork methodsFor: #permissions!
+14743:!XuWork methodsFor: #endorsing!
+14762:!XuWork methodsFor: #permissions!
+14779:!XuWork methodsFor: #permissions!
+14799:!XuWork methodsFor: #permissions!
+14816:!XuWork methodsFor: #sponsoring!
+14835:!XuWork methodsFor: #'grab status'!
+14852:!XuWork methodsFor: #permissions!
+14872:!XuWork methodsFor: #'grab status'!
+14890:!XuWork methodsFor: #'grab status'!
+14908:!XuWork methodsFor: #contents!
+14928:!XuWork methodsFor: #sponsoring!
+14946:!XuWork methodsFor: #endorsing!
+14965:!XuIDHolder class methodsFor: #'pseudo-constructors'!
+14969:!XuIDHolder class methodsFor: #'pseudo-constructors'!
+14976:!XuIDHolder class methodsFor: #'pseudo-constructors'!
+14980:!XuIDHolder methodsFor: #'promise access'!
+14986:!XuIDHolder methodsFor: #creation!
+14990:!XuIDHolder methodsFor: #creation!
+14994:!XuIDHolder methodsFor: #creation!
+14998:!XuIDHolder methodsFor: #accessing!
+15015:!XuClub class methodsFor: #'pseudo-constructors'!
+15019:!XuClub class methodsFor: #'pseudo-constructors'!
+15026:!XuClub class methodsFor: #'pseudo-constructors'!
+15030:!XuClub methodsFor: #'promise access'!
+15036:!XuClub methodsFor: #creation!
+15040:!XuClub methodsFor: #creation!
+15044:!XuClub methodsFor: #creation!
+15048:!XuClub methodsFor: #signing!
+15068:!XuClub methodsFor: #signing!
+15085:!XuClub methodsFor: #signing!
+15102:!XuClub methodsFor: #'managing storage'!
+15121:!XuClub methodsFor: #'smalltalk: defaults'!
+15138:!XuFloatValue class methodsFor: #'pseudo-constructors'!
+15142:!XuFloatValue class methodsFor: #'pseudo-constructors'!
+15149:!XuFloatValue class methodsFor: #'pseudo-constructors'!
+15153:!XuFloatValue methodsFor: #'promise access'!
+15159:!XuFloatValue methodsFor: #creation!
+15163:!XuFloatValue methodsFor: #creation!
+15167:!XuFloatValue methodsFor: #creation!
+15171:!XuFloatValue methodsFor: #accessing!
+15189:!XuIntValue class methodsFor: #'pseudo-constructors'!
+15193:!XuIntValue class methodsFor: #'pseudo-constructors'!
+15200:!XuIntValue class methodsFor: #'pseudo-constructors'!
+15204:!XuIntValue methodsFor: #'promise access'!
+15210:!XuIntValue methodsFor: #creation!
+15214:!XuIntValue methodsFor: #creation!
+15218:!XuIntValue methodsFor: #creation!
+15222:!XuIntValue methodsFor: #operations!
+15241:!XuIntValue methodsFor: #operations!
+15260:!XuIntValue methodsFor: #operations!
+15279:!XuIntValue methodsFor: #operations!
+15298:!XuIntValue methodsFor: #operations!
+15317:!XuIntValue methodsFor: #operations!
+15336:!XuIntValue methodsFor: #operations!
+15355:!XuIntValue methodsFor: #operations!
+15374:!XuIntValue methodsFor: #operations!
+15393:!XuIntValue methodsFor: #operations!
+15412:!XuIntValue methodsFor: #operations!
+15431:!XuIntValue methodsFor: #accessing!
+15449:!XuIntValue methodsFor: #operations!
+15468:!XuSequenceSpace class methodsFor: #'pseudo-constructors'!
+15472:!XuSequenceSpace class methodsFor: #'pseudo-constructors'!
+15479:!XuSequenceSpace class methodsFor: #'pseudo-constructors'!
+15483:!XuSequenceSpace methodsFor: #'promise access'!
+15489:!XuSequenceSpace methodsFor: #creation!
+15493:!XuSequenceSpace methodsFor: #creation!
+15497:!XuSequenceSpace methodsFor: #creation!
+15501:!XuSequenceSpace methodsFor: #making!
+15522:!XuSequenceSpace methodsFor: #making!
+15543:!XuSequenceSpace methodsFor: #making!
+15564:!XuSequenceSpace methodsFor: #making!
+15585:!XuSequenceSpace methodsFor: #temporary!
+15604:!XuSequenceSpace methodsFor: #making!
+15625:!XuSequenceSpace methodsFor: #making!
+15646:!XuSequenceSpace methodsFor: #'smalltalk: defaults'!
+15665:!XuRealSpace class methodsFor: #'pseudo-constructors'!
+15669:!XuRealSpace class methodsFor: #'pseudo-constructors'!
+15676:!XuRealSpace class methodsFor: #'pseudo-constructors'!
+15680:!XuRealSpace methodsFor: #'promise access'!
+15686:!XuRealSpace methodsFor: #creation!
+15690:!XuRealSpace methodsFor: #creation!
+15694:!XuRealSpace methodsFor: #creation!
+15698:!XuRealSpace methodsFor: #making!
+15719:!XuRealSpace methodsFor: #making!
+15740:!XuRealSpace methodsFor: #making!
+15759:!XuRealSpace methodsFor: #making!
+15780:!XuFilterSpace class methodsFor: #'pseudo-constructors'!
+15784:!XuFilterSpace class methodsFor: #'pseudo-constructors'!
+15791:!XuFilterSpace class methodsFor: #'pseudo-constructors'!
+15795:!XuFilterSpace methodsFor: #'promise access'!
+15801:!XuFilterSpace methodsFor: #creation!
+15805:!XuFilterSpace methodsFor: #creation!
+15809:!XuFilterSpace methodsFor: #creation!
+15813:!XuFilterSpace methodsFor: #making!
+15833:!XuFilterSpace methodsFor: #accessing!
+15850:!XuFilterSpace methodsFor: #making!
+15869:!XuFilterSpace methodsFor: #making!
+15888:!XuIntegerSpace class methodsFor: #'pseudo-constructors'!
+15892:!XuIntegerSpace class methodsFor: #'pseudo-constructors'!
+15899:!XuIntegerSpace class methodsFor: #'pseudo-constructors'!
+15903:!XuIntegerSpace methodsFor: #'promise access'!
+15909:!XuIntegerSpace methodsFor: #creation!
+15913:!XuIntegerSpace methodsFor: #creation!
+15917:!XuIntegerSpace methodsFor: #creation!
+15921:!XuIntegerSpace methodsFor: #making!
+15942:!XuIntegerSpace methodsFor: #making!
+15963:!XuIntegerSpace methodsFor: #making!
+15984:!XuIntegerSpace methodsFor: #making!
+16004:!XuIntegerSpace methodsFor: #making!
+16023:!XuCrossSpace class methodsFor: #'pseudo-constructors'!
+16027:!XuCrossSpace class methodsFor: #'pseudo-constructors'!
+16034:!XuCrossSpace class methodsFor: #'pseudo-constructors'!
+16038:!XuCrossSpace methodsFor: #'promise access'!
+16044:!XuCrossSpace methodsFor: #creation!
+16048:!XuCrossSpace methodsFor: #creation!
+16052:!XuCrossSpace methodsFor: #creation!
+16056:!XuCrossSpace methodsFor: #accessing!
+16073:!XuCrossSpace methodsFor: #making!
+16098:!XuCrossSpace methodsFor: #making!
+16117:!XuCrossSpace methodsFor: #making!
+16136:!XuCrossSpace methodsFor: #accessing!
+16155:!XuCrossSpace methodsFor: #making!
+16176:!XuCrossSpace methodsFor: #'smalltalk: defaults'!
+16195:!XuCrossSpace methodsFor: #'smalltalk: defaults'!
+16200:!XuCrossSpace methodsFor: #accessing!
+16217:!XuCrossSpace methodsFor: #making!
+16236:!XuCrossSpace methodsFor: #'smalltalk: defaults'!
+16253:!XuIDSpace class methodsFor: #'pseudo-constructors'!
+16257:!XuIDSpace class methodsFor: #'pseudo-constructors'!
+16264:!XuIDSpace class methodsFor: #'pseudo-constructors'!
+16268:!XuIDSpace methodsFor: #'promise access'!
+16274:!XuIDSpace methodsFor: #creation!
+16278:!XuIDSpace methodsFor: #creation!
+16282:!XuIDSpace methodsFor: #creation!
+16286:!XuIDSpace methodsFor: #accessing!
+16303:!XuIDSpace methodsFor: #making!
+16322:!XuIDSpace methodsFor: #making!
+16339:!XuIDSpace methodsFor: #making!
+16358:!XuArrayBundle class methodsFor: #'pseudo-constructors'!
+16362:!XuArrayBundle class methodsFor: #'pseudo-constructors'!
+16369:!XuArrayBundle class methodsFor: #'pseudo-constructors'!
+16373:!XuArrayBundle methodsFor: #'promise access'!
+16379:!XuArrayBundle methodsFor: #creation!
+16383:!XuArrayBundle methodsFor: #creation!
+16387:!XuArrayBundle methodsFor: #creation!
+16391:!XuArrayBundle methodsFor: #accessing!
+16408:!XuArrayBundle methodsFor: #accessing!
+16425:!XuPlaceHolderBundle class methodsFor: #'pseudo-constructors'!
+16429:!XuPlaceHolderBundle class methodsFor: #'pseudo-constructors'!
+16436:!XuPlaceHolderBundle class methodsFor: #'pseudo-constructors'!
+16440:!XuPlaceHolderBundle methodsFor: #'promise access'!
+16446:!XuPlaceHolderBundle methodsFor: #creation!
+16450:!XuPlaceHolderBundle methodsFor: #creation!
+16454:!XuPlaceHolderBundle methodsFor: #creation!
+16458:!XuElementBundle class methodsFor: #'pseudo-constructors'!
+16462:!XuElementBundle class methodsFor: #'pseudo-constructors'!
+16469:!XuElementBundle class methodsFor: #'pseudo-constructors'!
+16473:!XuElementBundle methodsFor: #'promise access'!
+16479:!XuElementBundle methodsFor: #creation!
+16483:!XuElementBundle methodsFor: #creation!
+16487:!XuElementBundle methodsFor: #creation!
+16491:!XuElementBundle methodsFor: #accessing!
+16508:!HHNHandler methodsFor: #'request handling'!
+16517:!HHNHandler methodsFor: #creation!
+16524:!HHNHandler class methodsFor: #creation!
+16528:!HHNHandler class methodsFor: #generated:!
+16531:!HHNNHandler methodsFor: #'request handling'!
+16541:!HHNNHandler methodsFor: #creation!
+16549:!HHNNHandler class methodsFor: #creation!
+16553:!HHNNHandler class methodsFor: #generated:!
+16556:!HHNNHNHandler methodsFor: #'request handling'!
+16568:!HHNNHNHandler methodsFor: #creation!
+16578:!HHNNHNHandler class methodsFor: #creation!
+16582:!HHNNHNHandler class methodsFor: #generated:!
+16585:!HHNHNHandler methodsFor: #'request handling'!
+16596:!HHNHNHandler methodsFor: #creation!
+16605:!HHNHNHandler class methodsFor: #creation!
+16609:!HHNHNHandler class methodsFor: #generated:!
+16612:!HHHNHandler methodsFor: #'request handling'!
+16622:!HHHNHandler methodsFor: #creation!
+16630:!HHHNHandler class methodsFor: #creation!
+16634:!HHHNHandler class methodsFor: #generated:!
+16637:!HHNNNHandler methodsFor: #'request handling'!
+16648:!HHNNNHandler methodsFor: #creation!
+16657:!HHNNNHandler class methodsFor: #creation!
+16661:!HHNNNHandler class methodsFor: #generated:!
+16664:!HHNNNHNHandler methodsFor: #'request handling'!
+16677:!HHNNNHNHandler methodsFor: #creation!
+16688:!HHNNNHNHandler class methodsFor: #creation!
+16692:!HHNNNHNHandler class methodsFor: #generated:!
+16695:!VHHHandler methodsFor: #'request handling'!
+16705:!VHHHandler methodsFor: #creation!
+16712:!VHHHandler class methodsFor: #creation!
+16716:!VHHHandler class methodsFor: #generated:!
+16719:!VHHHHandler methodsFor: #'request handling'!
+16730:!VHHHHandler methodsFor: #creation!
+16738:!VHHHHandler class methodsFor: #creation!
+16742:!VHHHHandler class methodsFor: #generated:!
+16745:!VHHandler methodsFor: #'request handling'!
+16754:!VHHandler methodsFor: #creation!
+16760:!VHHandler class methodsFor: #creation!
+16764:!VHHandler class methodsFor: #generated:!
+16767:!VHNHHandler methodsFor: #'request handling'!
+16778:!VHNHHandler methodsFor: #creation!
+16786:!VHNHHandler class methodsFor: #creation!
+16790:!VHNHHandler class methodsFor: #generated:!
+16793:!VHNHHHandler methodsFor: #'request handling'!
+16805:!VHNHHHandler methodsFor: #creation!
+16814:!VHNHHHandler class methodsFor: #creation!
+16818:!VHNHHHandler class methodsFor: #generated:!
+16821:!VHHHHHandler methodsFor: #'request handling'!
+16833:!VHHHHHandler methodsFor: #creation!
+16842:!VHHHHHandler class methodsFor: #creation!
+16846:!VHHHHHandler class methodsFor: #generated:!
+16849:!VHHHHHHandler methodsFor: #'request handling'!
+16862:!VHHHHHHandler methodsFor: #creation!
+16872:!VHHHHHHandler class methodsFor: #creation!
+16876:!VHHHHHHandler class methodsFor: #generated:!
+16879:!VHBHandler methodsFor: #'request handling'!
+16889:!VHBHandler methodsFor: #creation!
+16895:!VHBHandler class methodsFor: #creation!
+16899:!VHBHandler class methodsFor: #generated:!
+16902:!HNNHandler methodsFor: #'request handling'!
+16911:!HNNHandler methodsFor: #creation!
+16918:!HNNHandler class methodsFor: #creation!
+16922:!HNNHandler class methodsFor: #generated:!
+16925:!HNHandler methodsFor: #'request handling'!
+16933:!HNHandler methodsFor: #creation!
+16939:!HNHandler class methodsFor: #creation!
+16943:!HNHandler class methodsFor: #generated:!
+16946:!HNNNHandler methodsFor: #'request handling'!
+16956:!HNNNHandler methodsFor: #creation!
+16964:!HNNNHandler class methodsFor: #creation!
+16968:!HNNNHandler class methodsFor: #generated:!
+16971:!HNNNNHandler methodsFor: #'request handling'!
+16982:!HNNNNHandler methodsFor: #creation!
+16991:!HNNNNHandler class methodsFor: #creation!
+16995:!HNNNNHandler class methodsFor: #generated:!
+16998:!VHHNHandler methodsFor: #'request handling'!
+17009:!VHHNHandler methodsFor: #creation!
+17017:!VHHNHandler class methodsFor: #creation!
+17021:!VHHNHandler class methodsFor: #generated:!
+17024:!VHNHandler methodsFor: #'request handling'!
+17034:!VHNHandler methodsFor: #creation!
+17041:!VHNHandler class methodsFor: #creation!
+17045:!VHNHandler class methodsFor: #generated:!
+17048:!HHandler methodsFor: #'request handling'!
+17054:!HHandler methodsFor: #creation!
+17059:!HHandler class methodsFor: #creation!
+17063:!HHandler class methodsFor: #generated:!
+17066:!HHHandler methodsFor: #'request handling'!
+17074:!HHHandler methodsFor: #creation!
+17080:!HHHandler class methodsFor: #creation!
+17084:!HHHandler class methodsFor: #generated:!
+17087:!HHHHandler methodsFor: #'request handling'!
+17096:!HHHHandler methodsFor: #creation!
+17103:!HHHHandler class methodsFor: #creation!
+17107:!HHHHandler class methodsFor: #generated:!
+17110:!HHHHHandler methodsFor: #'request handling'!
+17120:!HHHHHandler methodsFor: #creation!
+17128:!HHHHHandler class methodsFor: #creation!
+17132:!HHHHHandler class methodsFor: #generated:!
+17135:!HHNHHandler methodsFor: #'request handling'!
+17145:!HHNHHandler methodsFor: #creation!
+17153:!HHNHHandler class methodsFor: #creation!
+17157:!HHNHHandler class methodsFor: #generated:!
+17160:!HHHHHHandler methodsFor: #'request handling'!
+17171:!HHHHHHandler methodsFor: #creation!
+17180:!HHHHHHandler class methodsFor: #creation!
+17184:!HHHHHHandler class methodsFor: #generated:!
+17187:!HHHHHHHandler methodsFor: #'request handling'!
+17199:!HHHHHHHandler methodsFor: #creation!
+17209:!HHHHHHHandler class methodsFor: #creation!
+17213:!HHHHHHHandler class methodsFor: #generated:!
+17216:!HHNNHHandler methodsFor: #'request handling'!
+17227:!HHNNHHandler methodsFor: #creation!
+17236:!HHNNHHandler class methodsFor: #creation!
+17240:!HHNNHHandler class methodsFor: #generated:!
+17243:!HHNNNHHandler methodsFor: #'request handling'!
+17255:!HHNNNHHandler methodsFor: #creation!
+17265:!HHNNNHHandler class methodsFor: #creation!
+17269:!HHNNNHHandler class methodsFor: #generated:!
+17272:!BHHHandler methodsFor: #'request handling'!
+17281:!BHHHandler methodsFor: #creation!
+17288:!BHHHandler class methodsFor: #creation!
+17292:!BHHHandler class methodsFor: #generated:!
+17295:!BHHandler methodsFor: #'request handling'!
+17303:!BHHandler methodsFor: #creation!
+17309:!BHHandler class methodsFor: #creation!
+17313:!BHHandler class methodsFor: #generated:!
+17316:!HHBHandler methodsFor: #'request handling'!
+17325:!HHBHandler methodsFor: #creation!
+17331:!HHBHandler class methodsFor: #creation!
+17335:!HHBHandler class methodsFor: #generated:!
+17338:!HHHBHandler methodsFor: #'request handling'!
+17348:!HHHBHandler methodsFor: #creation!
+17355:!HHHBHandler class methodsFor: #creation!
+17359:!HHHBHandler class methodsFor: #generated:!
+17362:!BHHHHandler methodsFor: #'request handling'!
+17372:!BHHHHandler methodsFor: #creation!
+17380:!BHHHHandler class methodsFor: #creation!
+17384:!BHHHHandler class methodsFor: #generated:!
+17387:!RequestHandler class methodsFor: #'translate: generated'!
+17391:!RequestHandler class methodsFor: #'translate: generated'!
+17395:!RequestHandler class methodsFor: #'translate: generated'!
+17399:!RequestHandler class methodsFor: #'translate: generated'!
+17403:!RequestHandler class methodsFor: #'translate: generated'!
+17407:!RequestHandler class methodsFor: #'translate: generated'!
+17411:!RequestHandler class methodsFor: #'translate: generated'!
+17415:!RequestHandler class methodsFor: #'translate: generated'!
+17419:!RequestHandler class methodsFor: #'translate: generated'!
+17423:!RequestHandler class methodsFor: #'translate: generated'!
+17427:!RequestHandler class methodsFor: #'translate: generated'!
+17431:!RequestHandler class methodsFor: #'translate: generated'!
+17435:!RequestHandler class methodsFor: #'translate: generated'!
+17439:!RequestHandler class methodsFor: #'translate: generated'!
+17443:!RequestHandler class methodsFor: #'translate: generated'!
+17447:!RequestHandler class methodsFor: #'translate: generated'!
+17451:!RequestHandler class methodsFor: #'translate: generated'!
+17455:!RequestHandler class methodsFor: #'translate: generated'!
+17459:!RequestHandler class methodsFor: #'translate: generated'!
+17463:!RequestHandler class methodsFor: #'translate: generated'!
+17467:!RequestHandler class methodsFor: #'translate: generated'!
+17471:!RequestHandler class methodsFor: #'translate: generated'!
+17475:!RequestHandler class methodsFor: #'translate: generated'!
+17479:!RequestHandler class methodsFor: #'translate: generated'!
+17483:!RequestHandler class methodsFor: #'translate: generated'!
+17487:!RequestHandler class methodsFor: #'translate: generated'!
+17491:!RequestHandler class methodsFor: #'translate: generated'!
+17495:!RequestHandler class methodsFor: #'translate: generated'!
+17499:!RequestHandler class methodsFor: #'translate: generated'!
+17503:!RequestHandler class methodsFor: #'translate: generated'!
+17507:!RequestHandler class methodsFor: #'translate: generated'!
+17511:!RequestHandler class methodsFor: #'translate: generated'!
+17515:!RequestHandler class methodsFor: #'translate: generated'!
+17519:!RequestHandler class methodsFor: #'translate: generated'!
+17523:!RequestHandler class methodsFor: #'translate: generated'!
+17527:!RequestHandler class methodsFor: #'translate: generated'!
+17531:!RequestHandler class methodsFor: #'translate: generated'!
+17535:!RequestHandler class methodsFor: #'translate: generated'!
+17539:!RequestHandler class methodsFor: #'translate: generated'!
+17543:!RequestHandler class methodsFor: #'translate: generated'!
+17547:!RequestHandler class methodsFor: #'translate: generated'!
+17551:!RequestHandler class methodsFor: #'translate: generated'!
+17555:!RequestHandler class methodsFor: #'translate: generated'!
+17559:!RequestHandler class methodsFor: #'translate: generated'!
+17563:!RequestHandler class methodsFor: #'translate: generated'!
+17567:!RequestHandler class methodsFor: #'translate: generated'!
+17571:!RequestHandler class methodsFor: #'translate: generated'!
+17575:!RequestHandler class methodsFor: #'translate: generated'!
+17579:!RequestHandler class methodsFor: #'translate: generated'!
+17583:!RequestHandler class methodsFor: #'translate: generated'!
+17587:!RequestHandler class methodsFor: #'translate: generated'!
+17591:!RequestHandler class methodsFor: #'translate: generated'!
+17595:!RequestHandler class methodsFor: #'translate: generated'!
+17599:!RequestHandler class methodsFor: #'translate: generated'!
+17603:!RequestHandler class methodsFor: #'translate: generated'!
+17607:!RequestHandler class methodsFor: #'translate: generated'!
+17611:!RequestHandler class methodsFor: #'translate: generated'!
+17615:!RequestHandler class methodsFor: #'translate: generated'!
+17619:!RequestHandler class methodsFor: #'translate: generated'!
+17623:!RequestHandler class methodsFor: #'translate: generated'!
+17627:!RequestHandler class methodsFor: #'translate: generated'!
+17631:!RequestHandler class methodsFor: #'translate: generated'!
+17635:!RequestHandler class methodsFor: #'translate: generated'!
+17639:!RequestHandler class methodsFor: #'translate: generated'!
+17643:!RequestHandler class methodsFor: #'translate: generated'!
+17647:!RequestHandler class methodsFor: #'translate: generated'!
+17651:!RequestHandler class methodsFor: #'translate: generated'!
+17655:!RequestHandler class methodsFor: #'translate: generated'!
+17659:!RequestHandler class methodsFor: #'translate: generated'!
+17663:!RequestHandler class methodsFor: #'translate: generated'!
+17667:!RequestHandler class methodsFor: #'translate: generated'!
+17671:!RequestHandler class methodsFor: #'translate: generated'!
+17675:!RequestHandler class methodsFor: #'translate: generated'!
+17679:!RequestHandler class methodsFor: #'translate: generated'!
+17683:!RequestHandler class methodsFor: #'translate: generated'!
+17687:!RequestHandler class methodsFor: #'translate: generated'!
+17691:!RequestHandler class methodsFor: #'translate: generated'!
+17695:!RequestHandler class methodsFor: #'translate: generated'!
+17699:!RequestHandler class methodsFor: #'translate: generated'!
+17703:!RequestHandler class methodsFor: #'translate: generated'!
+17707:!RequestHandler class methodsFor: #'translate: generated'!
+17711:!RequestHandler class methodsFor: #'translate: generated'!
+17715:!RequestHandler class methodsFor: #'translate: generated'!
+17719:!RequestHandler class methodsFor: #'translate: generated'!
+17723:!RequestHandler class methodsFor: #'translate: generated'!
+17727:!RequestHandler class methodsFor: #'translate: generated'!
+17731:!RequestHandler class methodsFor: #'translate: generated'!
+17735:!RequestHandler class methodsFor: #'translate: generated'!
+17739:!RequestHandler class methodsFor: #'translate: generated'!
+17743:!RequestHandler class methodsFor: #'translate: generated'!
+17747:!RequestHandler class methodsFor: #'translate: generated'!
+17751:!RequestHandler class methodsFor: #'translate: generated'!
+17755:!RequestHandler class methodsFor: #'translate: generated'!
+17759:!RequestHandler class methodsFor: #'translate: generated'!
+17763:!RequestHandler class methodsFor: #'translate: generated'!
+17767:!RequestHandler class methodsFor: #'translate: generated'!
+17771:!RequestHandler class methodsFor: #'translate: generated'!
+17775:!RequestHandler class methodsFor: #'translate: generated'!
+17779:!RequestHandler class methodsFor: #'translate: generated'!
+17783:!RequestHandler class methodsFor: #'translate: generated'!
+17787:!RequestHandler class methodsFor: #'translate: generated'!
+17791:!RequestHandler class methodsFor: #'translate: generated'!
+17795:!RequestHandler class methodsFor: #'translate: generated'!
+17799:!RequestHandler class methodsFor: #'translate: generated'!
+17803:!RequestHandler class methodsFor: #'translate: generated'!
+17807:!RequestHandler class methodsFor: #'translate: generated'!
+17811:!RequestHandler class methodsFor: #'translate: generated'!
+17815:!RequestHandler class methodsFor: #'translate: generated'!
+17819:!RequestHandler class methodsFor: #'translate: generated'!
+17823:!RequestHandler class methodsFor: #'translate: generated'!
+17827:!RequestHandler class methodsFor: #'translate: generated'!
+17831:!RequestHandler class methodsFor: #'translate: generated'!
+17835:!RequestHandler class methodsFor: #'translate: generated'!
+17839:!RequestHandler class methodsFor: #'translate: generated'!
+17843:!RequestHandler class methodsFor: #'translate: generated'!
+17847:!RequestHandler class methodsFor: #'translate: generated'!
+17851:!RequestHandler class methodsFor: #'translate: generated'!
+17855:!RequestHandler class methodsFor: #'translate: generated'!
+17859:!RequestHandler class methodsFor: #'translate: generated'!
+17863:!RequestHandler class methodsFor: #'translate: generated'!
+17867:!RequestHandler class methodsFor: #'translate: generated'!
+17871:!RequestHandler class methodsFor: #'translate: generated'!
+17875:!RequestHandler class methodsFor: #'translate: generated'!
+17879:!RequestHandler class methodsFor: #'translate: generated'!
+17883:!RequestHandler class methodsFor: #'translate: generated'!
+17887:!RequestHandler class methodsFor: #'translate: generated'!
+17891:!RequestHandler class methodsFor: #'translate: generated'!
+17895:!RequestHandler class methodsFor: #'translate: generated'!
+17899:!RequestHandler class methodsFor: #'translate: generated'!
+17903:!RequestHandler class methodsFor: #'translate: generated'!
+17907:!RequestHandler class methodsFor: #'translate: generated'!
+17911:!RequestHandler class methodsFor: #'translate: generated'!
+17915:!RequestHandler class methodsFor: #'translate: generated'!
+17919:!RequestHandler class methodsFor: #'translate: generated'!
+17923:!RequestHandler class methodsFor: #'translate: generated'!
+17927:!RequestHandler class methodsFor: #'translate: generated'!
+17931:!RequestHandler class methodsFor: #'translate: generated'!
+17935:!RequestHandler class methodsFor: #'translate: generated'!
+17939:!RequestHandler class methodsFor: #'translate: generated'!
+17943:!RequestHandler class methodsFor: #'translate: generated'!
+17947:!RequestHandler class methodsFor: #'translate: generated'!
+17951:!RequestHandler class methodsFor: #'translate: generated'!
+17955:!RequestHandler class methodsFor: #'translate: generated'!
+17959:!RequestHandler class methodsFor: #'translate: generated'!
+17963:!RequestHandler class methodsFor: #'translate: generated'!
+17967:!RequestHandler class methodsFor: #'translate: generated'!
+17971:!RequestHandler class methodsFor: #'translate: generated'!
+17975:!RequestHandler class methodsFor: #'translate: generated'!
+17979:!RequestHandler class methodsFor: #'translate: generated'!
+17983:!RequestHandler class methodsFor: #'translate: generated'!
+17987:!RequestHandler class methodsFor: #'translate: generated'!
+17991:!RequestHandler class methodsFor: #'translate: generated'!
+17995:!RequestHandler class methodsFor: #'translate: generated'!
+17999:!RequestHandler class methodsFor: #'translate: generated'!
+18003:!RequestHandler class methodsFor: #'translate: generated'!
+18007:!RequestHandler class methodsFor: #'translate: generated'!
+18011:!RequestHandler class methodsFor: #'translate: generated'!
+18015:!RequestHandler class methodsFor: #'translate: generated'!
+18019:!RequestHandler class methodsFor: #'translate: generated'!
+18023:!RequestHandler class methodsFor: #'translate: generated'!
+18027:!RequestHandler class methodsFor: #'translate: generated'!
+18031:!RequestHandler class methodsFor: #'translate: generated'!
+18035:!RequestHandler class methodsFor: #'translate: generated'!
+18039:!RequestHandler class methodsFor: #'translate: generated'!
+18043:!RequestHandler class methodsFor: #'translate: generated'!
+18047:!RequestHandler class methodsFor: #'translate: generated'!
+18051:!RequestHandler class methodsFor: #'translate: generated'!
+18055:!RequestHandler class methodsFor: #'translate: generated'!
+18059:!RequestHandler class methodsFor: #'translate: generated'!
+18063:!RequestHandler class methodsFor: #'translate: generated'!
+18067:!RequestHandler class methodsFor: #'translate: generated'!
+18071:!RequestHandler class methodsFor: #'translate: generated'!
+18075:!RequestHandler class methodsFor: #'translate: generated'!
+18079:!RequestHandler class methodsFor: #'translate: generated'!
+18083:!RequestHandler class methodsFor: #'translate: generated'!
+18087:!RequestHandler class methodsFor: #'translate: generated'!
+18091:!RequestHandler class methodsFor: #'translate: generated'!
+18095:!RequestHandler class methodsFor: #'translate: generated'!
+18099:!RequestHandler class methodsFor: #'translate: generated'!
+18103:!RequestHandler class methodsFor: #'translate: generated'!
+18107:!RequestHandler class methodsFor: #'translate: generated'!
+18111:!RequestHandler class methodsFor: #'translate: generated'!
+18115:!RequestHandler class methodsFor: #'translate: generated'!
+18119:!RequestHandler class methodsFor: #'translate: generated'!
+18123:!RequestHandler class methodsFor: #'translate: generated'!
+18127:!RequestHandler class methodsFor: #'translate: generated'!
+18131:!RequestHandler class methodsFor: #'translate: generated'!
+18135:!RequestHandler class methodsFor: #'translate: generated'!
+18139:!RequestHandler class methodsFor: #'translate: generated'!
+18143:!RequestHandler class methodsFor: #'translate: generated'!
+18147:!RequestHandler class methodsFor: #'translate: generated'!
+18151:!RequestHandler class methodsFor: #'translate: generated'!
+18155:!RequestHandler class methodsFor: #'translate: generated'!
+18159:!RequestHandler class methodsFor: #'translate: generated'!
+18163:!RequestHandler class methodsFor: #'translate: generated'!
+18167:!RequestHandler class methodsFor: #'translate: generated'!
+18171:!RequestHandler class methodsFor: #'translate: generated'!
+18175:!RequestHandler class methodsFor: #'translate: generated'!
+18179:!RequestHandler class methodsFor: #'translate: generated'!
+18183:!RequestHandler class methodsFor: #'translate: generated'!
+18187:!RequestHandler class methodsFor: #'translate: generated'!
+18191:!RequestHandler class methodsFor: #'translate: generated'!
+18195:!RequestHandler class methodsFor: #'translate: generated'!
+18199:!RequestHandler class methodsFor: #'translate: generated'!
+18203:!RequestHandler class methodsFor: #'translate: generated'!
+18207:!RequestHandler class methodsFor: #'translate: generated'!
+18211:!RequestHandler class methodsFor: #'translate: generated'!
+18215:!RequestHandler class methodsFor: #'translate: generated'!
+18219:!RequestHandler class methodsFor: #'translate: generated'!
+18223:!RequestHandler class methodsFor: #'translate: generated'!
+18227:!RequestHandler class methodsFor: #'translate: generated'!
+18231:!RequestHandler class methodsFor: #'translate: generated'!
+18235:!RequestHandler class methodsFor: #'translate: generated'!
+18239:!RequestHandler class methodsFor: #'translate: generated'!
+18243:!RequestHandler class methodsFor: #'translate: generated'!
+18247:!RequestHandler class methodsFor: #'translate: generated'!
+18251:!RequestHandler class methodsFor: #'translate: generated'!
+18255:!RequestHandler class methodsFor: #'translate: generated'!
+18259:!RequestHandler class methodsFor: #'translate: generated'!
+18263:!RequestHandler class methodsFor: #'translate: generated'!
+18267:!RequestHandler class methodsFor: #'translate: generated'!
+18271:!RequestHandler class methodsFor: #'translate: generated'!
+18275:!RequestHandler class methodsFor: #'translate: generated'!
+18279:!RequestHandler class methodsFor: #'translate: generated'!
+18283:!RequestHandler class methodsFor: #'translate: generated'!
+18287:!RequestHandler class methodsFor: #'translate: generated'!
+18291:!RequestHandler class methodsFor: #'translate: generated'!
+18295:!RequestHandler class methodsFor: #'translate: generated'!
+18299:!RequestHandler class methodsFor: #'translate: generated'!
+18303:!RequestHandler class methodsFor: #'translate: generated'!
+18307:!RequestHandler class methodsFor: #'translate: generated'!
+18311:!RequestHandler class methodsFor: #'translate: generated'!
+18315:!RequestHandler class methodsFor: #'translate: generated'!
+18319:!RequestHandler class methodsFor: #'translate: generated'!
+18323:!RequestHandler class methodsFor: #'translate: generated'!
+18327:!RequestHandler class methodsFor: #'translate: generated'!
+18331:!RequestHandler class methodsFor: #'translate: generated'!
+18335:!RequestHandler class methodsFor: #'translate: generated'!
+18339:!RequestHandler class methodsFor: #'translate: generated'!
+18343:!RequestHandler class methodsFor: #'translate: generated'!
+18347:!RequestHandler class methodsFor: #'translate: generated'!
+18351:!RequestHandler class methodsFor: #'translate: generated'!
+18355:!RequestHandler class methodsFor: #'translate: generated'!
+18359:!RequestHandler class methodsFor: #'translate: generated'!
+18363:!RequestHandler class methodsFor: #'translate: generated'!
+18367:!RequestHandler class methodsFor: #'translate: generated'!
+18371:!RequestHandler class methodsFor: #'translate: generated'!
+18375:!RequestHandler class methodsFor: #'translate: generated'!
+18379:!RequestHandler class methodsFor: #'translate: generated'!
+18383:!RequestHandler class methodsFor: #'translate: generated'!
+18387:!RequestHandler class methodsFor: #'translate: generated'!
+18391:!RequestHandler class methodsFor: #'translate: generated'!
+18395:!RequestHandler class methodsFor: #'translate: generated'!
+18399:!RequestHandler class methodsFor: #'translate: generated'!
+18403:!RequestHandler class methodsFor: #'translate: generated'!
+18407:!RequestHandler class methodsFor: #'translate: generated'!
+18411:!RequestHandler class methodsFor: #'translate: generated'!
+18415:!RequestHandler class methodsFor: #'translate: generated'!
+18419:!RequestHandler class methodsFor: #'translate: generated'!
+18423:!RequestHandler class methodsFor: #'translate: generated'!
+18427:!RequestHandler class methodsFor: #'translate: generated'!
+18431:!RequestHandler class methodsFor: #'translate: generated'!
+18435:!RequestHandler class methodsFor: #'translate: generated'!
+18439:!RequestHandler class methodsFor: #'translate: generated'!
+18443:!RequestHandler class methodsFor: #'translate: generated'!
+18447:!RequestHandler class methodsFor: #'translate: generated'!
+18451:!RequestHandler class methodsFor: #'translate: generated'!
+18455:!RequestHandler class methodsFor: #'translate: generated'!
+18459:!RequestHandler class methodsFor: #'translate: generated'!
+18463:!RequestHandler class methodsFor: #'translate: generated'!
+18467:!RequestHandler class methodsFor: #'translate: generated'!
+18471:!RequestHandler class methodsFor: #'translate: generated'!
+18475:!RequestHandler class methodsFor: #'translate: generated'!
+18479:!RequestHandler class methodsFor: #'translate: generated'!
+18483:!RequestHandler class methodsFor: #'translate: generated'!
+18487:!RequestHandler class methodsFor: #'translate: generated'!
+18491:!RequestHandler class methodsFor: #'translate: generated'!
+18495:!RequestHandler class methodsFor: #'translate: generated'!
+18499:!RequestHandler class methodsFor: #'translate: generated'!
+18503:!RequestHandler class methodsFor: #'translate: generated'!
+18507:!RequestHandler class methodsFor: #'translate: generated'!
+18511:!RequestHandler class methodsFor: #'translate: generated'!
+18515:!RequestHandler class methodsFor: #'translate: generated'!
+18519:!RequestHandler class methodsFor: #'translate: generated'!
+18523:!RequestHandler class methodsFor: #'translate: generated'!
+18527:!RequestHandler class methodsFor: #'translate: generated'!
+18531:!RequestHandler class methodsFor: #'translate: generated'!
+18535:!RequestHandler class methodsFor: #'translate: generated'!
+18539:!RequestHandler class methodsFor: #'translate: generated'!
+18543:!RequestHandler class methodsFor: #'translate: generated'!
+18547:!RequestHandler class methodsFor: #'translate: generated'!
+18551:!RequestHandler class methodsFor: #'translate: generated'!
+18555:!RequestHandler class methodsFor: #'translate: generated'!
+18559:!RequestHandler class methodsFor: #'translate: generated'!
+18563:!RequestHandler class methodsFor: #'translate: generated'!
+18567:!RequestHandler class methodsFor: #'translate: generated'!
+18571:!RequestHandler class methodsFor: #'translate: generated'!
+18575:!RequestHandler class methodsFor: #'translate: generated'!
+18579:!RequestHandler class methodsFor: #'translate: generated'!
+18583:!RequestHandler class methodsFor: #'translate: generated'!
+18587:!RequestHandler class methodsFor: #'translate: generated'!
+18591:!RequestHandler class methodsFor: #'translate: generated'!
+18595:!RequestHandler class methodsFor: #'translate: generated'!
+18599:!RequestHandler class methodsFor: #'translate: generated'!
+18603:!RequestHandler class methodsFor: #'translate: generated'!
+18607:!RequestHandler class methodsFor: #'translate: generated'!
+18611:!RequestHandler class methodsFor: #'translate: generated'!
+18615:!RequestHandler class methodsFor: #'translate: generated'!
+18619:!RequestHandler class methodsFor: #'translate: generated'!
+18623:!RequestHandler class methodsFor: #'translate: generated'!
+18627:!RequestHandler class methodsFor: #'translate: generated'!
+18631:!RequestHandler class methodsFor: #'translate: generated'!
+18635:!RequestHandler class methodsFor: #'translate: generated'!
+18639:!RequestHandler class methodsFor: #'translate: generated'!
+18643:!RequestHandler class methodsFor: #'translate: generated'!
+18647:!RequestHandler class methodsFor: #'translate: generated'!
+18651:!RequestHandler class methodsFor: #'translate: generated'!
+18655:!RequestHandler class methodsFor: #'translate: generated'!
+18659:!RequestHandler class methodsFor: #'translate: generated'!
+18663:!RequestHandler class methodsFor: #'translate: generated'!
+18667:!RequestHandler class methodsFor: #'translate: generated'!
+18671:!RequestHandler class methodsFor: #'translate: generated'!
+18675:!RequestHandler class methodsFor: #'translate: generated'!
+18679:!RequestHandler class methodsFor: #'translate: generated'!
+18683:!RequestHandler class methodsFor: #'translate: generated'!
+18687:!RequestHandler class methodsFor: #'translate: generated'!
+18691:!RequestHandler class methodsFor: #'translate: generated'!
+18695:!RequestHandler class methodsFor: #'translate: generated'!
+18699:!RequestHandler class methodsFor: #'translate: generated'!
+18703:!RequestHandler class methodsFor: #'translate: generated'!
+18707:!RequestHandler class methodsFor: #'translate: generated'!
+18711:!RequestHandler class methodsFor: #'translate: generated'!
+18715:!RequestHandler class methodsFor: #'translate: generated'!
+18719:!RequestHandler class methodsFor: #'translate: generated'!
+18723:!RequestHandler class methodsFor: #'translate: generated'!
+18727:!RequestHandler class methodsFor: #'translate: generated'!
+18731:!RequestHandler class methodsFor: #'translate: generated'!
+18735:!RequestHandler class methodsFor: #'translate: generated'!
+18739:!RequestHandler class methodsFor: #'translate: generated'!
+18743:!RequestHandler class methodsFor: #'translate: generated'!
+18747:!RequestHandler class methodsFor: #'translate: generated'!
+18751:!RequestHandler class methodsFor: #'translate: generated'!
+18755:!RequestHandler class methodsFor: #'translate: generated'!
+18759:!RequestHandler class methodsFor: #'translate: generated'!
+18763:!RequestHandler class methodsFor: #'translate: generated'!
+18767:!RequestHandler class methodsFor: #'translate: generated'!
+18771:!RequestHandler class methodsFor: #'translate: generated'!
+18775:!RequestHandler class methodsFor: #'translate: generated'!
+18779:!RequestHandler class methodsFor: #'translate: generated'!
+18783:!RequestHandler class methodsFor: #'translate: generated'!
+18787:!RequestHandler class methodsFor: #'translate: generated'!
+18791:!RequestHandler class methodsFor: #'translate: generated'!
+18795:!RequestHandler class methodsFor: #'translate: generated'!
+18799:!RequestHandler class methodsFor: #'translate: generated'!
+18803:!RequestHandler class methodsFor: #'translate: generated'!
+18807:!RequestHandler class methodsFor: #'translate: generated'!
+18811:!RequestHandler class methodsFor: #'translate: generated'!
+18815:!RequestHandler class methodsFor: #'translate: generated'!
+18819:!RequestHandler class methodsFor: #'translate: generated'!
+18823:!RequestHandler class methodsFor: #'translate: generated'!
+18827:!RequestHandler class methodsFor: #'translate: generated'!
+18831:!RequestHandler class methodsFor: #'translate: generated'!
+18835:!RequestHandler class methodsFor: #'translate: generated'!
+18839:!RequestHandler class methodsFor: #'translate: generated'!
+18843:!RequestHandler class methodsFor: #'translate: generated'!
+18847:!RequestHandler class methodsFor: #'translate: generated'!
+18851:!RequestHandler class methodsFor: #'translate: generated'!
+18855:!RequestHandler class methodsFor: #'translate: generated'!
+18859:!RequestHandler class methodsFor: #'translate: generated'!
+18863:!RequestHandler class methodsFor: #'translate: generated'!
+18867:!RequestHandler class methodsFor: #'translate: generated'!
+18871:!RequestHandler class methodsFor: #'translate: generated'!
+18875:!RequestHandler class methodsFor: #'translate: generated'!
+18879:!RequestHandler class methodsFor: #'translate: generated'!
+18883:!RequestHandler class methodsFor: #'translate: generated'!
+18887:!RequestHandler class methodsFor: #'translate: generated'!
+18891:!RequestHandler class methodsFor: #'translate: generated'!
+18895:!RequestHandler class methodsFor: #'translate: generated'!
+18899:!RequestHandler class methodsFor: #'translate: generated'!
+18903:!RequestHandler class methodsFor: #'translate: generated'!
+18907:!RequestHandler class methodsFor: #'translate: generated'!
+18911:!RequestHandler class methodsFor: #'translate: generated'!
+18915:!RequestHandler class methodsFor: #'translate: generated'!
+18919:!RequestHandler class methodsFor: #'translate: generated'!
+18923:!RequestHandler class methodsFor: #'translate: generated'!
+18927:!RequestHandler class methodsFor: #'translate: generated'!
+18931:!RequestHandler class methodsFor: #'translate: generated'!
+18935:!RequestHandler class methodsFor: #'translate: generated'!
+18939:!RequestHandler class methodsFor: #'translate: generated'!
+18943:!RequestHandler class methodsFor: #'translate: generated'!
+18947:!RequestHandler class methodsFor: #'translate: generated'!
+18951:!RequestHandler class methodsFor: #'translate: generated'!
+18955:!RequestHandler class methodsFor: #'translate: generated'!
+18959:!RequestHandler class methodsFor: #'translate: generated'!
+18963:!RequestHandler class methodsFor: #'translate: generated'!
+18967:!RequestHandler class methodsFor: #'translate: generated'!
+18971:!RequestHandler class methodsFor: #'translate: generated'!
+18975:!RequestHandler class methodsFor: #'translate: generated'!
+18979:!RequestHandler class methodsFor: #'translate: generated'!
+18983:!RequestHandler class methodsFor: #'translate: generated'!
+18987:!RequestHandler class methodsFor: #'translate: generated'!
+18991:!RequestHandler class methodsFor: #'translate: generated'!
+18995:!RequestHandler class methodsFor: #'translate: generated'!
+18999:!RequestHandler class methodsFor: #'translate: generated'!
+19003:!RequestHandler class methodsFor: #'translate: generated'!
+19007:!RequestHandler class methodsFor: #'translate: generated'!
+19011:!RequestHandler class methodsFor: #'translate: generated'!
+19015:!RequestHandler class methodsFor: #'translate: generated'!
+19019:!RequestHandler class methodsFor: #'translate: generated'!
+19023:!RequestHandler class methodsFor: #'translate: generated'!
+19027:!RequestHandler class methodsFor: #'translate: generated'!
+19031:!RequestHandler class methodsFor: #'translate: generated'!
+19035:!RequestHandler class methodsFor: #'translate: generated'!
+19039:!RequestHandler class methodsFor: #'translate: generated'!
+19043:!RequestHandler class methodsFor: #'translate: generated'!
+19047:!RequestHandler class methodsFor: #'translate: generated'!
+19051:!RequestHandler class methodsFor: #'translate: generated'!
+19055:!RequestHandler class methodsFor: #'translate: generated'!
+19059:!RequestHandler class methodsFor: #'translate: generated'!
+19063:!RequestHandler class methodsFor: #'translate: generated'!
+19067:!RequestHandler class methodsFor: #'translate: generated'!
+19071:!RequestHandler class methodsFor: #'translate: generated'!
+19075:!RequestHandler class methodsFor: #'translate: generated'!
+19079:!RequestHandler class methodsFor: #'translate: generated'!
+19083:!RequestHandler class methodsFor: #'translate: generated'!
+19087:!RequestHandler class methodsFor: #'translate: generated'!
+19091:!RequestHandler class methodsFor: #'translate: generated'!
+19095:!RequestHandler class methodsFor: #'translate: generated'!
+19099:!RequestHandler class methodsFor: #'translate: generated'!
+19103:!RequestHandler class methodsFor: #'translate: generated'!
+19107:!RequestHandler class methodsFor: #'translate: generated'!
+19111:!RequestHandler class methodsFor: #'translate: generated'!
+19115:!RequestHandler class methodsFor: #'translate: generated'!
+19119:!RequestHandler class methodsFor: #'translate: generated'!
+19123:!RequestHandler class methodsFor: #'translate: generated'!
+19127:!RequestHandler class methodsFor: #'translate: generated'!
+19131:!RequestHandler class methodsFor: #'translate: generated'!
+19135:!RequestHandler class methodsFor: #'translate: generated'!
+19139:!RequestHandler class methodsFor: #'translate: generated'!
+19143:!RequestHandler class methodsFor: #'translate: generated'!
+19147:!RequestHandler class methodsFor: #'translate: generated'!
+19151:!PromiseManager class methodsFor: #'translate: generated'!
+19479:!PromiseManager class methodsFor: #'translate: generated'!
+19827:!PromiseManager class methodsFor: #'translate: generated'!
+20173:!PromiseManager class methodsFor: #'translate: generated'!
+20437:!PromiseManager class methodsFor: #'translate: generated'!
+20795:!PromiseManager class methodsFor: #'translate: generated'!
+21064:!PromiseManager class methodsFor: #'translate: generated'!
+21155:!BeGrandMap methodsFor: #'private: booting'!
+21312:!BeGrandMap methodsFor: #'private: create'!

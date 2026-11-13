@@ -1,0 +1,15 @@
+"Load in the Organizer framework. These are the organizers that contain
+ Environments with inspectors."
+
+
+| dir |
+dir _ ''.   "Change this to the directory that contains the tutorial code"
+
+#( 'compiler.st'
+	'Interface-Structures.st'
+	'Framework-Tree.st'
+	'Framework-List.st'
+	'Framework-Environments.st'
+) do: [ :aName |         
+        (Filename named: dir, aName) fileIn ] 
+

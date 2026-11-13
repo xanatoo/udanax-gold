@@ -1,0 +1,10 @@
+#ifndef SHEET_OXX
+#define SHEET_OXX
+
+class FESheet;
+typedef FESheetP FESheet *;
+
+class FEFormSheet;
+typedef FEFormSheetP FEFormSheet *;
+
+#endif SHEET_OXX

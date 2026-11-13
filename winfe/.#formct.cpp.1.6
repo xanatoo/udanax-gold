@@ -1,0 +1,92 @@
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "formct.h"
+#include "sheet.h"
+#include "content.h"
+
+/******************* FEFormContent ********************/
+
+XU_DEFINE_TYPE(FEFormContent,FEContent)
+
+<<<<<<< formct.cpp
+FEFormContentP FEFormContent::
+with(XuStringVar key, XuRangeElementP value)
+{
+	XuEditionP edition = this->edition()->with(key, value);
+	edition->endorse(myType->endorsements());
+	return myType->makeContent(edition);
+=======
+FEFormContentP FEFormContent::
+with(XuStringVar key, XuRangeElementP value)
+{
+	XuEditionP edition = this->edition()->with(key, value);
+	edition->endorse(myType->endorsements());
+	return XU_CAST(FEFormContent,myType->makeContent(edition));
+>>>>>>> 1.6
+}
+
+<<<<<<< formct.cpp
+void FEFormContent::
+followFieldRef (XuStringVar key) {
+	// we get it from the edition since it may get changed from outside
+	XuHyperRefP ref = XuHyperRef::wrap(XuEdition::cast(this->edition()->get(key)));
+	FESheet::showRef(ref);
+=======
+void FEFormContent::
+followFieldRef (XuStringVar key) {
+	// we get it from the edition since it may get changed from outside
+	XuEditionP edn = this->edition();
+	XuPromiseP refPromise = edn->get(key);
+	XuEditionP refEdn = XuEdition::cast(refPromise);
+	XuHyperRefP ref = XuHyperRef::wrap(refEdn);
+#ifdef DEBUG
+ref->force();
+#endif
+	FESheet::showRef(ref);
+>>>>>>> 1.6
+}
+
+const FEContentTypeP FEFormContent::
+type () {
+	return myType;
+}
+const FEFormContentTypeP FEFormContent::
+formType () {
+	return myType;
+}
+
+FEFormContent::
+FEFormContent (XuEditionP edition, FEFormContentTypeP type)
+	: FEContent(edition), myType(type)
+{}
+
+/******************* FEFormContentType ********************/
+
+<<<<<<< formct.cpp
+/* make a form of this type, properly initialized */
+FEContentP FEFormContentType::
+makeContent(XuEditionP XU_OR_NULL edition) {
+	if (edition == XU_NULL) {
+		edition = XuEdition::empty(XuSequenceSpace::make());
+=======
+/* make a form of this type, properly initialized */
+FEContentP FEFormContentType::
+makeContent(XuEditionP XU_OR_NULL edition) {
+	if (edition == XU_NULL) {
+		edition = XuEdition::empty(XuSequenceSpace::make());
+		edition->endorse(this->endorsements());
+>>>>>>> 1.6
+	}
+	return new FEFormContent(edition, this);
+}
+
+FESheetP FEFormContentType::
+makeSheet(FEDraftP draft) {
+	return new FEFormSheet(draft);
+}

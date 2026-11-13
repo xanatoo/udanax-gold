@@ -1,0 +1,55 @@
+#ifndef FORMCT
+#define FORMCT
+
+#include "content.h"
+#include "formct.oxx"
+#include "draft.oxx"
+
+class FEFormContentType;
+
+class FEFormContent : public FEContent {
+	XU_PROLOGUE(FEFormContent)
+
+public: /* form-specific accessing */
+
+	/* replace the rangeElement at the supplied key */
+	FEFormContentP with (XuStringVar key, XuRangeElementP value);
+
+	/* follow a reference */
+	virtual void followFieldRef (XuStringVar key);
+
+public: /* type */
+
+	virtual const FEContentTypeP type ();
+	// for convenience, we also have...
+	const FEFormContentTypeP formType ();
+
+private:
+
+	/* The object defining what kind of form I am */
+	FEFormContentTypeP myType;
+
+	friend class FEFormContentType;
+	FEFormContent (XuEditionP edition, FEFormContentTypeP);
+};
+
+class FEFormContentType : public FEContentType {
+
+public: /* creation */
+
+	virtual FEContentP makeContent (XuEditionP edition = XU_NULL);
+
+protected: /* subclass should implement these constructors */
+
+	/* A window of the right kind, which has been informed of its content object */
+	friend class FEFormContent;
+	virtual PTWindowsObject makeWindow (FEDraftP) =0;
+	virtual FESheetP makeSheet (FEDraftP draft);
+
+	FEFormContentType() {}
+
+};
+
+#endif FORMCT
+
+

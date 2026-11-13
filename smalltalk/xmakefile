@@ -1,0 +1,60 @@
+mallocobj = alloca.o malloc.o
+SHELL=/bin/sh
+MAINTAINER = 'nfsun!sbyrne@uunet.uu.net'
+CFLAGS_NORMAL   = -g  
+CFLAGS_PROFILE  = -g -pg -DUSE_MONCONTROL  
+CFLAGS_OPTIMIZE = -O -DOPTIMIZE  
+CFLAGS = $(CFLAGS_NORMAL) $(READLINEDEF)
+OBJS =  mstmain.o   mst.tab.o   mstlex.o    mststr.o    mstid.o \
+	msttree.o   mstbyte.o   mstinterp.o mstcomp.o   mstsym.o \
+	mstdict.o   mstoop.o    mstsave.o   mstcint.o 	mstsysdep.o \
+	$(USER_OBJS) $(ALLOCA)
+SRCS =  mstmain.c   mst.tab.c   mstlex.c    mststr.c    mstid.c \
+	msttree.c   mstbyte.c   mstinterp.c mstcomp.c   mstsym.c \
+	mstdict.c   mstoop.c    mstsave.c   mstcint.c 	mstsysdep.c
+LIBS =  -lm $(USER_LIBS) $(READLINELIB)
+all: mst
+mst: $(OBJS)
+	$(CC) -o mst $(CFLAGS) $(OBJS) $(LIBS)
+mst.tab.h mst.tab.c: mst.y
+	bison -dv mst.y
+mstmain.o mstlex.c: mst.tab.h
+mstlex.o: mst.tab.h
+mstsave.o mstoop.o mstmain.o mstsym.o: mstoop.h
+install:
+	if test ! -d "/usr/local/smalltalk" ; then      \
+	    mkdir -p "/usr/local/smalltalk" ;           \
+	fi
+	cp *.st "/usr/local/smalltalk"
+	(cd "/usr/local/smalltalk"; chmod +r *.st)
+	if test ! -d "/usr/local/smalltalk" ; then      \
+	    mkdir -p "/usr/local/smalltalk" ;           \
+	fi
+	(x=`pwd`; cd "/usr/local/smalltalk"; $$x/mst -Vi)
+lint: $(SRCS)
+	lint $(SRCS)
+lexdebug:
+	$(CC) -c $(XCFLAGS) -DLEXDEBUG mstmain.c
+	$(MAKE) -f xmakefile mst
+profile:
+	make CFLAGS='$(CFLAGS) -pg -Dprofiling'
+senddiffs: diffs
+	kermit -e 1000 -s mst.diffs
+mail-diffs:
+	@echo "Please enter a brief note describing the contents of"
+	@echo "the diffs file that you've created.  End with Ctrl-D."
+	@cat > mst.diffs.note
+	@echo "-----------------------------------" >> mst.diffs.note
+	@### If there's a more portable/better way to do this, please
+	@### don't hesitate to fix this and send the new version back -- SBB
+	@cat mst.diffs.note mst.diffs | mail $(MAINTAINER)
+diffs:
+	mk_mst_diffs
+setup:
+	@if [ -f ./orig ] ; then \
+		echo "./orig exists, but is not a directory" ; \
+		exit 1 ; \
+	fi
+	rm -rf ./orig
+	mkdir ./orig
+	tar cbf 20 - `cat mstfiles` | (cd ./orig; tar xbBf 20 -)

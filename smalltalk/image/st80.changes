@@ -1,0 +1,9 @@
+
+
+'From Objectworks for Smalltalk-80(tm), Version 2.5 of 29 July 1989 on 1 February 1990 at 5:45:02 pm'!
+
+"'was' is with respect to releases 27Feb"!
+
+	TextStyle setDefaultTo: #large.
+	TextStyle resetViews.
+!

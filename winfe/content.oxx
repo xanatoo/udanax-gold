@@ -1,0 +1,13 @@
+#ifndef CONTENT_OXX
+#define CONTENT_OXX
+
+class FEContent;
+XU_TYPE_2(FEContent,XuCounted)
+
+class FEContentType;
+typedef FEContentTypeP FEContentType *;
+
+class FEContentHandle;
+XU_TYPE_2(FEContentHandle,XuCounted)
+
+#endif CONTENT_OXX

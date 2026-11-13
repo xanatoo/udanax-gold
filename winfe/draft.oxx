@@ -1,0 +1,7 @@
+#ifndef DRAFT_OXX
+#define DRAFT_OXX
+
+class FEDraft;
+typedef FEDraftP FEDraft *;
+
+#endif DRAFT_OXX

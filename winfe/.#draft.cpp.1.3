@@ -1,0 +1,182 @@
+// The superclass of all Drafts.  Specific subclasses handle particular
+// revise policies (for example, simple drafts versus buckets).
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "draft.h"
+#include "content.h"
+#include "xstuff.hxx"
+#include "xconn.hxx"
+#include "absui.h"
+#include "xint2set.hxx"
+
+// TODO: magic constants.  these should go away
+const int DraftMax = 100;
+int DraftCount = 0;
+
+// TODO: make this an indexed linked list so we can't run out
+static FEDraftP TheDrafts[DraftMax]; 	// all open drafts
+static FEInt2Set* TheWorks = NULL; 		// map from draft numbers to works
+
+// called after the the initial setup
+void FEDraft::startup() {
+	for (int i = 0; i < DraftMax; i++) {
+		TheDrafts[i] = NULL;
+	}
+	TheWorks = FEInt2Set::make();
+}
+
+// Noone calls this with a ContentType
+FEDraftP FEDraft::
+fetchDraft (XuWorkP work) {
+	FEContentTypeHandleP handle = FEContentTypeHandle::make(work->edition());
+	XuIntVar pos = TheWorks->positionOf(work);
+	if (work->isBroken()) {
+			return NULL;	
+	}
+  // pos is negative if work is broken or not in TheWorks
+	if (pos >= 0) {
+		// TODO: might this return NULL?
+		return TheDrafts[pos];
+	} 
+	FEContentTypeP type = handle->fetchType();
+	if (type == NULL) {
+		// TODO: put up warning that doc type couldn't be found (or wasn't unique)
+		return NULL;
+	}
+	FEContentP content = type->makeContent (work->edition());
+  return new FEDraft(work, content, DraftCount++);
+}
+
+FEDraftP FEDraft::makeNewDraft (FEContentP content) {
+	XuWorkP work = XuWork::make(content->edition());
+	return new FEDraft(work, content, DraftCount++);
+}
+
+/* Make a simple draft on the given work with the given content */
+
+FEDraft::
+FEDraft(XuWorkP work, FEContentP content, XuIntVar draftNum) {
+	myWork = work;
+	myContent = content;
+	myLastReviseSuccess = XU_NULL;
+	mySheet = NULL;
+	amGrabbing = FALSE;
+	TheWorks->addAt(draftNum, work);
+	TheDrafts[draftNum] = draft;
+	FETitleManager::add(work);
+}
+
+XuWorkP FEDraft::
+editWork () {
+	return myWork;
+}  
+
+/* The save work.  If edit works are not supported, this gets revised
+	on every call to revise(). This may be XU_NULL if the Draft has
+	never been saved. */
+XuWorkP FEDraft::
+work () {
+	return myWork;
+}
+
+/* Access the Content of this Draft. */
+FEContentP FEDraft::content () {
+	return myContent;
+}
+
+/* Grab revise protocol */
+// TODO: support NULL myWork here.  Not yet implemented.
+void FEDraft::revise (FEContentP newContent) {
+	if (!amGrabbing) {
+		this->grab();
+  }
+	XuEditionP newEdition = newContent->edition();
+	if (newEdition->isBroken()
+			&& FEUI::ask("Edition broken.\nQuit now?", "Revise Error")) {
+	   exit(-1);
+	}
+ 	XuVoidP success = myWork->revise(newEdition);
+	if (myLastReviseSuccess == NULL || myLastReviseSuccess->isFulfilled()) {
+		myLastReviseSuccess = success;
+	}   /* Fall through so we immediately test success if possible. */
+	if (myLastReviseSuccess->isBroken()) {
+  	// the last revise broke; we lost the grab.  Ask what to do.
+		if (FEUI::ask("Make a new variant?", "Revise failed.")) {
+
+			// TODO: add code here so we can keep original around and request grab.
+			// TODO: add code to make new variant's title and update new Doc
+			// immediately.
+
+      // make the new Work and Draft
+			FESheet::showDraft(FEDraft::makeNewDraft(myContent));
+/*			// set the new Variant's title
+			XuWorkP titleWork = 
+				FETitleManager::makeTitle(newDoc->work(), 
+													XuText::make("New Variant")->edition());
+			newDoc->setTitle(titleWork, "New Variant");
+*/			
+			// TODO: get rid of me
+			this->release();
+			return;
+		} else {
+    	// rewind to work's current edition
+			myContent = myContent->type()->makeContent(myWork->edition());
+    }
+	}
+}
+
+/* Attempt to grab this draft.  This lets people who would rather not
+	type onto a moving document try to grab in a more direct way. */	
+// TODO: we want this to wait for the grab to come back and give feedback ASAP,
+// not to mention checking whether it's moved out from under us.
+void FEDraft::
+grab () {
+	if (!amGrabbing) {
+		// TODO: this must update title, too.
+		amGrabbing = TRUE;
+		myWork->grab();
+	}
+}	
+                                         
+/* Release this draft. amGrabbing must be TRUE. */
+void FEDraft::
+release () {
+	if (amGrabbing) {
+		// TODO: this must update title, also.
+		amGrabbing = FALSE;
+		myWork->release();
+  }
+}
+
+XuBooleanValueP FEDraft::
+replace (FEContentP oldContent, FEContentP newContent) {
+	// Is this the right semantics?
+	if (!amGrabbing) {
+		myWork->grab();
+	}
+	XuBooleanValueP flag = myContent->edition()->isIdentical(oldContent->edition());
+	flag = flag->logicalAnd(myWork->canRevise());
+	flag->force();
+	if (flag->asBooleanVar()) {
+		myContent = newContent;
+		myWork->revise(newContent->edition());
+	}
+	if (!amGrabbing) {
+		myWork->release();
+	}
+	return flag;
+}
+
+/* Revise the save work. */	
+// TODO: extend this to only save if save is needed.
+void FEDraft::save (FEContentP content) {
+	this->revise(content);
+}
+	

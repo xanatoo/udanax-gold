@@ -1,0 +1,187 @@
+// form dialog boxes and controls
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "formui.h"
+#include "draft.h"
+#include "content.h"
+#include "formct.h"
+#include "xstuff.hxx"
+#include "dlgtools.h"
+#include "edit.h"
+#include "dialog.h"
+#include "checkbox.h"
+
+#define FE_FORMTEXTLEN 5000
+
+FEFormEdit::
+FEFormEdit (PTWindowsObject aParent, int resID,
+			FEDraftP draft, XuStringVar key)
+		: TEdit (aParent, resID, FE_FORMTEXTLEN), myKey(key), myDraft(draft) {
+	// TODO: these are gross hacks to keep us from either
+	// updating fields unnecessarily or allocating every
+ 	// time we kill focus.
+	myOldBuf = new char[FE_FORMTEXTLEN];
+	myBuf = new char[FE_FORMTEXTLEN];
+	this->resetValue();
+}
+
+// Set the selection to the last character
+void FEFormEdit::WMSetFocus (RTMessage msg) {
+	DefWndProc (msg);
+  this->updateSelection ();
+}
+
+void FEFormEdit::updateSelection () {
+  // to turn off highlighting of the entire field, and allow text entry at the end
+	int len = GetTextLen();
+	SetSelection(len, len);
+}
+
+
+// this edit field is losing the focus; send its contents to the backend
+void FEFormEdit::WMKillFocus(RTMessage msg) {
+	GetText(myBuf, GetTextLen()+1);
+  // only flush if my contents actually have changed
+	if (strcmp(myOldBuf, myBuf) != 0) {
+		strcpy(myOldBuf, myBuf);
+		FEFormContentP content = (FEFormContentP)myDraft->content();
+		myDraft->revise(content->with(myKey, XuText::make(myBuf)->edition()));
+	}
+	DefWndProc(msg);
+}
+
+// hook so we don't wait to fill in text fields
+class FEFormEditHook : public XuExportHook {
+	FEFormEdit* myEdit;
+public:
+	FEFormEditHook (FEFormEdit* edit) : myEdit(edit) {}
+
+	virtual void fulfilled (XuBufferVar buf, XuIntVar size) {
+		myEdit->SetText((char*)buf);
+		strcpy(myEdit->myOldBuf, (char*)buf);
+	}
+	virtual void broken (XuVoidP) {
+			cerr << "Couldn't get data.\n";
+	}
+};
+
+// set this field from an Edition; do not wait
+void FEFormEdit::
+resetValue () {
+	XuEditionP edn = XuEdition::cast(myDraft->content()->edition()->get(myKey));
+	FEStuff::getText(edn,	new FEFormEditHook(this));
+}
+
+FEFormTextCompare::
+FEFormTextCompare (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key, XuStringVar reference)
+	: FEFormEdit (aParent, resID, draft, key), myReference(reference)
+{}
+
+void FEFormTextCompare::WMSetText (RTMessage msg) {
+	DefWndProc (msg);
+  this->updateSelection ();
+}
+
+void FEFormTextCompare::updateSelection () {
+	// Do the default thing in case the comparison doesn't work
+	this->FEFormEdit::updateSelection ();
+	// Compare with original version comparison
+	XuEditionP edition = myDraft->content()->edition()
+	XuIntegerRegionP notShared = XuIntegerRegion::cast (
+		XuEdition::cast(edition->get(myKey)))
+			->notSharedWith(XuEdition::cast(edition->get(myReference)))
+		->domain());
+  // update the selection when the result comes back
+	DialogTools::setSelection(notShared->start(), notShared->stop(), this);
+}
+
+FEFormCheckbox::
+FEFormCheckbox (PTWindowsObject aParent, int resID, PTGroupBox group,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, group), myKey(key), myOldState(BF_UNCHECKED), myDraft(draft)
+{
+	this->resetValue();
+}
+
+// flush this checkbox's state to the backend
+void FEFormCheckbox::WMKillFocus(RTMessage msg) {
+	if (myOldState != GetCheck()) {
+  	myOldState = GetCheck();
+		XuDataHolderP value = XuDataHolder::make(GetCheck() == BF_CHECKED ? 1 : 0);
+		FEFormContentP content = (FEFormContentP)myDraft->content();
+		myDraft->revise(content->with(myKey, value));
+		DefWndProc(msg);
+	}
+}
+
+// set this checkbox's state from the backend; do a force for now
+void FEFormCheckbox::
+resetValue () {
+	XuIntValueP val = 
+		XuIntValue::cast(XuDataHolder::cast(myDraft->content()->edition()->get(myKey))->value());
+	// TODO: make this not force (easy)
+	XuPromise::forceAll();
+	int newState = val->asInt() ? BF_CHECKED : BF_UNCHECKED;
+	SetCheck(newState);
+	myOldState = newState;
+}
+
+FERefButtonHook::FERefButtonHook (XuIntValueP flag, TButton * button) {
+	myFlag = flag;
+	myButton = button;
+}
+
+void FERefButtonHook::ready () {
+	if (! myFlag->asInt()) {
+		myButton->Show (SW_HIDE);
+	}
+}
+
+FEFormRefButton::
+FEFormRefButton (PTWindowsObject aParent, int resID, 
+								 FEDraftP draft, XuStringVar key)
+	: TButton (aParent, resID), myKey(key), myDraft(draft)
+{}
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRefButton::BNClicked (RTMessage msg) {
+	DefWndProc (msg);
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+}
+
+FEFormRefCheckbox::
+FEFormRefCheckbox (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRefCheckbox::WMLButtonDown (RTMessage) {
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+  // Don't pass on to DefWndProc so the checkbox state doesn't change
+}
+
+FEFormRefText::
+FEFormRefText (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar myKey)
+	: TEdit (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRefText::WMLButtonDown (RTMessage) {
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+	// Don't pass on to DefWndProc so the text state doesn't change
+}
+
+

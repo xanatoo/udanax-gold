@@ -1,0 +1,71 @@
+// The superclass of all Drafts.  Specific subclasses handle particular
+// revise policies (for example, simple drafts versus buckets).
+
+#ifndef DRAFT
+#define DRAFT
+
+#include "draft.oxx"
+#include "content.oxx"
+#include "sheet.oxx"
+
+class FEDraftP {
+public: /* creation */
+	
+	/* Return a draft on the supplied work.  If one already existed, use
+		 it.  Otherwise extract the edition, get its contentType, make an
+		 appropriate contentType, and create a draft on that. */
+	static FEDraftP fetchDraft (XuWorkP work);
+
+	/* Create a new Work on the Edition of the provided Content, make a new Draft
+		on the new Work, and return the new Draft.  This is used by the new-variant
+		code. */
+	static FEDraftP makeNewDraft (FEContentP content);
+
+public: /* accessing */
+
+	/* Access the Content of this Draft. */
+	FEContentP content ();
+
+public: /* grab/revise protocol */
+
+	/* Attempt to grab this draft. */
+  virtual void grab ();
+
+	/* revise the virtual Work that this is a Draft on. */
+	virtual void revise (FEContentP content);
+
+	/* Release this draft. */ 
+  virtual void release ();
+
+	/* TRUE if this draft has a grab on its virtual work. */
+	virtual XuBooleanVar canRevise ();
+
+public: /* compare and swap protocol */
+
+ 	/* Compare and swap the current contents without keeping a grab on the Draft. */
+	virtual XuBooleanValueP replace (FEContentP oldContent, FEContentP newContent);
+
+protected:
+	
+	FEDraft();
+
+private: 
+
+	/* initialize draft to work mapping structures. */
+	friend class FEStartupManager;
+	void startup();
+
+	XuWorkP myWork;
+	FEContentP myContent;
+	XuVoidP myLastReviseSuccess;
+	XuBooleanVar amGrabbing;
+
+	/* private hack instance variable to map from drafts to sheets
+		 this variable is only accessed by sheets, and may be NULL. */
+	friend class FESheet;
+	FESheetP mySheet;
+
+};
+
+#endif DRAFT
+

@@ -1,0 +1,65 @@
+
+RATE DIALOG LOADONCALL MOVEABLE DISCARDABLE 14, 60, 292, 320
+STYLE WS_POPUP | WS_DLGFRAME
+CAPTION "Rating Instructions"
+BEGIN
+ /* , , Ravi Pandya:AKORD CGL Form, @A@M@V@B,  */
+     CONTROL "...", 1, "Edit", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT | ES_MULTILINE, 5, 107, 284, 200  /*  ,  */
+     CONTROL "4/1/93", 2, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 238, 8, 51, 11  /*  ,  */
+     CONTROL "Unlucky Markets", 3, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT | ES_MULTILINE, 140, 27, 151, 25  /*  ,  */
+     CONTROL "Willy Loman", 4, "Edit", WS_CHILD | WS_VISIBLE | WS_DISABLED | ES_LEFT | ES_MULTILINE, 5, 37, 91, 56  /*  ,  */
+     CONTROL "4/1/93", 5, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 101, 68, 44, 11  /*  ,  */
+     CONTROL "4/1/94", 6, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 154, 68, 38, 10  /*  ,  */
+     CONTROL "AGENCY", 7, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 198, 67, 32, 11  /*  ,  */
+     CONTROL "DIRECT", 8, "Button", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX, 198, 76, 32, 11  /*  ,  */
+     CONTROL "TBD", 9, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 239, 68, 27, 11  /*  ,  */
+     CONTROL "Y", 10, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 273, 68, 9, 10  /*  ,  */
+     CONTROL "ACME", 0, "text", WS_CHILD, 5, 3, 0, 0
+     CONTROL "RATING INSTRUCTIONS", 10, "text", WS_CHILD, 5, 92, 0, 0
+     CONTROL "PRODUCER", 0, "text", WS_CHILD, 5, 26, 0, 0
+     CONTROL "DATE", 0, "text", WS_CHILD, 219, 8, 0, 0
+     CONTROL "APPLICANT", 0, "text", WS_CHILD, 101, 26, 0, 0
+     CONTROL "BILLING", 0, "text", WS_CHILD, 198, 56, 0, 0
+     CONTROL "PAYMENT", 0, "text", WS_CHILD, 239, 56, 0, 0
+     CONTROL "AUDIT", 0, "text", WS_CHILD, 273, 56, 0, 0
+     CONTROL "PROP EFF", 0, "text", WS_CHILD, 101, 56, 0, 0
+     CONTROL "PROP EXP", 0, "text", WS_CHILD, 154, 56, 0, 0
+     CONTROL "CASUALTY INSURANCE", 0, "text", WS_CHILD, 57, 7, 0, 0
+END
+
+/* Color Values and Validation strings */
+RATE RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+1,
+1, " Ravi Pandya", 0
+10, /* Field Fonts */
+1, 10, 0, "Courier", 0,
+2, 10, 0, "Courier", 0,
+3, 10, 0, "Courier", 0,
+4, 10, 0, "Courier", 0,
+5, 10, 0, "Courier", 0,
+6, 10, 0, "Courier", 0,
+7, 9, 1, "Arial Narrow", 0,
+8, 9, 1, "Arial Narrow", 0,
+9, 10, 0, "Courier", 0,
+10, 10, 0, "Courier", 0,
+11, /* Textfield Fonts */
+1, 36, 1, "Arial Super", 0,
+2, 14, 1, "Arial Narrow", 0,
+3, 11, 1, "Arial Narrow", 0,
+4, 11, 1, "Arial Narrow", 0,
+5, 11, 1, "Arial Narrow", 0,
+6, 11, 1, "Arial Narrow", 0,
+7, 11, 1, "Arial Narrow", 0,
+8, 11, 1, "Arial Narrow", 0,
+9, 11, 1, "Arial Narrow", 0,
+10, 11, 1, "Arial Narrow", 0,
+11, 14, 1, "Arial Narrow", 0,
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+
+

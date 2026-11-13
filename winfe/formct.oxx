@@ -1,0 +1,10 @@
+#ifndef FORMCONTENT_OXX
+#define FORMCONTENT_OXX
+
+class FEFormContent;
+XU_TYPE_3(FEFormContent,FEContent,XuCounted)
+
+class FEFormContentType;
+typedef FEFormContentTypeP FEFormContentType *
+
+#endif FORMCONTENT_OXX

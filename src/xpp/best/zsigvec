@@ -1,0 +1,10 @@
+/oldfiles/proderic/xhs/src/xpp
+ccompatc.h:/* SGI won''t give us sigvec unless we want BSD_SIGNALS or BSD_COMPAT */
+sockptlx.cxx:	static struct sigvec myVec, oldVec;
+sockptlx.cxx:	sigvec (SIGALRM, &myVec, &oldVec);
+sockptlx.cxx:	sigvec (SIGALRM, &oldVec, NULL);
+/oldfiles/proderic/xhs/src/xlatexpp
+/oldfiles/proderic/xhs/src/server
+/oldfiles/proderic/xhs/src/disk
+/oldfiles/proderic/xhs/src/comm
+/oldfiles/proderic/xhs/src/urdi

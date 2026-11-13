@@ -1,0 +1,26 @@
+PCAide MENU
+BEGIN
+    POPUP      "Forms"
+    BEGIN
+        MENUITEM   "Attention",          IDM_ATTENTION
+        MENUITEM   "Akord",              IDM_AKORD
+        MENUITEM   "Rate",               IDM_RATE
+        MENUITEM   "Memo",               IDM_MEMO
+        MENUITEM   "UM",                 IDM_UM
+        MENUITEM   "CProfile",           IDM_CPROFILE
+        MENUITEM   "Papers",             IDM_PAPERS
+    END
+    POPUP      "Parts"
+    BEGIN
+        MENUITEM   "Initialize",         IDM_INITIALIZE
+        MENUITEM   "Return Home",        IDM_RETURNHOME
+        MENUITEM   "Write to disk",      IDM_WRITETODISK
+    END
+    MENUITEM   "&Next demo", IDM_NEXTDEMO
+END 
+
+PCAide ACCELERATORS
+BEGIN
+       "z",                 IDM_NEXTDEMO, VIRTKEY , ALT
+END 
+

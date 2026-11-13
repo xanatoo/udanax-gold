@@ -1,0 +1,265 @@
+roken) ifTrue:
+		[^XuMultiRef makeBrokenBy: originalContext].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuMultiRef makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuMultiRef make: (self getActualFeServer newMultiRef: ((XuPromise getActual: refs) cast: PtrArray) with: ((XuPromise getActual: workContext) cast: FeWork) with: ((XuPromise getActual: originalContext) cast: FeWork))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuMultiRef} newMultiRef: refs {XuPrimArray default: DefaultNull} with: workContext {XuWork default: DefaultNull} 
+
+	^self  newMultiRef: refs with: workContext with: DefaultNull! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuMultiRef} newMultiRef: refs {XuPrimArray default: DefaultNull} 
+
+	^self  newMultiRef: refs with: DefaultNull with: DefaultNull! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuMultiRef} newMultiRef
+
+	^self  newMultiRef: DefaultNull with: DefaultNull with: DefaultNull! !
+
+!XuServer methodsFor: 'making wrappers'!
+{XuMultiRef} newMultiRef: refs {XuPrimArray} with: workContext {XuWork} with: originalContext {XuWork} with: pathContext {XuPath} 
+
+	| retVal {XuMultiRef} |
+	(self isBroken) ifTrue:
+		[^XuMultiRef makeBrokenBy: self].
+	(refs isBroken) ifTrue:
+		[^XuMultiRef makeBrokenBy: refs].
+	(workContext isBroken) ifTrue:
+		[^XuMultiRef makeBrokenBy: workContext].
+	(originalContext isBroken) ifTrue:
+		[^XuMultiRef makeBrokenBy: originalContext].
+	(pathContext isBroken) ifTrue:
+		[^XuMultiRef makeBrokenBy: pathContext].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuMultiRef makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuMultiRef make: (self getActualFeServer newMultiRef: ((XuPromise getActual: refs) cast: PtrArray) with: ((XuPromise getActual: workContext) cast: FeWork) with: ((XuPromise getActual: originalContext) cast: FeWork) with: ((XuPromise getActual: pathContext) cast: FePath))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'managing clubs'!
+{XuID} publicClubID
+
+	| retVal {XuID} |
+	(self isBroken) ifTrue:
+		[^XuID makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuID makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuID make: (self getActualFeServer publicClubID)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuHyperLink} newHyperLink
+
+	| retVal {XuHyperLink} |
+	(self isBroken) ifTrue:
+		[^XuHyperLink makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuHyperLink makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuHyperLink make: (self getActualFeServer newHyperLink)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'making spaces'!
+{XuFilterSpace} filterSpace: baseSpace {XuCoordinateSpace} 
+
+	| retVal {XuFilterSpace} |
+	(self isBroken) ifTrue:
+		[^XuFilterSpace makeBrokenBy: self].
+	(baseSpace isBroken) ifTrue:
+		[^XuFilterSpace makeBrokenBy: baseSpace].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuFilterSpace makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuFilterSpace make: (self getActualFeServer filterSpace: ((XuPromise getActual: baseSpace) cast: CoordinateSpace))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'making spaces'!
+{XuFilterSpace} endorsementFilterSpace
+
+	| retVal {XuFilterSpace} |
+	(self isBroken) ifTrue:
+		[^XuFilterSpace makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuFilterSpace makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuFilterSpace make: (self getActualFeServer endorsementFilterSpace)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'managing clubs'!
+{XuKeyMaster} publicKeyMaster
+
+	| retVal {XuKeyMaster} |
+	(self isBroken) ifTrue:
+		[^XuKeyMaster makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuKeyMaster makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuKeyMaster make: (self getActualFeServer publicKeyMaster)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuEdition} newEdition: values {XuPrimArray} with: keys {XuXnRegion default: DefaultNull} 
+
+	| retVal {XuEdition} |
+	(self isBroken) ifTrue:
+		[^XuEdition makeBrokenBy: self].
+	(values isBroken) ifTrue:
+		[^XuEdition makeBrokenBy: values].
+	(keys isBroken) ifTrue:
+		[^XuEdition makeBrokenBy: keys].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuEdition makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuEdition make: (self getActualFeServer newEdition: ((XuPromise getActual: values) cast: PrimArray) with: ((XuPromise getActual: keys) cast: XnRegion))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuEdition} newEdition: values {XuPrimArray} 
+
+	^self  newEdition: values with: DefaultNull! !
+
+!XuServer methodsFor: 'making wrappers'!
+{XuSingleRef} newSingleRef: material {XuEdition} with: workContext {XuWork default: DefaultNull} with: originalContext {XuWork default: DefaultNull} with: pathContext {XuPath default: DefaultNull} 
+
+	| retVal {XuSingleRef} |
+	(self isBroken) ifTrue:
+		[^XuSingleRef makeBrokenBy: self].
+	(material isBroken) ifTrue:
+		[^XuSingleRef makeBrokenBy: material].
+	(workContext isBroken) ifTrue:
+		[^XuSingleRef makeBrokenBy: workContext].
+	(originalContext isBroken) ifTrue:
+		[^XuSingleRef makeBrokenBy: originalContext].
+	(pathContext isBroken) ifTrue:
+		[^XuSingleRef makeBrokenBy: pathContext].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuSingleRef makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuSingleRef make: (self getActualFeServer newSingleRef: ((XuPromise getActual: material) cast: FeEdition) with: ((XuPromise getActual: workContext) cast: FeWork) with: ((XuPromise getActual: originalContext) cast: FeWork) with: ((XuPromise getActual: pathContext) cast: FePath))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuSingleRef} newSingleRef: material {XuEdition} with: workContext {XuWork default: DefaultNull} with: originalContext {XuWork default: DefaultNull} 
+
+	^self  newSingleRef: material with: workContext with: originalContext with: DefaultNull! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuSingleRef} newSingleRef: material {XuEdition} with: workContext {XuWork default: DefaultNull} 
+
+	^self  newSingleRef: material with: workContext with: DefaultNull with: DefaultNull! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuSingleRef} newSingleRef: material {XuEdition} 
+
+	^self  newSingleRef: material with: DefaultNull with: DefaultNull with: DefaultNull! !
+
+!XuServer methodsFor: 'making spaces'!
+{XuIntegerSpace} integerSpace
+
+	| retVal {XuIntegerSpace} |
+	(self isBroken) ifTrue:
+		[^XuIntegerSpace makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuIntegerSpace makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuIntegerSpace make: (self getActualFeServer integerSpace)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'global ids'!
+{XuID} iDOf: value {XuRangeElement} 
+
+	| retVal {XuID} |
+	(self isBroken) ifTrue:
+		[^XuID makeBrokenBy: self].
+	(value isBroken) ifTrue:
+		[^XuID makeBrokenBy: value].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuID makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuID make: (self getActualFeServer iDOf: ((XuPromise getActual: value) cast: FeRangeElement))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'making editions'!
+{XuEdition} newEmptyEdition: keySpace {XuCoordinateSpace} 
+
+	| retVal {XuEdition} |
+	(self isBroken) ifTrue:
+		[^XuEdition makeBrokenBy: self].
+	(keySpace isBroken) ifTrue:
+		[^XuEdition makeBrokenBy: keySpace].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuEdition makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuEdition make: (self getActualFeServer newEmptyEdition: ((XuPromise getActual: keySpace) cast: CoordinateSpace))].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer methodsFor: 'smalltalk: defaults'!
+{XuPath} newPath
+
+	| retVal {XuPath} |
+	(self isBroken) ifTrue:
+		[^XuPath makeBrokenBy: self].
+
+	Heaper problems.AllBlasts 
+		handle: [:ex | retVal _ XuPath makeBroken: ex asProblem. ex return]
+		do: 	[retVal _ XuPath make: (self getActualFeServer newPath)].
+	XuPromise inDelayBlock ifFalse:
+		[XuPromise force.
+		retVal isBroken ifTrue: [retVal explode]].
+	^retVal! !
+
+!XuServer class methodsFor: 'smalltalk: initialization'!
+staticTimeNonInherited
+
+	XuKeyMaster defineClientFluid: #XuCurrentKeyMaster with: XuPromise emulsion with: [NULL] with: CurrentKeyMaster.
+	XuID defineClientFluid: #XuCurrentAuthor with: XuPromise emulsion with: [NULL] with: CurrentAuthor.
+	XuID defineClientFluid: #XuInitialReadClub with: XuPromise emulsion with: [NULL] with: InitialReadClub.
+	XuID defineClientFluid: #XuInitialEditClub with: XuPromise emulsion with: [NULL] with: InitialEditClub.
+	XuID defineClientFluid: #XuInitialOwner with: XuPromise emulsion with: [NULL] with: InitialOwner.
+	XuID defineClientFluid: #XuInitialSponsor with: XuPromise emulsion with: [NULL] with: InitialSponsor.! !
+
+
+"---DOIT---"
+ChangeLog logging: true!

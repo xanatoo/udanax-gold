@@ -1,0 +1,132 @@
+
+
+
+st80(1)                  USER COMMANDS                    st80(1)
+
+
+
+NAME
+     Objectworks for Smalltalk-80
+
+SYNOPSIS
+     st80 [ _o_p_t_i_o_n_s ] st80.im
+     st80 [ _o_p_t_i_o_n_s ] _l_o_c_a_l_I_m_a_g_e_N_a_m_e
+
+DESCRIPTION
+     st80 takes the virtual image file name as its argument; this
+     may  be the standard Smalltalk-80 system virtual image (usu-
+     ally /usr/smalltalk/image/st80.im or simply, st80.im ), or a
+     customized  snapshot  version  of the virtual image.  It may
+     also take options (see below).
+
+OPTIONS
+     -a _n_u_m_b_e_r
+               Address space warning.  If set, a low space notif-
+          ier  appears  when  the  address  space grows by _n_u_m_b_e_r
+          bytes.  Useful to keep tabs on space consumption.
+
+     -g _n_u_m_b_e_r
+               The maximum amount of time allowed  for  automatic
+          garbage  collection  (expressed  as a percentage of the
+          total time of the computation).  For example,  with  -g
+          10,  if  the  last  garbage  collection took 2 seconds,
+          another garbage collection would  not  start  until  at
+          least 20 seconds had elapsed and space was getting low.
+          Or, -g 0 suppresses the automatic  mark-and-sweep  gar-
+          bage collector entirely.  The -g switch does not affact
+          the primary storage reclamation  system,  a  generation
+          scavenger,  which  should  be  invisible  to the system
+          user.
+
+     -h _n_u_m_b_e_r
+               Height.  Sets the height of the  Smalltalk  window
+          when  the system comes up (in pixels).  By default, the
+          Smalltalk window will be the full size of the display.
+
+     -l _n_u_m_b_e_r
+               Size of the large-object zone.  If set,  the  size
+          of  the  zone in which large-objects are housed will be
+          _n_u_m_b_e_r  bytes.   The  default  large-object  zone  size
+          varies from platform to platform (typically hundreds of
+          KB).
+
+     -m _n_u_m_b_e_r
+               Total space allocated to object memory (in bytes).
+          If  you use this switch, you will be given exactly this
+          amount of space at startup time and no more thereafter.
+          The  -m  switch  disables  the  default  mechanism that
+          starts the system with an object memory large enough to
+          hold  the  image  and  then  increases object memory as
+
+
+
+Sun Release 4.1     Last change: 24 July 1989                   1
+
+
+
+
+
+
+st80(1)                  USER COMMANDS                    st80(1)
+
+
+
+          necessary.  The -m switch is useful both  for  limiting
+          address space consumption and guaranteeing access to an
+          adequate amount of address space.
+
+     -n _n_u_m_b_e_r
+               Native-method zone  size.   If  set,  the  native-
+          method  zone  size  will  be _n_u_m_b_e_r bytes.  The default
+          native-method zone size varies from platform  to  plat-
+          form,  ranging  from  approximately 400 KB to more than
+          double that.
+
+     -s _n_u_m_b_e_r
+               Number of stacks.  If set, there  will  be  _n_u_m_b_e_r
+          stacks.  By default there are 30.
+
+     -v        Version     information.      Reports     detailed
+          version/release    codes    meaningful   to   ParcPlace
+          customer-support personnel.
+
+     -w _n_u_m_b_e_r
+               Sets the width of the Smalltalk  window  when  the
+          system comes up (in pixels).  By default, the Smalltalk
+          window will be the full size of the display.
+
+SEE ALSO
+     Goldberg, Adele. _S_m_a_l_l_t_a_l_k-_8_0: _T_h_e  _I_n_t_e_r_a_c_t_i_v_e  _P_r_o_g_r_a_m_m_i_n_g
+     _E_n_v_i_r_o_n_m_e_n_t (The 'Orange Book') Addison-Wesley, 1984.
+
+     Goldberg,  Adele  and  David  Robson.   _S_m_a_l_l_t_a_l_k-_8_0:    _T_h_e
+     _L_a_n_g_u_a_g_e  _a_n_d  _i_t_s _I_m_p_l_e_m_e_n_t_a_t_i_o_n (The 'Blue Book') Addison-
+     Wesley, 1983.
+
+     Krasner, Glenn, ed. _S_m_a_l_l_t_a_l_k-_8_0: _B_i_t_s _o_f _H_i_s_t_o_r_y, _W_o_r_d_s  _o_f
+     _A_d_v_i_c_e (The 'Green Book') Addison-Wesley, 1983.
+
+     ParcPlace  Systems.   Objectworks  for  Smalltalk-80  System
+     Manual Set.  ParcPlace, 1989.
+
+BUGS
+     The Smalltalk-80 manual set contains a list  of  outstanding
+     system bugs, as well as troubleshooting procedures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sun Release 4.1     Last change: 24 July 1989                   2
+
+
+

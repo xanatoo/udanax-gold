@@ -1,0 +1,25 @@
+Printing Demos and Utility Directory
+
+The Classes defined in these files are:
+	
+Category System-Printing
+	Document
+	FontDescription
+	FontStyle
+	PageStyle
+	PostscriptPrinter
+
+These files implement translators that can turn Smalltalk text and Forms into PostScript programs suitable for printing.
+
+The proper order to file these sources in is:
+	Printing.st
+	PrtSuprt.st
+	TextMenu.st
+	PrtOutOS.st
+
+Reading in the file Printing.st will initialize the printing classes and read
+in the Adobe font metric files held in the AFM subdirectory.  The
+initialization method in class FontDescription will prompt you for the
+directory name in which to look for the font metric files.  These are found
+in the 'AFM' subdirectory of the 'printing' directory in the standard release.
+

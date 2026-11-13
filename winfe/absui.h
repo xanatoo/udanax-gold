@@ -1,0 +1,38 @@
+// A support class to abstract trivial user-interface things like error messages.
+
+#ifndef ABSUI
+#define ABSUI
+
+#include "draft.oxx"
+
+#define FE_MYTEXTLEN 50
+
+/* The header file of this module should be completely window system
+	 independent.  This is one of the modules that gets reimplemented for
+	 each window system (so that other parts of the application don't have
+	 to change. */
+
+class FEUI {
+	public:
+    // tell the user something.
+		static void tell(LPSTR message, LPSTR title);
+
+		// ask the user a yes or no question
+		static int ask(LPSTR question, LPSTR title);
+
+		// beep at the user.
+		static void beep();
+
+		// get the parameters for logging in to the server.
+		static void loginParams(char* hostBuf, char* loginBuf);
+
+		// bring up the information dialog for the draft
+    static void draftInformation(FEDraftP draft);
+
+		// align a window with the edges of the screen
+		enum Alignment {Default, Min, Center, Max};
+
+};
+
+#endif // ABSUI
+

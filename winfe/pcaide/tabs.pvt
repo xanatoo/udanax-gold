@@ -1,0 +1,26 @@
+
+TABS DIALOG LOADONCALL MOVEABLE DISCARDABLE 85, 43, 181, 43
+STYLE WS_POPUP | WS_DLGFRAME | WS_CAPTION
+CAPTION "Reference Area"
+BEGIN
+ /* MainWndProc, , Ravi Pandya:, @O@L@V@B,  */
+     CONTROL "Rating Instructions", 1, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 8, 6, 69, 12  /*  ,  */
+     CONTROL "Underwriters Manual", 2, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 86, 6, 84, 12  /*  ,  */
+     CONTROL "Akord Application", 3, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 8, 23, 69, 12  /*  ,  */
+     CONTROL "Contractual Profile", 4, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 86, 23, 84, 12  /*  ,  */
+END
+
+/* Color Values and Validation strings */
+TABS RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+0,
+0, /* Field Fonts */
+0, /* Textfield Fonts */
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+
+

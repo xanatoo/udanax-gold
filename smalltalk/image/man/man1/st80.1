@@ -1,0 +1,85 @@
+.TH st80 1 "24 July 1989"
+.SH NAME
+Objectworks for Smalltalk-80
+.SH SYNOPSIS	
+.B st80
+[
+.I options 
+] 
+.B st80.im 
+.br
+.B st80
+[
+.I options 
+] 
+.I localImageName 
+.SH DESCRIPTION 
+.BI st80 
+takes the virtual image file name as its argument; this may be 
+the standard Smalltalk-80 system virtual image (usually 
+.BI /usr/smalltalk/image/st80.im 
+or simply, 
+.BI st80.im
+), or a customized snapshot version of the virtual image.  It may 
+also take options (see below). 
+.SH OPTIONS 
+.TP
+\fB-a \fInumber\fR
+	Address space warning.  If set, a low space notifier appears when the address 
+space grows by \fInumber\fR bytes.  Useful to keep tabs on space consumption.
+.TP
+\fB-g \fInumber	\fR
+	The maximum amount of time allowed for automatic garbage collection 
+(expressed as a percentage of the total time of the computation).  For example, with -g 10, if the last garbage collection took 2 seconds, another 
+garbage collection would not start until at least 20 seconds had elapsed and space 
+was getting low.  Or, -g 0 suppresses the automatic mark-and-sweep garbage collector entirely.  The -g switch does not affact the primary storage reclamation system, a generation scavenger, which should be invisible to the system user.
+.TP
+\fB-h \fInumber	\fR
+	Height.  Sets the height of the Smalltalk window when the system comes up 
+(in pixels).  By default, the Smalltalk window will be the full size of 
+the display.
+.TP
+\fB-l \fInumber	\fR
+	Size of the large-object zone.  If set, the size of the zone in which
+large-objects are 
+housed will be \fInumber\fR bytes.  The default large-object zone size varies from platform to platform (typically hundreds of KB).
+.TP
+\fB-m \fInumber	\fR
+	Total space allocated to object memory (in bytes).  If you use this switch,
+you will 
+be given exactly this amount of space at startup time and no more thereafter.  
+The -m switch disables the default mechanism that starts the system with an 
+object memory large enough to hold the image and then increases object memory 
+as necessary.  The -m switch is useful both for limiting address space
+consumption and guaranteeing access to an adequate amount of address space.
+.TP
+\fB-n \fInumber	\fR
+	Native-method zone size.  If set, the native-method zone size will be \fInumber\fR bytes.  The default native-method 
+zone size varies from platform to platform, ranging from approximately 400 KB to more than double that.
+.TP
+\fB-s \fInumber	\fR
+	Number of stacks.  If set, there will be \fInumber\fR stacks.  By default there are 30.
+.TP
+\fB-v \fR
+	Version information.  Reports detailed version/release codes meaningful
+to ParcPlace customer-support personnel.
+.TP
+\fB-w \fInumber	\fR
+	Sets the width of the Smalltalk window when the system comes up 
+(in pixels).  By default, the Smalltalk window will be the full size of 
+the display.
+.SH "SEE ALSO"
+.PP
+Goldberg, Adele. \fISmalltalk-80: The Interactive Programming 
+Environment\fP (The 'Orange Book') Addison-Wesley, 1984. 
+.PP
+Goldberg, Adele and David Robson.  \fISmalltalk-80:  The Language 
+and its Implementation\fP (The 'Blue Book') Addison-Wesley, 1983. 
+.PP
+Krasner, Glenn, ed. \fISmalltalk-80: Bits of History, Words of 
+Advice\fP (The 'Green Book') Addison-Wesley, 1983. 
+.PP
+ParcPlace Systems.  Objectworks for Smalltalk-80 System Manual Set.  ParcPlace, 1989. 
+.SH BUGS
+The Smalltalk-80 manual set contains a list of outstanding 
+system bugs, as well as troubleshooting procedures. 

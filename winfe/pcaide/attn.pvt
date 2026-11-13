@@ -1,0 +1,30 @@
+
+ATTN DIALOG LOADONCALL MOVEABLE DISCARDABLE 80, 30, 209, 55
+STYLE WS_POPUP | WS_DLGFRAME | WS_CAPTION
+CAPTION "Attention"
+BEGIN
+ /* MainWndProc, , Ravi Pandya:, @O@L@V@B,  */
+     CONTROL "Read Now", 1, "Button", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | BS_OKAY, 113, 34, 40, 14  /*  ,  */
+     CONTROL "Later...", 2, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_CANCEL, 162, 34, 40, 14  /*  ,  */
+     CONTROL "", 3, "Edit", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT | ES_MULTILINE, 8, 4, 194, 25  /*  ,  */
+     CONTROL "", 0, "text", WS_CHILD, 7, 5, 0, 0
+END
+
+/* Color Values and Validation strings */
+ATTN RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+1,
+3, "@PRT()\n", 0
+1, /* Field Fonts */
+3, 10, 1, "Arial", 0,
+1, /* Textfield Fonts */
+1, 10, 1, "Arial", 0,
+1, /* Field Colors */
+3, 0, 255,255, -1,255, -1,0, 0,
+0, /* Text Field Colors */
+END
+
+
+

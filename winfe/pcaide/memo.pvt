@@ -1,0 +1,52 @@
+
+MEMO DIALOG LOADONCALL MOVEABLE DISCARDABLE 16, 72, 290, 308
+STYLE WS_POPUP | WS_DLGFRAME
+CAPTION "Memorandum"
+BEGIN
+ /* , , Ravi Pandya:MEMO form, @A@M@V@B,  */
+     CONTROL "", 1, "Edit", WS_CHILD | WS_VISIBLE | ES_LEFT, 238, 8, 50, 10  /*  ,  */
+     CONTROL "", 2, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 186, 40, 96, 20  /*  ,  */
+     CONTROL "", 3, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 30, 28, 114, 20  /*  ,  */
+     CONTROL "", 4, "Edit", WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL | ES_LEFT | ES_MULTILINE, 32, 54, 114, 32  /*  ,  */
+     CONTROL "", 5, "Edit", WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT | ES_MULTILINE, 4, 106, 282, 178  /*  ,  */
+     CONTROL "References...", 6, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 220, 86, 68, 14  /*  ,  */
+     CONTROL "Set Aside", 7, "Button", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON | BS_OKAY, 182, 290, 40, 14  /*  ,  */
+     CONTROL "Done", 8, "Button", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_CANCEL, 234, 290, 40, 14  /*  ,  */
+     CONTROL "ACME", 7, "text", WS_CHILD, 4, 2, 0, 0
+     CONTROL "MEMORANDUM", 0, "text", WS_CHILD, 4, 92, 0, 0
+     CONTROL "DATE", 0, "text", WS_CHILD, 218, 8, 0, 0
+     CONTROL "FROM", 0, "text", WS_CHILD, 6, 26, 0, 0
+     CONTROL "CASUALTY INSURANCE", 8, "text", WS_CHILD, 56, 6, 0, 0
+     CONTROL "FILE", 0, "text", WS_CHILD, 186, 26, 0, 0
+     CONTROL "TO", 8, "text", WS_CHILD, 6, 52, 0, 0
+END
+
+/* Color Values and Validation strings */
+MEMO RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+32,1,
+0,
+3,
+6, " Ravi Pandya", 0,
+7, " Ravi Pandya", 0,
+8, " Ravi Pandya", 0
+5, /* Field Fonts */
+1, 10, 0, "Courier", 0,
+2, 10, 0, "Courier", 0,
+3, 10, 0, "Courier", 0,
+4, 10, 0, "Courier", 0,
+5, 10, 0, "Courier", 0,
+7, /* Textfield Fonts */
+1, 36, 1, "Arial Super", 0,
+2, 14, 1, "Arial Narrow", 0,
+3, 11, 1, "Arial Narrow", 0,
+4, 11, 1, "Arial Narrow", 0,
+5, 14, 1, "Arial Narrow", 0,
+6, 11, 1, "Arial Narrow", 0,
+7, 11, 1, "Arial Narrow", 0,
+0, /* Field Colors */
+0, /* Text Field Colors */
+END
+
+
+

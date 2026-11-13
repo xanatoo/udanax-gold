@@ -1,0 +1,553 @@
+// The manager for all documents, windows, and managers.
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "absui.h"
+#include "document.h"
+#include "simpldoc.h"
+#include "content.h"
+#include "textct.h"
+#include "femanage.h"
+#include "fedialog.h"
+#include "xstuff.hxx"
+#include "xconn.hxx"
+#include "xint2set.hxx"
+#include "homedoc.h"
+#include "feinit.h"
+#include "clip.h"
+#include "bucket.h"
+#include "title.h"
+#include "formct.h"
+#include "ratefct.h"
+#include "memofct.h"
+#include "akordfct.h"
+#include "homefct.h"
+#include "tabsfct.h"
+#include "attnfct.h"
+#include "umfct.h"
+#include "cproffct.h"
+
+// number for the doc type arrays
+#define FE_NUMDOCTYPES 20
+
+// struct pairing registered doc names with classes
+typedef struct {
+	char* typeName;
+	FEDocument* docClass;
+	FEContent* contClass;
+} FEDocNameStruct;
+
+// the list of doc types, as statically registered at init time
+static FEDocNameStruct theDocTypes[FE_NUMDOCTYPES];
+static int theDocTypeNum = 0;
+
+// a sequence-indexed edition of Works describing doc types
+static XuEditionP theDocTypeEdition = XU_NULL;
+
+// an ID-indexed edition of integers; each integer is an index into
+// theDocTypes, and the IDs are token IDs with which documents are
+// endorsed to set their type
+static XuEditionP theDocTypeNumEdn = XU_NULL;
+
+// TODO: get rid of these
+const int DocumentMax = 100;
+int FEManager::DocumentCount = 0;
+
+// TODO: make this an indexed linked list so we can't run out
+static FEDocument* TheDocuments[DocumentMax]; 	// all open documents
+
+static FEInt2Set* TheWorks = NULL; 		// map from document numbers to doc works
+
+FEConn* FEManager::TheFEConn = NULL;
+
+// called after the the initial setup
+void FEManager::startup() {
+	for (int i = 0; i < DocumentMax; i++) {
+		TheDocuments[i] = NULL;
+	}
+	TheWorks = FEInt2Set::make();
+}
+
+FEDocument* FEManager::documentOn (XuWorkP work,
+		FEDocument* docClass, FEContent* contClass) {
+
+	XuIntValueP docTypeNum;
+	if (docClass == NULL || contClass == NULL) {
+		docTypeNum = FEManager::docTypeNumber(work->edition());
+	}
+	// this forces, so we don't need to force docTypeNum
+	XuIntVar pos = TheWorks->positionOf(work);
+  FEDocument* doc;
+  // pos is negative if work is broken or not in TheWorks
+	if (pos >= 0) {
+		// work _is_ in TheWorks, but the document's been closed; need to reopen a
+    // document on it
+		doc = TheDocuments[pos];
+		if (doc != NULL) {
+			return doc;
+		}
+		// now fall through; pos is set to the empty slot where work's Doc
+		// used to be    	
+	} else if (work->isBroken()) {
+			return NULL;
+	} else {
+		// work needs a new slot
+		pos = DocumentCount++;
+  }
+	FEDocument* docMaker = docClass;
+  FEContent* contentMaker = contClass;
+		if (docClass == NULL || contClass == NULL) {
+	if (docTypeNum->isBroken()) {
+			// TODO: put up warning that doc type couldn't be found (or wasn't
+       // unique)
+			return NULL;
+		}
+		docMaker = theDocTypes[docTypeNum->asInt()].docClass;
+		contentMaker = theDocTypes[docTypeNum->asInt()].contClass;
+	}
+	doc = docMaker->make(work);
+	FEContent* cont = contentMaker->make(work->edition(), doc);
+	doc->setContent(cont);
+	TheWorks->addAt(pos, work);
+	TheDocuments[pos] = doc;
+	FETitleManager::add(work);
+	return doc;
+}
+
+FEDocument* FEManager::makeNewDocument (FEDocument* docClass,
+	FEContent* content) {
+	XuWorkP work = XuWork::make(content->edition());
+	// TODO: make dispatch on type of work if docClass is NULL
+	if (docClass == NULL) {
+		docClass = FESimpleDocument::make();
+	}
+
+	int pos = DocumentCount++;
+	TheWorks->addAt(pos, work);
+	FEDocument* document = docClass->make(work);
+  document->setContent(content);
+	TheDocuments[pos] = document;
+	FETitleManager::add(work);
+	return document;
+}
+
+XuBooleanVar FEManager::shutdown() {
+	for (int i = 0; i < DocumentMax; i++) {
+		if (TheDocuments[i] != NULL) {
+			if (!FEManager::close(TheDocuments[i], FALSE)) {
+				return FALSE;
+			}
+		}
+  }
+	XuSession::current()->endSession();
+  return TRUE;
+}
+
+XuBooleanVar FEManager::close (FEDocument* doc, int windowClose) {
+	if (doc->close(windowClose)) {
+		for (int i = 0; i < DocumentMax; i++) {
+			if (TheDocuments[i] == doc) {
+				// TODO: figure this out.  It seems that removing doc->work()
+				// from the table eventually causes a xuFatalError, when a promise
+				// with the work's name on it comes back from the server.  Now,
+				// the question is, why does that happen?
+				TheWorks->remove(doc->work());
+				delete doc;
+				TheDocuments[i] = NULL;
+				break;
+			}
+		}
+    return TRUE;
+	} else {
+		return FALSE;
+  }
+}
+
+
+void FEManager::returnHome () {
+	if (TheWorks == NULL) {
+		cerr << "Haven't finished startup!!!\n";
+		XuIntValue::signedMake(42);
+    XuPromise::forceAll();
+		XuDetectorHook::poll();
+		MessageBeep(-1);
+		return;
+  }
+	XuWorkP loginHomeDoc = HomeDocManager::homeFor(TheFEConn->loginClubID());
+	XuWorkP publicHomeDoc = HomeDocManager::homeFor(XuServer::publicClubID());
+  XuPromise::forceAll();
+	if ( !publicHomeDoc->isBroken() ) {
+//		FEManager::documentOn(publicHomeDoc)->content()->showWindow();
+	}
+	if ( !loginHomeDoc->isBroken() ) {
+		FEDocument * home = FEManager::documentOn (loginHomeDoc);
+    if (home) {
+			FEHomeFormContentType::setInstance ((FEFormContent*)home->content ());
+			FEHomeFormContentType::show ("Akord");
+			FEHomeFormContentType::show ("Papers");
+		}
+  }
+}
+
+/* This will only really work if iD is loginClubID or publicClubID. */
+XuWorkP FEManager::newHomeDoc (XuIDP iD, XuStringVar clubName, XuEditionP homeEdn) {
+	XuWorkP homeDoc;
+	XuBind (XuInitialReadClub, XuServer::publicClubID()) {
+		XuEditionP homeEdition;
+		XuEditionP topEdition;
+		XuWorkP topWork;
+		XuBind (XuInitialEditClub, iD) {
+			// Note we must make the doc types before calling makeEdition, as
+      // otherwise TextContent's endorsement won't be set up.
+			XuEditionP docTypeEdn = FEManager::docTypeEdition();
+			if (homeEdn == XU_NULL) {
+				homeEdition = FETextContent::makeEdition("This is your home document.");
+			} else {
+				homeEdition = homeEdn;
+      }
+			homeDoc = XuWork::make(homeEdition);
+			homeDoc->release();
+			// if it's the public doc we're making, then make the place for the
+			// doc and link types, and put homeDoc there; otherwise just make
+      // homeDoc be the home doc which is linked to
+			XuIf (iD->equals(XuServer::publicClubID())) {
+				topEdition = XuEdition::empty(XuSequenceSpace::make())
+					->with(FE_MYLINKTYPESKEY, XuEdition::fromArray(TheFEConn->typeIDs()))
+					->with(FE_MYHOMEDOCWORKKEY, homeDoc)
+					->with(FE_MYDOCTYPESKEY, docTypeEdn);
+				topWork = XuWork::make(topEdition);
+     		topWork->release();
+			} XuElse {
+      	topEdition = homeEdition;
+  			topWork = homeDoc;
+			} XuEndIf
+		} XuEndBind
+
+		// make the link from the club to the home doc
+		XuBind (XuInitialEditClub, XuServer::emptyClubID()) {
+			XuClubP club = XuClub::cast(XuServer::get(iD));
+			XuWorkP homeLinkWork = XuWork::make(FEStuff::makeLink
+   			(TheFEConn->homeDocLinkTypeID(),
+   			 FEStuff::makeSingleRef(club, club->edition(), XU_NULL),
+  	 		 FEStuff::makeSingleRef(topWork, topEdition, XU_NULL))
+				->edition());
+			homeLinkWork->release();
+		} XuEndBind
+	} XuEndBind
+
+	if (homeEdn == XU_NULL) {
+		// make the title
+		char docName[50];
+		wsprintf(docName, "%s Home Document", clubName);
+		XuEditionP titleEdition;
+		titleEdition = XuText::make(docName)->edition();
+		XuBind (XuInitialReadClub, XuServer::publicClubID()) {
+ 	 	XuBind (XuInitialEditClub, iD) {
+				FETitleManager::makeTitle(homeDoc, titleEdition);
+			} XuEndBind
+		} XuEndBind
+	}
+	return homeDoc;
+}
+
+static XuStringVar fileContents (char * filename) {
+	// hack! allocate only as much as we need
+	char * buf = (char *) malloc (5001);
+	FILE * f = fopen (filename, "rb");
+  int n;
+	if (! f) {
+  	n = 0;
+	} else {
+		n = fread (buf, 1, 5000, f);
+	}
+	buf[n] = 0;
+	cerr << "read " << n << " characters from " << filename << '\n';
+	fclose (f);
+	return buf;
+}
+		
+/* This gets used to set up the home documents and such. */
+void FEManager::initializeClub () {
+	// are we sysadmin?
+	XuAdminerP admin = XuAdminer::make();
+	admin->force();
+	if (TheWorks == NULL) {
+  	// The world isn't initialized.  Make the link types.
+		if (admin->isFulfilled()
+				&& FEUI::ask("Initialize document and link types?",
+										"Backend Initialization")) {
+    	// we are sysadmin, and we have permission to init the world
+			TheFEConn->makeTypeIDs();
+      XuWorkP newDoc;
+			XuBind (XuInitialReadClub,XuServer::publicClubID()) {
+      	// make a new text doc as the public doc
+				newDoc = FEManager::newHomeDoc(XuServer::publicClubID(), "Public");
+			} XuEndBind
+      // finish the startup, with the newly made home doc
+			FEInitManager::completeStartup(newDoc);
+		} else {
+			FEUI::beep();
+			return;
+		}
+	}
+	XuPromise::forceAll();
+	XuWorkP loginDoc = HomeDocManager::homeFor(TheFEConn->loginClubID());
+	loginDoc->force();
+	// if no login doc, or if user wants new one anyway, then make one
+	if (loginDoc->isBroken()
+			|| FEUI::ask("Make another Home Document?", "Backend Initialization")) {
+		XuIDP loginID = TheFEConn->loginClubID();
+
+	// Here is where all the initial documents are created and connected.
+
+	// First make the rate form.
+		XuEditionP rateEdn = FERateFormContentType::TheOne.makeEdition ();
+		XuWorkP rateWork = XuWork::make(rateEdn);
+        rateWork->release ();
+
+	// Then make the Tabs form pointing to it
+		XuEditionP tabsEdn = FETabsFormContentType::TheOne.makeEdition ()
+			->with ("Rate Instructions",
+				FEStuff::makeSingleRef(rateWork, rateEdn, XU_NULL)->edition ());
+		tabsEdn->endorse (FETabsFormContentType::TheOne.endorsements ());
+		XuWorkP tabsWork = XuWork::make (tabsEdn);
+        tabsWork->release ();
+
+	// Then make the Contractual Profile form
+		XuEditionP cprofEdn = FECProfFormContentType::TheOne.makeEdition ();
+		XuWorkP cprofWork = XuWork::make(cprofEdn);
+        cprofWork->release ();
+
+	// Then make the UM CLC form pointing to it
+		XuStringVar buf = fileContents ("umclc.txt");
+		XuEditionP umclcEdn = FEUMFormContentType::TheOne.makeEdition ()
+			->with ("Manual", XuText::make ("AB14")->edition ())
+			->with ("Procedure", XuText::make ("3220")->edition ())
+			->with ("Page", XuText::make ("12")->edition ())
+			->with ("Date", XuText::make ("7/12/92")->edition ())
+			->with ("Rev", XuText::make ("00")->edition ())
+			->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+CONTRACTUAL LIABILITY COVERAGE\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+			->with ("Contents", XuText::make (buf)->edition ())
+			->with ("Exhibit",
+				FEStuff::makeSingleRef(cprofWork, cprofEdn, XU_NULL)->edition ());
+		umclcEdn->endorse (FEUMFormContentType::TheOne.endorsements ());
+		XuWorkP umclcWork = XuWork::make (umclcEdn);
+				umclcWork->release ();
+		free((void*) buf);
+
+	// Then make the UM CCC form
+  	buf = fileContents ("umccc.txt");
+		XuTextP umcccText = XuText::make (buf); // for revised version later
+		free ((void*) buf);
+		XuEditionP umcccEdn = FEUMFormContentType::TheOne.makeEdition ()
+			->with ("Manual", XuText::make ("AB14")->edition ())
+			->with ("Procedure", XuText::make ("3220")->edition ())
+			->with ("Page", XuText::make ("05")->edition ())
+			->with ("Date", XuText::make ("7/12/92")->edition ())
+			->with ("Rev", XuText::make ("00")->edition ())
+			->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+AMENDED CARE, CUSTODY, AND CONTROL EXCLUSION\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+			->with ("Contents", umcccText->edition ());
+		umcccEdn->endorse (FEUMFormContentType::TheOne.endorsements ());
+		XuWorkP umcccWork = XuWork::make (umcccEdn);
+        umcccWork->release ();
+
+	// Now make the akord form pointing to both UM pages
+		XuEditionP akordEdn = FEAkordFormContentType::TheOne.makeEdition ()
+			->with ("CGL", FEStuff::makeSingleRef(umclcWork, umclcEdn, XU_NULL)->edition ())
+			->with ("CCC", FEStuff::makeSingleRef(umcccWork, umclcEdn, XU_NULL)->edition ());
+		akordEdn->endorse (FEAkordFormContentType::TheOne.endorsements ());
+		XuWorkP akordWork = XuWork::make(akordEdn);
+        akordWork->release ();
+
+	// Next make the UM hazard form
+		buf = fileContents ("umhaz.txt");
+		XuEditionP umhazEdn = FEUMFormContentType::TheOne.makeEdition ()
+			->with ("Manual", XuText::make ("AB14")->edition ())
+			->with ("Procedure", XuText::make ("3220")->edition ())
+			->with ("Page", XuText::make ("22")->edition ())
+			->with ("Date", XuText::make ("7/12/92")->edition ())
+			->with ("Rev", XuText::make ("00")->edition ())
+			->with ("Title", XuText::make (
+"GENERAL LIABILITY AND COVERAGE EXTENSIONS\r\n\
+NEARBY HAZARDS\r\n\
+COVERAGE SUPPLEMENT")->edition ())
+			->with ("Contents", XuText::make (buf)->edition ());
+		umhazEdn->endorse (FEUMFormContentType::TheOne.endorsements ());
+		XuWorkP umhazWork = XuWork::make (umhazEdn);
+        umhazWork->release ();
+		free ((void*) buf);
+
+	// Then make the LCR memo pointing to it
+		XuEditionP lcrmemoEdn = FEMemoFormContentType::TheOne.makeEdition ()
+			->with ("Date", XuText::make ("2/10/93")->edition ())
+			->with ("File", XuText::make ("Unlucky Markets")->edition ())
+			->with ("From", XuText::make ("Karen Albertson, Loss Control Representative")->edition ())
+			->with ("To", XuText::make ("Blake Patterson, Underwriter")->edition ())
+			->with ("Memorandum", XuText::make ("The new market has a vacant wood frame building next door.")->edition ())
+			->with ("References", FEStuff::makeSingleRef(umhazWork, umhazEdn, XU_NULL)->edition ());
+		lcrmemoEdn->endorse (FEMemoFormContentType::TheOne.endorsements ());
+		XuWorkP lcrmemoWork = XuWork::make (lcrmemoEdn);
+        lcrmemoWork->release ();
+
+	// And then make the LCR attention window pointing to it
+		XuEditionP lcrattnEdn = FEAttnFormContentType::TheOne.makeEdition ()
+			->with ("Message", XuText::make ("MEMO\r\nFrom: Karen Albertson, Loss Control Representative")->edition ())
+			->with ("Read", FEStuff::makeSingleRef(lcrmemoWork, lcrmemoEdn, XU_NULL)->edition ());
+		lcrattnEdn->endorse (FEAttnFormContentType::TheOne.endorsements ());
+		XuWorkP lcrattnWork = XuWork::make (lcrattnEdn);
+        lcrattnWork->release ();
+
+	// Next make the revised UM CCC form
+		XuEditionP umccc2Edn = umcccEdn
+			->with ("Date", XuText::make ("2/12/93")->edition ())
+			->with ("Rev", XuText::make ("01")->edition ())
+			->with ("Contents", umcccText->replace (
+					XuIntegerSpace::make()->interval (529,534), XuText::make ("10-20%"))->edition ())
+			->with ("Original", umcccText->edition ());
+		umccc2Edn->endorse (FEUMFormContentType::TheOne.endorsements ());
+		XuWorkP umccc2Work = XuWork::make (umccc2Edn);
+		umccc2Work->release ();
+
+	// And then make the UM Change attention window pointing to it
+		XuEditionP umattnEdn = FEAttnFormContentType::TheOne.makeEdition ()
+			->with ("Message", XuText::make ("UM CHANGE\r\nCare, Custody, and Control Exclusions")->edition ())
+			->with ("Read", FEStuff::makeSingleRef(umccc2Work, umccc2Edn, XU_NULL)->edition ());
+		umattnEdn->endorse (FEAttnFormContentType::TheOne.endorsements ());
+		XuWorkP umattnWork = XuWork::make (umattnEdn);
+        umattnWork->release ();
+
+	// Next make the HOUO memo
+		XuEditionP houomemoEdn = FEMemoFormContentType::TheOne.makeEdition ()
+			->with ("Date", XuText::make ("2/15/93")->edition ())
+			->with ("File", XuText::make ("Unlucky Markets")->edition ())
+			->with ("From", XuText::make ("George Smithers, Branch Manager")->edition ())
+			->with ("To", XuText::make ("Blake Patterson, Underwriter")->edition ())
+			->with ("Memorandum", XuText::make ("The Home Office Underwriting Officer says we should try to reduce the rate since they write $5M premiums per year with us")->edition ());
+		houomemoEdn->endorse (FEMemoFormContentType::TheOne.endorsements ());
+		XuWorkP houomemoWork = XuWork::make (houomemoEdn);
+        houomemoWork->release ();
+
+	// And then make the HOUO attention window pointing to it
+		XuEditionP houoattnEdn = FEAttnFormContentType::TheOne.makeEdition ()
+			->with ("Message", XuText::make ("MEMO\r\nFrom: George Smithers, Branch Manager")->edition ())
+			->with ("Read", FEStuff::makeSingleRef(houomemoWork, houomemoEdn, XU_NULL)->edition ());
+		houoattnEdn->endorse (FEAttnFormContentType::TheOne.endorsements ());
+		XuWorkP houoattnWork = XuWork::make (houoattnEdn);
+        houoattnWork->release ();
+
+	// Now make the home doc and connect it to the akord, tabs, and attention
+		XuEditionP homeEdn = FEHomeFormContentType::TheOne.makeEdition()
+			->with ("Akord", FEStuff::makeSingleRef(akordWork, akordEdn, XU_NULL)->edition ())
+			->with ("Papers", FEStuff::makeSingleRef(tabsWork, tabsEdn, XU_NULL)->edition ())
+			->with ("Attention 1B", FEStuff::makeSingleRef(lcrattnWork, lcrattnEdn, XU_NULL)->edition ())
+			->with ("Attention 2B", FEStuff::makeSingleRef(umattnWork, umattnEdn, XU_NULL)->edition ())
+			->with ("Attention 1C", FEStuff::makeSingleRef(houoattnWork, houoattnEdn, XU_NULL)->edition ());
+		homeEdn->endorse (FEHomeFormContentType::TheOne.endorsements ());
+		XuWorkP homeWork = newHomeDoc(TheFEConn->loginClubID(),
+			TheFEConn->loginName(), homeEdn);
+        homeWork->release ();
+	}
+	FEUI::tell("Initialization complete", "Done");
+}
+
+
+// Register a type (at init time) as associated with a particular class.
+void FEManager::registerType (XuStringVar typeName, FEDocument* docClass,
+		FEContent* contClass) {
+	int num = theDocTypeNum++;
+	theDocTypes[num].typeName = (char*)typeName;
+	theDocTypes[num].docClass = docClass;
+	theDocTypes[num].contClass = contClass;
+}
+
+// note that these next three members depend on the Edition structure
+// created in docTypeEdition()
+XuEditionP FEManager::docTypeEdition () {
+	if (theDocTypeEdition == XU_NULL) {
+		// make new one, with works
+		theDocTypeNumEdn = XuEdition::empty(XuIDSpace::global());
+		XuEditionP edn = XuEdition::empty(XuSequenceSpace::make());
+
+		// for each registered doc type, make a work on the type name, make
+		// an ID for that work, use that ID as the content class's typeID,
+    // and save the ID in theDocTypeNumEdn for speedy lookup
+		for (int i = 0; i < theDocTypeNum; i++) {
+			XuWorkP work = XuWork::make(XuText::make
+				(theDocTypes[i].typeName)->edition());
+			XuIDP id = XuServer::assignID(work);
+			theDocTypes[i].contClass->setTypeID(id);
+      theDocTypeNumEdn = theDocTypeNumEdn->with(id, XuDataHolder::make(i));
+			XuSequenceP sequence = XuSequence::string
+				((XuStringVar)theDocTypes[i].typeName);
+			edn = edn->with(sequence, work);
+		}
+		theDocTypeEdition = edn;
+	}
+	return theDocTypeEdition;
+}
+
+
+// Load theDocTypeEdition from an already-made home document
+void FEManager::setDocTypeEdition (XuEditionP newEdition) {
+	theDocTypeEdition = newEdition;
+	XuDataP names[FE_NUMDOCTYPES];
+	XuIDP ids[FE_NUMDOCTYPES];
+  // Get all the doc types out of the edition, exporting their names and IDs
+	// note this sequential retrieval assumes the doc types are always stored
+	// consecutively along the integer axis
+  XuTableStepperP stepper = newEdition->stepper(); 
+	for (int i = 0; i < FE_NUMDOCTYPES; i++) {
+		names[i] = XuData::make();
+		FEStuff::getText(XuSequence::cast(stepper->position()), names[i]);
+		ids[i] = XuServer::iDOf(XuRangeElement::cast(stepper->get()));
+    stepper->step();
+	}
+  XuIntValueP count = newEdition->count();
+	// TODO: is there a better way to do this so we don't force so damn much
+  // when we initialize?
+	XuPromise::forceAll();
+	// Now match each type's name to a registered name in this frontend, and
+	// store the number under which the type's registered at the type ID in
+  // theDocTypeNumEdn
+  theDocTypeNumEdn = XuEdition::empty(XuIDSpace::global());
+	for (i = 0; i < count->asInt(); i++) {
+		// find the  doc type with this name
+		for (int j = 0; j < FE_NUMDOCTYPES; j++) {
+			if (!strcmp
+				(theDocTypes[j].typeName, (char*)names[i]->buffer())) {
+				break;
+			}
+		}
+		if (j == FE_NUMDOCTYPES) {
+			// TODO: it may be some sort of error, if there are entries in the
+			// persistent docTypeEdition that have not been registered in this
+			// frontend
+			continue;
+		}
+		theDocTypes[j].contClass->setTypeID(ids[i]);
+		// store the number under which the doc type is registered in theDocTypeNumEdn
+		theDocTypeNumEdn = theDocTypeNumEdn->with(ids[i], XuDataHolder::make(j));
+	}
+}
+
+// get the number of the type with which edition is endorsed, by comparing
+// the endorsements on edition with the numbers stored in theDocTypeNumEdn
+XuIntValueP FEManager::docTypeNumber (XuEditionP edition) {
+	XuIDP docTypeID = XuID::cast(theDocTypeNumEdn->domain()->intersect
+		(edition->endorsements()->projection(1))->theOne());
+	XuIntValueP ret = XuIntValue::cast(XuDataHolder::cast
+		(theDocTypeNumEdn->get(docTypeID))->value());
+	return ret;
+} 	

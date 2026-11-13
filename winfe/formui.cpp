@@ -1,0 +1,497 @@
+// form dialog boxes and controls
+
+#include <owl.h>
+#include <xanadu.hxx>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fstream.h>
+#include <string.h>
+#pragma hdrstop
+
+#include "formui.h"
+#include "draft.h"
+#include "content.h"
+#include "formct.h"
+#include "xstuff.hxx"
+#include "dlgtools.h"
+#include "edit.h"
+#include "dialog.h"
+#include "checkbox.h"
+<<<<<<< formui.cpp
+
+#define FE_FORMTEXTLEN 5000
+
+FEFormEdit::
+FEFormEdit (PTWindowsObject aParent, int resID,
+			FEDraftP draft, XuStringVar key)
+		: TEdit (aParent, resID, FE_FORMTEXTLEN), myKey(key), myDraft(draft) {
+	// TODO: these are gross hacks to keep us from either
+	// updating fields unnecessarily or allocating every
+ 	// time we kill focus.
+	myOldBuf = new char[FE_FORMTEXTLEN];
+	myBuf = new char[FE_FORMTEXTLEN];
+	this->resetValue();
+}
+=======
+
+// these added merely for the RateFormRefButton
+#include "pcaidcls.h"
+#include "mxapp.h"
+#include "sheet.h"
+#include "ratefct.h"
+
+
+#define FE_FORMTEXTLEN 5000
+
+FEFormEdit::FEFormEdit (PTWindowsObject aParent, int resID,
+			FEDraftP draft, XuStringVar key)
+		: TEdit (aParent, resID, FE_FORMTEXTLEN), myKey(key), myDraft(draft) {
+	// TODO: these are gross hacks to keep us from either
+	// updating fields unnecessarily or allocating every
+ 	// time we kill focus.
+	myOldBuf = new char[FE_FORMTEXTLEN];
+	myBuf = new char[FE_FORMTEXTLEN];
+}
+>>>>>>> 1.16
+
+void FEFormEdit::SetupWindow () {
+	TEdit::SetupWindow();
+	this->resetValue();
+}
+
+// Set the selection to the last character
+void FEFormEdit::WMSetFocus (RTMessage msg) {
+	DefWndProc (msg);
+  this->updateSelection ();
+}
+
+void FEFormEdit::updateSelection () {
+  // to turn off highlighting of the entire field, and allow text entry at the end
+	int len = GetTextLen();
+	SetSelection(len, len);
+}
+
+
+// this edit field is losing the focus; send its contents to the backend
+void FEFormEdit::WMKillFocus(RTMessage msg) {
+	GetText(myBuf, GetTextLen()+1);
+  // only flush if my contents actually have changed
+	if (strcmp(myOldBuf, myBuf) != 0) {
+		strcpy(myOldBuf, myBuf);
+<<<<<<< formui.cpp
+		FEFormContentP content = (FEFormContentP)myDraft->content();
+		myDraft->revise(content->with(myKey, XuText::make(myBuf)->edition()));
+=======
+		FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+<<<<<<< formui.cpp
+		myDraft->revise(content->with(myKey, XuText::make(myBuf)->edition()));
+>>>>>>> 1.16
+=======
+		myDraft->revise(content->with(myKey, (XuStringVar)myBuf));
+>>>>>>> 1.18
+	}
+	DefWndProc(msg);
+}
+
+// hook so we don't wait to fill in text fields
+class FEFormEditHook : public XuExportHook {
+	FEFormEdit* myEdit;
+public:
+	FEFormEditHook (FEFormEdit* edit) : myEdit(edit) {}
+
+	virtual void fulfilled (XuBufferVar buf, XuIntVar size) {
+		myEdit->SetText((char*)buf);
+		strcpy(myEdit->myOldBuf, (char*)buf);
+
+		// TODO: this is in UTTERLY the wrong place.  Move into content
+		// somehow.
+		XU_CAST(FEFormContent, myEdit->myDraft->content())
+    	->updateCache(myEdit->myKey, (XuStringVar)buf);
+	}
+	virtual void broken (XuVoidP) {
+			cerr << "Couldn't get data.\n";
+	}
+};
+
+// set this field from an Edition; do not wait
+<<<<<<< formui.cpp
+void FEFormEdit::
+resetValue () {
+	XuEditionP edn = XuEdition::cast(myDraft->content()->edition()->get(myKey));
+=======
+void FEFormEdit::resetValue () {
+<<<<<<< formui.cpp
+	XuEditionP edn = XuEdition::cast(myDraft->content()->edition()->get(myKey));
+>>>>>>> 1.16
+	FEStuff::getText(edn,	new FEFormEditHook(this));
+=======
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+  XuStringVar value = content->fetchString(myKey);
+	if (value != NULL) {
+  	this->SetText((char*)value);
+	} else {  	
+		XuEditionP edn = XuEdition::cast(content->edition()->get(myKey));
+		FEStuff::getText(edn,	new FEFormEditHook(this));
+  }
+>>>>>>> 1.18
+}
+
+<<<<<<< formui.cpp
+FEFormTextCompare::
+FEFormTextCompare (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key, XuStringVar reference)
+	: FEFormEdit (aParent, resID, draft, key), myReference(reference)
+{}
+=======
+void FEFormEdit::WURefresh (RTMessage msg) {
+	if (msg.LParam == NULL || !strcmp((char*)msg.LParam, myKey)) {
+		this->resetValue();
+	}
+}
+
+void FEFormEdit::WUSelectRef (RTMessage msg) {
+	if (!strcmp((char*)msg.LParam, myKey)) {
+		SetFocus(this->HWindow);
+		this->SetSelection(0, this->GetTextLen());
+	}
+}
+
+FEFormTextCompare::FEFormTextCompare (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key, XuStringVar reference)
+	: FEFormEdit (aParent, resID, draft, key), myReference(reference)
+{}
+<<<<<<< formui.cpp
+>>>>>>> 1.16
+
+=======
+/*
+>>>>>>> 1.18
+void FEFormTextCompare::WMSetText (RTMessage msg) {
+	this->updateSelection ();
+	DefWndProc (msg);
+}
+*/
+void FEFormTextCompare::updateSelection () {
+	// Do the default thing in case the comparison doesn't work
+	this->FEFormEdit::updateSelection ();
+	// Compare with original version comparison
+<<<<<<< formui.cpp
+	XuEditionP edition = myDraft->content()->edition()
+	XuIntegerRegionP notShared = XuIntegerRegion::cast (
+		XuEdition::cast(edition->get(myKey)))
+			->notSharedWith(XuEdition::cast(edition->get(myReference)))
+		->domain());
+=======
+	XuEditionP edition = myDraft->content()->edition();
+	XuIntegerRegionP notShared = XuIntegerRegion::cast(
+		XuEdition::cast(edition->get(myKey))
+			->notSharedWith(XuEdition::cast(edition->get(myReference)))
+		->domain());
+>>>>>>> 1.16
+  // update the selection when the result comes back
+<<<<<<< formui.cpp
+	DialogTools::setSelection(notShared->start(), notShared->stop(), this);
+}
+
+FEFormCheckbox::
+FEFormCheckbox (PTWindowsObject aParent, int resID, PTGroupBox group,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, group), myKey(key), myOldState(BF_UNCHECKED), myDraft(draft)
+{
+	this->resetValue();
+=======
+	DialogTools::setSelection(notShared->start(), notShared->stop(), this);
+}
+
+FEFormCheckbox::FEFormCheckbox (PTWindowsObject aParent, int resID, PTGroupBox group,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, group), myKey(key), myOldState(BF_UNCHECKED), myDraft(draft)
+{
+	this->resetValue();
+>>>>>>> 1.16
+}
+
+void FEFormCheckbox::SetupWindow () {
+	TCheckBox::SetupWindow();
+}
+
+// flush this checkbox's state to the backend
+void FEFormCheckbox::WMKillFocus(RTMessage msg) {
+	if (myOldState != GetCheck()) {
+  	myOldState = GetCheck();
+		XuDataHolderP value = XuDataHolder::make(GetCheck() == BF_CHECKED ? 1 : 0);
+<<<<<<< formui.cpp
+		FEFormContentP content = (FEFormContentP)myDraft->content();
+		myDraft->revise(content->with(myKey, value));
+=======
+		FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+		myDraft->revise(content->with(myKey, value));
+>>>>>>> 1.16
+		DefWndProc(msg);
+	}
+}
+
+// set this checkbox's state from the backend; do a force for now
+<<<<<<< formui.cpp
+void FEFormCheckbox::
+resetValue () {
+	XuIntValueP val = 
+		XuIntValue::cast(XuDataHolder::cast(myDraft->content()->edition()->get(myKey))->value());
+=======
+void FEFormCheckbox::resetValue () {
+	XuIntValueP val = 
+		XuIntValue::cast(XuDataHolder::cast(myDraft->content()->edition()->get(myKey))->value());
+>>>>>>> 1.16
+	// TODO: make this not force (easy)
+	XuPromise::forceAll();
+	int newState = val->asInt() ? BF_CHECKED : BF_UNCHECKED;
+	SetCheck(newState);
+	myOldState = newState;
+}
+
+void FEFormCheckbox::WURefresh (RTMessage msg) {
+	this->resetValue();
+}
+
+FERefButtonHook::FERefButtonHook (XuIntValueP flag, TButton * button) {
+	myFlag = flag;
+	myButton = button;
+}
+
+void FERefButtonHook::ready () {
+	if (! myFlag->asInt()) {
+		myButton->Show (SW_HIDE);
+	}
+}
+
+<<<<<<< formui.cpp
+FEFormRefButton::
+FEFormRefButton (PTWindowsObject aParent, int resID, 
+								 FEDraftP draft, XuStringVar key)
+	: TButton (aParent, resID), myKey(key), myDraft(draft)
+{}
+
+=======
+FEFormRefButton::FEFormRefButton (PTWindowsObject aParent, int resID,
+								 FEDraftP draft, XuStringVar key)
+	: TButton (aParent, resID), myKey(key), myDraft(draft)
+{}
+
+>>>>>>> 1.16
+/* the button's been clicked; tell the content to follow */
+void FEFormRefButton::BNClicked (RTMessage msg) {
+	DefWndProc (msg);
+<<<<<<< formui.cpp
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+=======
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+	content->followFieldRef(myKey);
+>>>>>>> 1.16
+}
+
+<<<<<<< formui.cpp
+FEFormRefCheckbox::
+FEFormRefCheckbox (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+=======
+FEFormRateRefButton::FEFormRateRefButton (PTWindowsObject aParent, int resID,
+								 FEDraftP draft, XuStringVar key)
+	: TButton (aParent, resID), myKey(key), myDraft(draft)
+{}
+
+class FERateSelectHook : public XuReadyHook {
+	FESheetP mySheet;
+	XuStringVar myKeyStr;
+public:
+	FERateSelectHook (FESheetP sheet, XuStringVar keyStr)
+		: XuReadyHook(), mySheet(sheet), myKeyStr(keyStr) {}
+	virtual void ready () {
+		((FEFormSheet*)mySheet)->selectFieldAt(myKeyStr);
+	}
+};
+
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRateRefButton::BNClicked (RTMessage msg) {
+	DefWndProc (msg);
+
+	// Note that this has unrolled FESheet::showRef so we can bring up
+	// the sheet only after setting the fields appropriately.
+	// There may well be a better way to organize FESheet so this is
+	// not necessary.
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+	XuHyperRefP ref = XuHyperRef::wrap(XuEdition::cast
+		(content->edition()->get(myKey)));
+	FEDraftP rateDraft = FEDraft::fetchDraft(ref->workContext());
+
+	if (rateDraft != NULL) {
+
+		FESheetP curSheet = FEDeskManager::currentSheet();
+		FEDraftP curDraft;
+		if (curSheet != NULL) {
+			curDraft = curSheet->draft();
+		} else if (PVUMDlg::lastWork() != XU_NULL) {
+			curDraft = FEDraft::fetchDraft(PVUMDlg::lastWork());
+		} else {
+			curDraft = XU_NULL;
+    }
+
+		if (curDraft == XU_NULL) {
+    	// just show the sheet
+			FESheet::sheetOn(rateDraft)->show();
+		} else {
+			// go and look at curDraft to determine what to highlight and/
+      // or enter in the rate sheet
+
+			FERateFormContentP rateContent =
+				XU_CAST(FERateFormContent,rateDraft->content());
+			XuIntValueP rateRow = rateContent->rowReferencing(curDraft->work());
+			// Try making the new rate form content before bothering to force the
+      // row!
+			FERateFormContentP newRateContent = rateContent->withRow(curDraft);
+
+			XuIntValueP numFilledRows = rateContent->numFilledRows();
+
+      XuStringVar rateKey = NULL;
+
+			// TODO: can this be made to not force, painlessly?
+			// This can't be the same force as the fetchDraft above since we need
+			// a Draft and a Content before we can get rateRow.
+			rateRow->force();
+
+      FESheetP rateSheet;
+			if (rateRow->isFulfilled()) {
+				// there's already a row which references the currentSheet; select its rate
+				XuIntVar rateRowNum = rateRow->asInt();
+				rateKey = FERateFormContent::fieldKeyStr(rateRowNum, "Rate");
+				rateSheet = FESheet::sheetOn(rateDraft);
+				rateSheet->show();
+				((FEFormSheet*)rateSheet)->selectFieldAt(rateKey);
+			} else {
+      	// we need to add an entry
+				XuIntVar rateRowNum = numFilledRows->asInt();
+				if (rateRowNum >= FERateFormContent::numRateRows) {
+        	// no space for another entry; just bring up the sheet and quit
+					FESheet::sheetOn(rateDraft)->show();
+					// no need to delete rateKey since it was never allocated
+					return;
+				}
+
+				rateKey = FERateFormContent::fieldKeyStr(rateRowNum, "Rate");
+
+        // there's room; add the entry, THEN bring up and select the Sheet
+				rateDraft->revise(newRateContent);
+				FESheetP curRateSheet = FESheet::fetchSheetOn(rateDraft);
+				rateSheet = FESheet::sheetOn(rateDraft);
+				rateSheet->show();
+				// if there was already a sheet, then refresh it
+				if (curRateSheet != NULL) {
+					FEFormSheet* rateFormSheet = (FEFormSheet*)rateSheet;         	
+					rateFormSheet->refreshFieldAt(rateKey);
+					XuStringVar baseKey = FERateFormContent::fieldKeyStr
+						(rateRowNum, "Base");
+					rateFormSheet->refreshFieldAt(baseKey);
+					delete (char*)baseKey;
+					XuStringVar sourceKey = FERateFormContent::fieldKeyStr
+						(rateRowNum, "Source");
+					rateFormSheet->refreshFieldAt(sourceKey);
+					delete (char*)sourceKey;
+				}
+
+				// the idea here is that if the Source field is already cached, then
+				// the other fields likely are as well, in which case they have al-
+				// ready been refreshed and we can just select the rate.  Otherwise
+				// the refreshes will post all sorts of hooks and we need to wait to
+        // highlight the rate.
+				if (newRateContent->fetchString(rateKey)) {
+					((FEFormSheet*)rateSheet)->selectFieldAt(rateKey);
+				} else {
+					XuIntValueP bogus = 2;
+					XuPromise::waitForReady(new FERateSelectHook(rateSheet, rateKey));
+					bogus->force();
+				}
+			}
+			delete (char*)rateKey;
+		}
+	}			
+}
+
+
+
+FEFormRefCheckbox::FEFormRefCheckbox (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key)
+	: TCheckBox (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+>>>>>>> 1.16
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRefCheckbox::WMLButtonDown (RTMessage) {
+<<<<<<< formui.cpp
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+=======
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+	content->followFieldRef(myKey);
+>>>>>>> 1.16
+  // Don't pass on to DefWndProc so the checkbox state doesn't change
+}
+
+<<<<<<< formui.cpp
+FEFormRefText::
+FEFormRefText (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar myKey)
+	: TEdit (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+
+=======
+
+
+FEFormRefText::FEFormRefText (PTWindowsObject aParent, int resID,
+		FEDraftP draft, XuStringVar key)
+	: TEdit (aParent, resID, NULL), myKey(key), myDraft(draft)
+{}
+
+>>>>>>> 1.16
+/* the button's been clicked; tell the content to follow */
+void FEFormRefText::WMLButtonDown (RTMessage) {
+<<<<<<< formui.cpp
+	FEFormContentP content = (FEFormContentP)myDraft->content();
+	content->followFieldRef(myKey);
+=======
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+	content->followFieldRef(myKey);
+>>>>>>> 1.16
+	// Don't pass on to DefWndProc so the text state doesn't change
+}
+<<<<<<< formui.cpp
+=======
+
+
+
+FEFormRefEdit::FEFormRefEdit (PTWindowsObject aParent, int resID,
+	FEDraftP draft, XuStringVar key, XuStringVar refKey)
+	: FEFormEdit (aParent, resID, draft, key) {
+	// why are these needed?  Just using FEFormEdit's ctor results in a
+  // XU_NULL myDraft when all is over.
+	myDraft = draft;
+	myKey = key;
+  myRefKey = refKey;
+}
+
+/* the button's been clicked; tell the content to follow */
+void FEFormRefEdit::WMLButtonDown (RTMessage) {
+	FEFormContentP content = XU_CAST(FEFormContent,myDraft->content());
+	content->followFieldRef(myRefKey);
+	// Don't pass on to DefWndProc so the text state doesn't change
+}
+
+/* do nothing on setFocus */
+void FEFormRefEdit::WMSetFocus (RTMessage) {
+}
+
+>>>>>>> 1.16
+
+
